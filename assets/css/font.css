@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Athene;
+    src: url(../font/AtheneFF/Athene.otf);
+}
+
+@font-face {
+    font-family: Voga;
+    src: url(../font/Voga/Voga-Medium.otf);
+}
+
+
+@font-face {
+    font-family: Fenix;
+    src: url(../font/Fenix/Fenix-Regular.ttf);
+}
+
+@font-face {
+    font-family: Aileron;
+    src: url(../font/Ailerons/Ailerons-Regular.otf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat/Montserrat-VariableFont_wght.ttf)
+}
