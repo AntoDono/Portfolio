@@ -13,9 +13,7 @@
 
 <script>
 export default defineComponent({
-    setup() {
-        
-    },
-    name: "Navbar"
+    name: "Navbar",
+    setup() {}
 })
 </script>
