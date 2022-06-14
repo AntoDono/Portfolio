@@ -5,6 +5,7 @@ module.exports = {
     './layouts/**/*.vue',
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
+    './*.vue'
     // './nuxt.config.{js,ts}',
   ],
   theme:{
@@ -15,6 +16,11 @@ module.exports = {
         'fenix': ['Fenix'],
         'aileron': ['Aileron'],
         'montserrat': ['Montserrat']
+      },
+      colors: {
+        "primary": "#111",
+        "accent1": "#4817eb",
+        "accent2": "#40d9ff"
       }
     },
   },
