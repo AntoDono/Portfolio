@@ -4,7 +4,7 @@
             <h1 class="opacity-10 text-[10vmin] text-transparent bg-clip-text bg-gradient-to-br from-accent2 to-accent1 font-aileron" id="name">Hi. I am Youwei.</h1>
         </div>
         <ul class="fixed top-[60%] text-center">
-            <li ref="1" class="font-montserrat text-[3vmin] text-white">Web Developer</li>
+            <li ref="1" id="1" class="opacity-10 font-montserrat text-[3vmin] text-white">Web Developer</li>
             <li class="font-montserrat text-[3vmin] text-white">Software Developer</li>
             <li class="font-montserrat text-[3vmin] text-white">Entrepreneur</li>
             <li class="font-montserrat text-[3vmin] text-white">Student</li>
@@ -31,7 +31,6 @@ export default defineComponent({
         }
     },
     mounted(){
-        this.$refs['1']
         // const scrollTrig = gsap.timeline({
         //     scrollTrigger: {
         //         trigger: "#scroll",
@@ -53,7 +52,7 @@ export default defineComponent({
                 end: "+=1000px +=100px",
                 toggleActions: "play none reverse none",
                 scrub: true,
-                markers: true,
+                // markers: true,
                 // onUpdate: function() { console.log(this.progress) }
             }
         })
@@ -61,9 +60,14 @@ export default defineComponent({
         titles = gsap.timeline({
             scrollTrigger: {
                 trigger: "#scroll",
-                start: "1100px"
+                start: "1100px top",
+                end: "+=1000px +=100px",
+                toggleActions: "play none reverse none",
+                scrub: true,
+                markers: true,
             }
         })
+        titles.to("#1", {autoAlpha: 1})
        
     }
 })
