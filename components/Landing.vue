@@ -3,6 +3,12 @@
         <div class="fixed top-[50%]">
             <h1 class="opacity-10 text-[10vmin] text-transparent bg-clip-text bg-gradient-to-br from-accent2 to-accent1 font-aileron" id="name">Hi. I am Youwei.</h1>
         </div>
+        <ul class="fixed top-[60%] text-center">
+            <li ref="1" class="font-montserrat text-[3vmin] text-white">Web Developer</li>
+            <li class="font-montserrat text-[3vmin] text-white">Software Developer</li>
+            <li class="font-montserrat text-[3vmin] text-white">Entrepreneur</li>
+            <li class="font-montserrat text-[3vmin] text-white">Student</li>
+        </ul>
     </div>
 </template>
 
@@ -18,30 +24,46 @@ export default defineComponent({
     },
     data(){
         return {
-            name_alpha: 0.1
         }
     },
     methods:{
         update_name(){
-            console.log(this.name_alpha)
-            gsap.set("#name", {
-                autoAlpha: this.name_alpha
-            })
         }
     },
     mounted(){
-        const scrollTrig = gsap.timeline({
+        this.$refs['1']
+        // const scrollTrig = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: "#scroll",
+        //         start: "100px top",
+        //         end: "+=300px +=100px",
+        //         toggleActions: "play none reverse none",
+        //         // scrub: 0.1,
+        //         markers: true
+        //     },
+        //     onUpdate: this.update_name
+        // })
+        // scrollTrig.fromTo("#name", { autoAlpha: 1 })
+        gsap.fromTo('#name', {scale: 0.5 ,autoAlpha: 0.1}, {
+            autoAlpha:1,
+            scale: 1,
             scrollTrigger: {
                 trigger: "#scroll",
                 start: "100px top",
-                end: "+=300px +=100px",
+                end: "+=1000px +=100px",
                 toggleActions: "play none reverse none",
-                // scrub: 0.1,
-                markers: true
-            },
-            onUpdate: this.update_name
+                scrub: true,
+                markers: true,
+                // onUpdate: function() { console.log(this.progress) }
+            }
         })
-        scrollTrig.to(this, { name_alpha: 100, snap: "name_alpha" })
+
+        titles = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#scroll",
+                start: "1100px"
+            }
+        })
        
     }
 })
