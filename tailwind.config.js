@@ -15,7 +15,11 @@ module.exports = {
         'voga': ['Voga'],
         'fenix': ['Fenix'],
         'aileron': ['Aileron'],
-        'montserrat': ['Montserrat']
+        'montserrat': ['Montserrat'],
+        'moderne': ['Moderne'],
+        "chelsea": ['Chelsea'],
+        "neovixbold": ['NeovixBold'],
+        "bogart": ['Bogart'],
       },
       colors: {
         "primary": "#111",

@@ -23,3 +23,23 @@
     font-family: Montserrat;
     src: url(../font/Montserrat/Montserrat-VariableFont_wght.ttf)
 }
+
+@font-face {
+    font-family: Moderne;
+    src: url(../font/ModerneSans/MODERNESANS.ttf)
+}
+
+@font-face {
+    font-family: Chelsea;
+    src: url(../font/Chelsea/Chelsea.ttf)
+}
+
+@font-face {
+    font-family: NeovixBold;
+    src: url(../font/Neovix/NeovixBasicBold.otf)
+}
+
+@font-face {
+    font-family: Bogart;
+    src: url(../font/Bogart/Bogart-Regular-trial.ttf)
+}
