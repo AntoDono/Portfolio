@@ -6,7 +6,7 @@
                 <h2 class="text-white text-[4vmin] font-bogart text-left">I'm Youwei Zhen,</h2>
                 <p class="text-white font-montserrat">a passionate high school student in the field of computer science and entrepreneurship.</p>
                 <p class="text-white font-montserrat pt-4">
-                    I am the founder and Cheif Executive Officer of two organizations:
+                    Over the past two years, I have developed and created two organizations:
                     <nuxt-link to="https://botsitivity.org" class="underline decoration-dotted" target="_blank">BOTSITIVITY INC</nuxt-link> 
                     and <nuxt-link to="https://privacysavior.com" class="underline decoration-dotted" target="_blank">PrivacySavior LLC</nuxt-link>.
                 </p>
