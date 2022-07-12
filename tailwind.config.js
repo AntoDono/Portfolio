@@ -30,7 +30,8 @@ module.exports = {
           "accent2": "#40d9ff"
         },
         "primary": "#111",
-        "secondary": "#00396b",
+        "secondary": "#1c1c1c",
+        "background": "#262626",
         "accent1": "#4817eb",
         "accent2": "#40d9ff",
         "accent3": "#7d00d1",
