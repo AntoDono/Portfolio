@@ -1,0 +1,50 @@
+@font-face {
+    font-family: Athene;
+    src: url(../font/AtheneFF/Athene.otf);
+}
+
+@font-face {
+    font-family: Voga;
+    src: url(../font/Voga/Voga-Medium.otf);
+}
+
+
+@font-face {
+    font-family: Fenix;
+    src: url(../font/Fenix/Fenix-Regular.ttf);
+}
+
+@font-face {
+    font-family: Aileron;
+    src: url(../font/Ailerons/Ailerons-Regular.otf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat/Montserrat-VariableFont_wght.ttf)
+}
+
+@font-face {
+    font-family: Moderne;
+    src: url(../font/ModerneSans/MODERNESANS.ttf)
+}
+
+@font-face {
+    font-family: Chelsea;
+    src: url(../font/Chelsea/Chelsea.ttf)
+}
+
+@font-face {
+    font-family: NeovixBold;
+    src: url(../font/Neovix/NeovixBasicBold.otf)
+}
+
+@font-face {
+    font-family: Bogart;
+    src: url(../font/Bogart/Bogart-Regular-trial.ttf)
+}
+
+@font-face {
+    font-family: SF;
+    src: url(../font/SFPro/FontsFree-Net-SF-Pro-Rounded-Medium.ttf)
+}
