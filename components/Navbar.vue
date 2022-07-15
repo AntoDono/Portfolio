@@ -7,7 +7,7 @@
             <div>
                 <ul class="flex text-[1.2rem] gap-x-8 font-aileron text-transparent bg-clip-text bg-gradient-to-br from-accent2 to-accent1">
                     <li class=""><nuxt-link to="/">Home</nuxt-link></li>
-                    <li class=""><nuxt-link to="/">About</nuxt-link></li>
+                    <li class=""><nuxt-link to="/about">About</nuxt-link></li>
                     <li class=""><nuxt-link to="/">Skills</nuxt-link></li>
                     <li class=""><nuxt-link to="/">Projects</nuxt-link></li>
                     <li class=""><nuxt-link to="/">Updates</nuxt-link></li>
