@@ -1,6 +1,6 @@
 <template>
-  <Renderer ref="renderer" orbit-ctrl resize="window">
-    <Camera :position="{ x: 10, y: 10, z: 10 }" />
+  <Renderer ref="renderer" resize="window" antialias autoClear>
+    <Camera :position="{ x: 50, y: 50, z: 50 }" ref="camera"/>
     <Scene ref="scene">
       <PointLight :position="{ x: 25, y: 25, z: 25 }" />
       <!-- <Plane
@@ -26,54 +26,94 @@ import * as THREE from 'three';
 export default defineComponent({
   setup() {},
   name: "terrain",
+  data(){
+    return{
+      segmentsX: 20,
+      segmentsZ: 20,
+      segmentSize: 15,
+      maxAmplitude: 10,
+      sizeX: null,
+      sizeZ: null,
+      geometry: null,
+      terrain: null,
+      currentZ: {}
+    }
+  },
+  methods: {
+    sinZ(pos, amplitude){
+      return Math.sin(pos) * amplitude
+    },
+    cosZ(pos, amplitude){
+      return Math.cos(pos + Math.PI/2) * amplitude
+    }
+  },
   mounted() {
 
-    const segmentsX = 15;
-    const segmentsZ = 15;
-    const sizeX = 15 * segmentsX;
-    const sizeZ = 15 * segmentsZ;
-    const geometry = new THREE.PlaneBufferGeometry(sizeX, sizeZ, segmentsX, segmentsZ);
+    this.$refs['camera'].camera.rotation.x = -Math.PI/4 // tilt down
+    this.$refs['camera'].camera.rotation.y = Math.PI/16
 
-    geometry.rotateX(Math.PI * -0.5);
+    this.sizeX = 15 * this.segmentsX;
+    this.sizeZ = 15 * this.segmentsZ;
+
+    this.geometry = new THREE.PlaneBufferGeometry(this.sizeX, this.sizeZ, this.segmentsX, this.segmentsZ);
+    this.geometry.rotateX(Math.PI * -0.5);
 
     const material = new THREE.MeshBasicMaterial({
-      color: 0x00ffff,
+      color: "#0091ff",
       wireframe: true,
     });
 
-    const terrain = new THREE.Mesh(geometry, material);
+    const terrain = new THREE.Mesh(this.geometry, material);
+    this.terrain = terrain
 
     this.$refs['scene'].add(terrain)
 
-    const totalSegmentsX = segmentsX + 1;
-    const totalSegmentsZ = segmentsZ + 1;
+    console.log(terrain)
 
-    for(let z = 0; z < totalSegmentsZ; z++) {
-      for(let x = 0; x < totalSegmentsX; x++) {
-        const index = 3 * (z * totalSegmentsX + x);
-        geometry.attributes.position.array[index + 1] = Math.random() * 10;
+    const totalsegmentsX = this.segmentsX + 1;
+    const totalsegmentsZ = this.segmentsZ + 1;
+
+    // sets initial z position
+    for(let z = 0; z < totalsegmentsZ; z++) {
+      for(let x = 0; x < totalsegmentsX; x++) {
+        const index = 3 * (z * totalsegmentsX + x);
+        let pos = Math.random() * Math.random()
+        let initialZ
+        this.currentZ[index] = {
+          pos: pos, 
+          method: Math.round(Math.random()),
+          amplitude: Math.random() * this.maxAmplitude,
+          increment: Math.random() * Math.random() * 0.007
+        } 
+
+        if (this.currentZ[index].method == 0) initialZ = this.sinZ(pos, this.currentZ[index].amplitude)
+        else if (this.currentZ[index].method == 1) initialZ = this.cosZ(pos, this.currentZ[index].amplitude)
+        
+        this.geometry.attributes.position.array[index + 1] = initialZ
       }
     }
 
-    geometry.attributes.position.needsUpdate = true;
-
-    let simplexNoise = new SimplexNoise()
+    this.geometry.attributes.position.needsUpdate = true;
 
     this.$refs['renderer'].onBeforeRender(() => {
-      geometry.attributes.position.needsUpdate = true;
+      this.geometry.attributes.position.needsUpdate = true;
 
-      for(let z = 0; z < totalSegmentsZ; z++) {
-        for(let x = 0; x < totalSegmentsX; x++) {
-          const index = 3 * (z * totalSegmentsX + x);
-          
-          if (Math.round(Math.random()) == 1){
-            geometry.attributes.position.array[index + 1] += 0.05
-          }else{
-            geometry.attributes.position.array[index + 1] -= 0.05
-          }
+      for(let z = 0; z < totalsegmentsX; z++) {
+        for(let x = 0; x < totalsegmentsZ; x++) {
+          const index = 3 * (z * totalsegmentsX + x);
+          this.currentZ[index].pos += this.currentZ[index].increment
 
+          if (this.currentZ[index].pos > 2 * Math.PI) this.currentZ[index].pos = 0;
+
+          let newZ
+          if (this.currentZ[index].method == 0) newZ = this.sinZ(this.currentZ[index].pos, this.currentZ[index].amplitude)
+          else if (this.currentZ[index].method == 1) newZ = this.cosZ(this.currentZ[index].pos, this.currentZ[index].amplitude)
+
+          this.geometry.attributes.position.array[index + 1] = newZ
         }
       }
+
+      this.terrain.rotation.y += Math.PI/2000
 
     });
 
