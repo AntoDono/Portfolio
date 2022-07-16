@@ -1,7 +1,7 @@
 <template>
   <div>
     <client-only>
-      <Terrain/>
+      <landing />
     </client-only>
   </div>
 </template>
