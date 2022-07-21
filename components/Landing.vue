@@ -1,6 +1,11 @@
 <template>
-    <div class="z-20 relative h-screen flex items-center justify-center">
-        <h1 class="text-white text-9xl overflow-y-hidden font-phantom">YOUWEI</h1>
+    <div class="w-screen z-20 relative h-screen flex items-center justify-center flex-col">
+        <div class="pr-[25vmin]">
+            <h1 class="text-white text-[20vmin] overflow-y-hidden font-phantom intro">HI. I AM</h1>
+        </div>
+        <div class="pl-[25vmin]">
+            <h1 class="text-white text-[20vmin] overflow-y-hidden font-phantom">YOUWEI.</h1>
+        </div>
     </div>
 </template>
 
@@ -16,15 +21,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.pic{
-    height: 500px;
-    width: 500px;
+
+.intro{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    -webkit-text-fill-color: transparent;
 }
 
-@media (max-width:700px) {
-    .pic{
-        height: 300px;
-        width: 300px;
-    }
-}
 </style>

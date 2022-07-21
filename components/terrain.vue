@@ -35,11 +35,13 @@ export default defineComponent({
       segmentSize: 15,
       maxAmplitude: 12,
       speed: 0.007,
+      camera: null,
       sizeX: null,
       sizeZ: null,
       geometry: null,
       terrain: null,
-      currentZ: {}
+      currentZ: {},
+      mouse: { x:null, y: null }
     }
   },
   methods: {
@@ -52,8 +54,10 @@ export default defineComponent({
   },
   mounted() {
 
-    this.$refs['camera'].camera.rotation.x = -Math.PI/4 // tilt down
-    this.$refs['camera'].camera.rotation.y = Math.PI/16
+    this.camera = this.$refs['camera'].camera
+
+    this.camera.rotation.y = Math.PI/16
+    this.camera.rotation.x = -Math.PI/4 // tilt down
 
     this.sizeX = 15 * this.segmentsX;
     this.sizeZ = 15 * this.segmentsZ;
@@ -119,6 +123,22 @@ export default defineComponent({
       this.terrain.rotation.y += Math.PI/2000
 
     });
+
+    window.addEventListener("mousemove",(mouse)=>{
+      if (!this.mouse.x || !this.mouse.y){
+        this.mouse.x = mouse.x
+        this.mouse.y = mouse.y
+      }else{
+        let xdiff = (this.mouse.x - mouse.x) * 0.03 * -1
+        let ydiff = (this.mouse.y - mouse.y) * 0.03 * -1
+        
+        this.camera.position.x += xdiff
+        this.camera.position.z += ydiff
+
+        this.mouse.x = mouse.x
+        this.mouse.y = mouse.y
+      }
+    })
 
 
     // for (let i = 2; i < geometry.mesh.geometry.attributes.position.array.length; i+=3){
