@@ -43,3 +43,8 @@
     font-family: Bogart;
     src: url(../font/Bogart/Bogart-Regular-trial.ttf)
 }
+
+@font-face {
+    font-family: SF;
+    src: url(../font/SFPro/FontsFree-Net-SF-Pro-Rounded-Medium.ttf)
+}

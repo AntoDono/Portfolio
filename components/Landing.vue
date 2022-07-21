@@ -1,102 +1,68 @@
 <template>
-    <div class="h-[7000px] flex justify-center items-center" ref="scroll">
-        <div class="fixed top-[40%]" ref="container">
-            <h1 class="opacity-0 text-[10vmin] text-transparent bg-clip-text bg-gradient-to-br from-accent2 to-accent1 font-aileron" ref="name">Hi. I am Youwei.</h1>
-            <ul class="text-center h-[6vmin] overflow-y-hidden" ref="titles">
-                <div ref="titleScroller" class="top-0">
-                    <li ref="r1" class="font-montserrat text-[4.5vmin] text-white">Web Developer</li>
-                    <li ref="r2" class="font-montserrat text-[4.5vmin] text-white">Software Developer</li>
-                    <li ref="r3" class="font-montserrat text-[4.5vmin] text-white">Entrepreneur</li>
-                    <li ref="r4" class="font-montserrat text-[4.5vmin] text-white">Student</li>
-                </div>
-            </ul>
+    <div class="flex bg-secondary">
+        <Renderer ref="renderer" antialias orbit-ctrl :alpha="true" :width="600" :height="500" >
+            <Camera :position="{ y: 7, x: 7, z: 7}" ref="camera"/>
+            <Scene>
+                <AmbientLight color="#f6cd8b" :intensity="2" />
+                <!-- <HemisphereLight skyColor="#d90368" groundColor="#64a6bd" :intensity="2"/>  -->
+                <GltfModel
+                    src="/blender/model1.glb"
+                    @load="onReady"
+                />
+            </Scene>
+        </Renderer>
+        <div class="w-full flex justify-center items-center flex-col">
+            <h1 class="font-aileron text-5xl text-transparent bg-clip-text bg-gradient-to-br from-accent2 to-accent1">I am Youwei Zhen.</h1>
+            <p class="font-bogart text-white pt-10">
+                Fullstack developer • Web Developer • Programmer •
+            </p>
+            <p class="font-bogart text-white">
+                Machine Learning Enthusiast • Entrepreneur •
+            </p>
+            <p class="font-bogart text-white">
+                Student at Staten Island Technical High School
+            </p>
         </div>
     </div>
 </template>
 
 <script>
 import { defineComponent } from '@vue/composition-api'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { sRGBEncoding } from 'three';
+import * as THREE from 'three';
 
 export default defineComponent({
-    name: "Landing",
     setup() {
-        gsap.registerPlugin(ScrollTrigger)
+        
     },
     data(){
         return {
-            scrollPrevEnd: 3000,
-            childHeight: null,
-            currentY: 0,
-            scrollInterval: 300,
-            readInterval: 700,
+            sRGBEncoding: null,
+            renderer: null,
+            model: null
         }
+    },
+    mounted() {
+        this.renderer = this.$refs['renderer']
+        this.renderer.renderer.outputEncoding = sRGBEncoding
+        this.renderer.onBeforeRender(()=>{
+            if (this.model) this.model.rotation.y += 0.01;
+        })
+        // console.log(this.$refs['renderer'].renderer)
     },
     methods:{
-        update_name(){
-        }
-    },
-    mounted(){
-
-        gsap.fromTo(this.$refs['name'], {scale: 0.5 ,autoAlpha: 0.1}, {
-            autoAlpha:1,
-            scale: 1,
-            scrollTrigger: {
-                trigger: this.$refs['scroll'],
-                start: "100px top",
-                end: "+=1000px +=100px",
-                toggleActions: "play none reverse none",
-                scrub: true,
-                // markers: true,
-                // onUpdate: function() { console.log(this.progress) }
-            }
-        })
-
-        gsap.fromTo(this.$refs['titles'], { autoAlpha: 0},{
-            autoAlpha: 1,
-            scrollTrigger: {
-                trigger: this.$refs['scroll'],
-                start: "1500px top",
-                end: "+=500px +=100px",
-                toggleActions: "play none reverse none",
-                scrub: true,
-                // markers: true,
-            }
-        })
-
-
-        this.childHeight = this.$refs['titleScroller'].children[0].offsetHeight
-
-        for (let num = 0; num < this.$refs['titleScroller'].children.length-1; num++){
-
-            gsap.fromTo(this.$refs['titleScroller'], {  },{
-                y: this.currentY - this.childHeight,
-                scrollTrigger: {
-                    trigger: this.$refs['scroll'],
-                    start: `${this.scrollPrevEnd} top`,
-                    end: `+=${this.scrollInterval} +=100px`,
-                    toggleActions: "play none reverse none",
-                    scrub: 0.5,
-                    // markers: true,
+        onReady(model){
+            // console.log("Loaded Model")
+            this.model = model.scene
+            model.scene.traverse((obj)=>{
+                // console.log(obj)
+                if (obj.isMesh ) {
+                    obj.material.wireframe = true
+                    obj.material.color = new THREE.Color("#032cfc")
                 }
             })
-            this.currentY -= this.childHeight
-            this.scrollPrevEnd += this.scrollInterval + this.readInterval
         }
-
-        gsap.fromTo(this.$refs['container'], { scale: 1 },{
-            scale: 0,
-            scrollTrigger: {
-                trigger: this.$refs['scroll'],
-                start: `${this.scrollPrevEnd} top`,
-                end: `+=${this.scrollInterval} +=100px`,
-                toggleActions: "play none reverse none",
-                scrub: 0.2,
-                // markers: true,
-            }
-        })
-
-    }
+    },
+    name: "Landing"
 })
 </script>

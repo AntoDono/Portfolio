@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="h-[200vh] bg-primary flex justify-center items-start">
         <div class="flex justify-around w-[70vw] flex-wrap border-2 border-white">
             <img src="~/assets/images/rimuru.png" class="h-[500px] w-[500px] rounded-xl"/>
@@ -12,6 +13,10 @@
                 </p>
             </div>
         </div>
+=======
+    <div>
+        
+>>>>>>> 8345f65b527e48154a740d7e031a7be83cfdf1e1
     </div>
 </template>
 
@@ -25,3 +30,17 @@ export default defineComponent({
     },
 })
 </script>
+
+<style scoped>
+.pic{
+    height: 500px;
+    width: 500px;
+}
+
+@media (max-width:700px) {
+    .pic{
+        height: 300px;
+        width: 300px;
+    }
+}
+</style>

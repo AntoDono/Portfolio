@@ -1,7 +1,7 @@
 <template>
   <div>
     <client-only>
-      <terrain />
+      <landing />
     </client-only>
   </div>
 </template>
@@ -13,10 +13,10 @@ export default defineComponent({
     setup() {
         
     },
-    name: "index",
+    name: "about",
     head(){
       return {
-        title: "Youwei Zhen"
+        title: "About | Youwei Zhen"
       }
     }
 })
