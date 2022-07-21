@@ -48,3 +48,23 @@
     font-family: SF;
     src: url(../font/SFPro/FontsFree-Net-SF-Pro-Rounded-Medium.ttf)
 }
+
+@font-face {
+    font-family: avenir;
+    src: url(../font/Avenir/AvenirLTStd-Book.otf)
+}
+
+@font-face {
+    font-family: Orbitron;
+    src: url(../font/Orbitron/Orbitron-Regular.ttf);
+}
+
+@font-face {
+    font-family: OrbitronBold;
+    src: url(../font/Orbitron/Orbitron-Bold.ttf);
+}
+
+@font-face {
+    font-family: Phantom;
+    src: url(../font/Phantom/Phantom-ywgAe.otf);
+}

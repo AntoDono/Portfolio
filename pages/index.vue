@@ -1,7 +1,8 @@
 <template>
   <div>
+    <Landing />
     <client-only>
-      <terrain />
+      <Terrain />
     </client-only>
   </div>
 </template>

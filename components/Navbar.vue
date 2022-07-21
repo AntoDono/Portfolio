@@ -1,5 +1,5 @@
 <template>
-    <nav class="flex bg-primary flex-col w-full">
+    <nav class="flex bg-primary flex-col w-full z-20 relative">
         <div class="flex justify-between items-center w-full p-5">
             <div class="font-aileron text-3xl text-transparent bg-clip-text bg-gradient-to-br from-accent2 to-accent1">
                 <h2>Youwei.</h2>

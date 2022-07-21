@@ -20,7 +20,11 @@ module.exports = {
         "chelsea": ['Chelsea'],
         "neovixbold": ['NeovixBold'],
         "bogart": ['Bogart'],
-        "sf": ['SF']
+        "sf": ['SF'],
+        "avenir": ['Avenir'],
+        "orbitron": ['Orbitron'],
+        "orbitronbold": ['OrbitronBold'],
+        "phantom": ['Phantom'],
       },
       colors: {
         darkmode: {

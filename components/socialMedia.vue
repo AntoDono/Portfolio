@@ -1,5 +1,5 @@
 <template>
-    <div class="border">
+    <div class="border overflow-visible">
         <nuxt-link :href="destination" target="_blank">
             <img class="social" :src="url" :alt="image"/>
         </nuxt-link>

@@ -1,21 +1,23 @@
 <template>
-  <Renderer ref="renderer" resize="window" antialias autoClear>
-    <Camera :position="{ x: 50, y: 50, z: 50 }" ref="camera"/>
-    <Scene ref="scene">
-      <PointLight :position="{ x: 25, y: 25, z: 25 }" />
-      <!-- <Plane
-        :position="{ x: 0, y: 0, z: 0 }"
-        :rotation="{x:-Math.PI/2}"
-        :width="100"
-        :height="100"
-        :widthSegments="50"
-        :heightSegments="50"
-        ref="plane"
-      >
-        <BasicMaterial color="#1895dc" />
-      </Plane> -->
-    </Scene>
-  </Renderer>
+  <div class="h-[500vh] z-10">
+    <Renderer class="fixed top-0" ref="renderer" resize="window" antialias autoClear>
+      <Camera :position="{ x: 50, y: 50, z: 50 }" ref="camera"/>
+      <Scene ref="scene">
+        <PointLight :position="{ x: 25, y: 25, z: 25 }" />
+        <!-- <Plane
+          :position="{ x: 0, y: 0, z: 0 }"
+          :rotation="{x:-Math.PI/2}"
+          :width="100"
+          :height="100"
+          :widthSegments="50"
+          :heightSegments="50"
+          ref="plane"
+        >
+          <BasicMaterial color="#1895dc" />
+        </Plane> -->
+      </Scene>
+    </Renderer>
+  </div>
 </template>
 
 <script>
@@ -31,7 +33,8 @@ export default defineComponent({
       segmentsX: 20,
       segmentsZ: 20,
       segmentSize: 15,
-      maxAmplitude: 10,
+      maxAmplitude: 12,
+      speed: 0.007,
       sizeX: null,
       sizeZ: null,
       geometry: null,
@@ -83,7 +86,7 @@ export default defineComponent({
           pos: pos, 
           method: Math.round(Math.random()),
           amplitude: Math.random() * this.maxAmplitude,
-          increment: Math.random() * Math.random() * 0.007
+          increment: Math.random() * this.speed
         } 
 
         if (this.currentZ[index].method == 0) initialZ = this.sinZ(pos, this.currentZ[index].amplitude)

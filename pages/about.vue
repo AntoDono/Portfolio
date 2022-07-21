@@ -1,7 +1,6 @@
 <template>
   <div>
     <client-only>
-      <landing />
     </client-only>
   </div>
 </template>
