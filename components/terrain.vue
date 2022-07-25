@@ -129,8 +129,8 @@ export default defineComponent({
         this.mouse.x = mouse.x
         this.mouse.y = mouse.y
       }else{
-        let xdiff = (this.mouse.x - mouse.x) * 0.03 * -1
-        let ydiff = (this.mouse.y - mouse.y) * 0.03 * -1
+        let xdiff = (this.mouse.x - mouse.x) * 0.01 * -1
+        let ydiff = (this.mouse.y - mouse.y) * 0.01 * -1
         
         this.camera.position.x += xdiff
         this.camera.position.z += ydiff
