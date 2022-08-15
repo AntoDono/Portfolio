@@ -1,7 +1,9 @@
 <template>
   <div>
     <Landing />
-    <About />
+    <Titles class="mt-[20vh]"/>
+    <About class="mt-[20vh]"/>
+    <Skills />
     <client-only>
       <Terrain />
     </client-only>

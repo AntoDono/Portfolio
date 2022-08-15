@@ -30,10 +30,11 @@ export default defineComponent({
   name: "terrain",
   data(){
     return{
-      segmentsX: 20,
-      segmentsZ: 20,
+      segmentsX: 15,
+      segmentsZ: 15,
       segmentSize: 15,
       maxAmplitude: 12,
+      sensitivity: 0.005,
       speed: 0.007,
       camera: null,
       sizeX: null,
@@ -129,8 +130,8 @@ export default defineComponent({
         this.mouse.x = mouse.x
         this.mouse.y = mouse.y
       }else{
-        let xdiff = (this.mouse.x - mouse.x) * 0.01 * -1
-        let ydiff = (this.mouse.y - mouse.y) * 0.01 * -1
+        let xdiff = (this.mouse.x - mouse.x) * this.sensitivity * -1
+        let ydiff = (this.mouse.y - mouse.y) * this.sensitivity * -1
         
         this.camera.position.x += xdiff
         this.camera.position.z += ydiff

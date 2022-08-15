@@ -1,10 +1,10 @@
 <template>
     <div class="w-screen z-20 relative h-screen flex items-center justify-center flex-col">
-        <div class="pr-[25vmin] overflow-hidden">
-            <h1 class="text-white text-[20vmin] overflow-y-hidden font-phantom intro" ref="l1">HI. I AM</h1>
+        <div class="pr-[24vmin] overflow-hidden">
+            <h1 class="text-white text-[20vmin] overflow-y-hidden font-uni intro" ref="l1">HI. I AM</h1>
         </div>
-        <div class="pl-[25vmin] overflow-hidden">
-            <h1 class="text-white text-[20vmin] overflow-y-hidden font-phantom" ref="l2">YOUWEI.</h1>
+        <div class="pl-[24vmin] overflow-hidden">
+            <h1 class="text-white text-[20vmin] overflow-y-hidden font-uni" ref="l2">YOUWEI.</h1>
         </div>
     </div>
 </template>

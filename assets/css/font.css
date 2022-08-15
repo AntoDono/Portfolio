@@ -68,3 +68,8 @@
     font-family: Phantom;
     src: url(../font/Phantom/Phantom-ywgAe.otf);
 }
+
+@font-face {
+    font-family: UniSans;
+    src: url(../font/Unisans/UniSansDemo-HeavyCAPS.otf);
+}
