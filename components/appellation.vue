@@ -1,5 +1,5 @@
 <template>
-    <div class="z-20 relative overflow-y-hidden flex justify-center" ref="title">
+    <div class="overflow-y-hidden flex justify-center" ref="title">
         <h3 class="text-[10vmin] text-white font-uni text-center" ref="text">{{title}}</h3>
     </div>
 </template>

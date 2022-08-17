@@ -8,7 +8,7 @@
             <h2 class="text-white font-uni">{{ skill_level }}</h2>
         </div>
         <div class="h-2 w-full bg-gray-500 rounded" ref="full">
-            <div class="h-full bg-blue-400 w-0" ref="load"></div>
+            <div class="h-full bg-[#0f89f5] w-0" ref="load"></div>
         </div>
     </div>
 </template>

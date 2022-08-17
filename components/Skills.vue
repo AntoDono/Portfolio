@@ -43,7 +43,7 @@ export default {
             {
                 scrollTrigger: {
                     trigger: this.$refs['skills'],
-                    markers: true,
+                    markers: false,
                     // start: "top center",
                     // end: "bottom bottom",
                     onEnter: this.show
@@ -57,7 +57,7 @@ export default {
             let tl = gsap.timeline()
             this.skills.forEach((e) => {
                 tl.to(this.$refs[e.name][0], {
-                    duration: 0.5,
+                    duration: 0.25,
                     ease: "power1.out",
                     onStart: ()=>{
                         this.$refs[e.name][0].init()
