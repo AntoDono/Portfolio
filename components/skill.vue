@@ -3,7 +3,10 @@
         <div>
             <img class="logo" :src="`../assets/images/skills/${img_name}.png`" />
         </div>
-        <h2 class="text-white font-uni">{{ skill_name }}</h2>
+        <div class="flex justify-between">
+            <h2 class="text-white font-uni">{{ skill_name }}</h2>
+            <h2 class="text-white font-uni">{{ skill_level }}</h2>
+        </div>
         <div class="h-2 w-full bg-gray-500 rounded" ref="full">
             <div class="h-full bg-blue-400 w-0" ref="load"></div>
         </div>
@@ -23,9 +26,13 @@ export default {
             default: "Skill name",
             type: String
         },
-        percentage: {
+        percent: {
             default: 0.75,
             type: Number
+        },
+        skill_level: {
+            default: "level",
+            type: String
         }
     },
     methods: {
@@ -40,7 +47,7 @@ export default {
             gsap.to(
                 this.$refs['load'],
                 {
-                    width: this.percentage * this.$refs['full'].offsetWidth,
+                    width: this.percent * this.$refs['full'].offsetWidth,
                     duration: 1.5
                 }
             )

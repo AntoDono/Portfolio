@@ -1,20 +1,11 @@
 <template>
     <div class="flex flex-wrap justify-center gap-x-10 gap-y-5" ref="skills">
-        <skill img_name="python" ref="python" />
-        <skill img_name="java" ref="java" />
-        <skill img_name="js" ref="js" />
-        <skill img_name="c" ref="c" />
-        <skill img_name="c++" ref="c++" />
-        <skill img_name="r" ref="r" />
-        <skill img_name="html" ref="html" />
-        <skill img_name="css" ref="css" />
-        <skill img_name="vue" ref="vue" />
-        <skill img_name="react" ref="react" />
-        <skill img_name="nuxt" ref="nuxt" />
-        <skill img_name="mongo" ref="mongo" />
-        <skill img_name="nginx" ref="nginx" />
-        <skill img_name="rasa" ref="rasa" />
-        <skill img_name="graphql" ref="graphql" />
+        <skill 
+            v-for="skill in skills" 
+            :key="skill" :ref="skill.name" 
+            :img_name="skill.name" :skill_name="skill.name" 
+            :percent="skill.percent" :skill_level="skill.level"
+        />
     </div>
 </template>
 
@@ -26,21 +17,21 @@ export default {
     data() {
         return {
             skills: [
-                "python",
-                "java",
-                "js",
-                "c",
-                "c++",
-                "r",
-                "html",
-                "css",
-                "vue",
-                "react",
-                "nuxt",
-                "mongo",
-                "nginx",
-                "rasa",
-                "graphql",
+                {name: "python", percent: 1, level: "proficient" },
+                {name: "java", percent: 1, level: "proficient" },
+                {name: "js", percent: 1, level: "proficient" },
+                {name: "c", percent: 1, level: "proficient" },
+                {name: "c++", percent: 1, level: "proficient" },
+                {name: "r", percent: 1, level: "proficient" },
+                {name: "html", percent: 1, level: "proficient" },
+                {name: "css", percent: 1, level: "proficient" },
+                {name: "vue", percent: 1, level: "proficient" },
+                {name: "react", percent: 1, level: "proficient" },
+                {name: "nuxt", percent: 1, level: "proficient" },
+                {name: "mongo", percent: 1, level: "proficient" },
+                {name: "nginx", percent: 1, level: "proficient" },
+                {name: "rasa", percent: 1, level: "proficient" },
+                {name: "graphql", percent: 1, level: "proficient" },
             ]
         }
     },
@@ -52,9 +43,11 @@ export default {
             {
                 scrollTrigger: {
                     trigger: this.$refs['skills'],
-                    markers: false,
+                    markers: true,
+                    // start: "top center",
+                    // end: "bottom bottom",
+                    onEnter: this.show
                 },
-                onUpdate: this.show,
                 duration: 0
             }
         )
@@ -63,11 +56,11 @@ export default {
         show() {
             let tl = gsap.timeline()
             this.skills.forEach((e) => {
-                tl.to(this.$refs[e], {
+                tl.to(this.$refs[e.name][0], {
                     duration: 0.5,
                     ease: "power1.out",
                     onStart: ()=>{
-                        this.$refs[e].init()
+                        this.$refs[e.name][0].init()
                     }
                 })
             })
