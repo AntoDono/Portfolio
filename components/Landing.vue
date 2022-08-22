@@ -1,8 +1,17 @@
 <template>
-    <div class="w-screen h-[500vmin] z-20 relative">
-        <div class="fixed flex justify-center items-center flex-col w-full" ref="trigger">
-            <h1 class="text-white text-[35vmin] overflow-y-hidden font-uni intro" ref="l1">HI. I AM</h1>
-            <h1 class="text-white text-[35vmin] overflow-y-hidden font-uni" ref="l2">YOUWEI.</h1>
+    <div class="w-screen h-[350vmin] z-10 relative bg-primary" ref="trigger">
+        <div class="fixed top-0 w-full h-full  overflow-y-hidden">
+            <svg style="opacity:0;position:fixed;z-index:-999" viewBox="0 0 1 1">
+                <defs>
+                    <clipPath id="clip" clipPathUnits="objectBoundingBox">
+                        <text x="50%" y="0.25" font-size="0.25" text-anchor="middle" alignment-baseline="middle" ref="l1">HI. I AM</text>
+                        <text x="50%" y="0.7" font-size="0.25" text-anchor="middle" alignment-baseline="middle" ref="l2">YOUWEI</text>
+                    </clipPath>
+                </defs>
+            </svg>
+            <video autoplay playsinline muted loop preload>
+                <source src="~/assets/video/bg3.mp4" />
+            </video>
         </div>
     </div>
 </template>
@@ -23,14 +32,14 @@ export default defineComponent({
         gsap.set(
             this.$refs['l1'],
             {
-                x: - this.$refs['l1'].offsetWidth
+                x: - 0.5
             }
         )
 
         gsap.set(
             this.$refs['l2'],
             {
-                x: window.innerWidth / 2 + this.$refs['l2'].offsetWidth / 5
+                x: 0.5
             }
         )
 
@@ -42,11 +51,10 @@ export default defineComponent({
             {
                 scrollTrigger: {
                     trigger: this.$refs['trigger'],
-                    markers: true,
+                    markers: false,
                     start: "top top",
-                    end: "bottom+=100% top",
-                    scrub: true,
-                    onEnter: () => { console.log("entered") }
+                    end: "bottom-=20% top",
+                    scrub: 2,
                 },
                 x: 0,
             }
@@ -56,17 +64,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.intro {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
-    -webkit-text-fill-color: transparent;
+body {
+  background: linear-gradient(45deg, white 0%, blue 100%);
 }
-
-.cutout {
-    background: none;
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent
+svg{
+  font-family: UniSans;
+}
+video {
+  -webkit-clip-path: url(#clip);
+  clip-path: url(#clip);
+  width: 100%;
+  z-index: 1;
 }
 </style>

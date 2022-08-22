@@ -1,6 +1,6 @@
 <template>
-  <div class="h-[500vh] z-10">
-    <Renderer class="fixed top-0" ref="renderer" resize="window" antialias autoClear>
+  <div class="h-screen w-screen z-10">
+    <Renderer class="" ref="renderer" resize="window" antialias autoClear>
       <Camera :position="{ x: 50, y: 50, z: 50 }" ref="camera"/>
       <Scene ref="scene">
         <PointLight :position="{ x: 25, y: 25, z: 25 }" />

@@ -29,7 +29,7 @@ module.exports = {
       },
       colors: {
         darkmode: {
-          "primary": "#111",
+          "primary": "0a0a0a",
           "secondary": "#00396b",
           "accent1": "#4817eb",
           "accent2": "#40d9ff"

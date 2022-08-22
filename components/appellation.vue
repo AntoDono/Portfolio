@@ -34,8 +34,8 @@ export default {
                 scrollTrigger: {
                     trigger: this.$refs['title'],
                     markers: false,
-                    start: "top-=100px center-=100px",
-                    end: "bottom+=200px center-=100px",
+                    start: "top center-=200px",
+                    end: "bottom+=200px center-=200px",
                     toggleActions: "play none reverse none",
                     scrub: true
                 },

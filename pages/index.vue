@@ -1,12 +1,14 @@
 <template>
   <div>
-    <Landing />
-    <Titles class="mt-[20vh]"/>
-    <About class="mt-[20vh]"/>
-    <Skills />
-    <client-only>
-      <Terrain />
-    </client-only>
+    <Landing/>
+    <div class="z-20 relative bg-secondary">
+        <Titles class="p-10"/>
+        <About class="p-10"/>
+        <Skills class="p-10"/>
+    </div>
+    <!-- <client-only>
+      <Terrain class="w-full sticky" />
+    </client-only> -->
   </div>
 </template>
 
@@ -14,14 +16,15 @@
 import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
-    setup() {
-        
-    },
-    name: "index",
-    head(){
-      return {
-        title: "Youwei Zhen"
-      }
+  setup() {
+
+  },
+  name: "index",
+  head() {
+    return {
+      title: "Youwei Zhen"
     }
+  }
 })
 </script>
+
