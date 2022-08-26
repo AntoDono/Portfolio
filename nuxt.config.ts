@@ -17,5 +17,6 @@ export default defineNuxtConfig({
   },
   generate: {
     fallback: "404.html"
+    
   }
 })
