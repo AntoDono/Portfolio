@@ -20,8 +20,6 @@ export default defineComponent({
     mounted() {
         gsap.registerPlugin(ScrollTrigger)
 
-        console.log(this.$refs['l1'].offsetWidth)
-
         gsap.set(
             this.$refs['l1'],
             {

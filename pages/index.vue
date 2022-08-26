@@ -1,14 +1,7 @@
 <template>
   <div>
-    <Landing/>
-    <div class="z-20 relative bg-primary">
-        <Titles class="p-10"/>
-        <About class="p-10"/>
-        <Skills class="p-10"/>
-    </div>
-    <!-- <client-only>
-      <Terrain class="w-full sticky" />
-    </client-only> -->
+    <landing/>
+    <About/>
   </div>
 </template>
 

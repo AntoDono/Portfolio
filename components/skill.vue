@@ -1,11 +1,11 @@
 <template>
     <div class="z-20 relative w-[25vw] min-w-[400px] opacity-[10%]" ref="container">
         <div>
-            <img class="logo" :src="`../assets/images/skills/${img_name}.png`" />
+            <img class="logo" :src="`../assets/images/skills/${img_name.toLowerCase()}.png`" />
         </div>
         <div class="flex justify-between">
-            <h2 class="text-white font-uni">{{ skill_name }}</h2>
-            <h2 class="text-white font-uni">{{ skill_level }}</h2>
+            <h2 class="text-white font-bogart">{{ skill_name }}</h2>
+            <h2 class="text-white font-fenix">{{ skill_level }}</h2>
         </div>
         <div class="h-2 w-full bg-gray-500 rounded" ref="full">
             <div class="h-full bg-[#0f89f5] w-0" ref="load"></div>

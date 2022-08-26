@@ -1,6 +1,7 @@
 <template>
   <div>
     <slot />
-    <Footer/>
+    <pageselect/>
+    <footer_info/>
   </div>
 </template>
