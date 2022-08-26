@@ -7,7 +7,7 @@
             <h2 class="text-white font-bogart">{{ skill_name }}</h2>
             <h2 class="text-white font-fenix">{{ skill_level }}</h2>
         </div>
-        <div class="h-2 w-full bg-gray-500 rounded" ref="full">
+        <div class="h-2 w-full bg-gray-500" ref="full">
             <div class="h-full bg-[#0f89f5] w-0" ref="load"></div>
         </div>
     </div>

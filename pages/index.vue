@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading/>
     <landing/>
     <About/>
   </div>
