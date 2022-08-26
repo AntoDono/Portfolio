@@ -1,7 +1,7 @@
 <template>
     <div class="z-20 relative w-[25vw] min-w-[400px] opacity-[10%]" ref="container">
         <div>
-            <img class="logo" :src="`${img_name.toLowerCase()}.png`" />
+            <img class="logo" :src="`skills/${img_name.toLowerCase()}.png`" />
         </div>
         <div class="flex justify-between">
             <h2 class="text-white font-bogart">{{ skill_name }}</h2>
