@@ -15,4 +15,7 @@ export default defineNuxtConfig({
   router: {
 
   },
+  generate: {
+    fallback: "404.html"
+  }
 })
