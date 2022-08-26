@@ -2,9 +2,9 @@
     <div class="flex justify-center flex-row items-center gap-x-4">
         <label class="text-white font-bogart order-2">{{ text }}</label>
         <div ref="flip-part">
-            <a :href="path">
+            <nuxt-link :to="path">
                 <img class="h-8 w-8 rotate-180" src="~/assets/images/pageselect.png" />
-            </a>
+            </nuxt-link>
         </div>
     </div>
 </template>

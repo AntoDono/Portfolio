@@ -3,6 +3,8 @@
     <leftbar />
     <slot />
     <pageselect/>
-    <footer_info/>
+    <footer_info :key="$route.path"/>
   </div>
 </template>
+
+
