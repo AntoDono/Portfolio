@@ -1,6 +1,6 @@
 <template>
     <div class="overflow-y-hidden flex justify-center" ref="title">
-        <h3 class="text-[10vmin] text-white font-uni text-center" ref="text">{{title}}</h3>
+        <h3 class="text-[10vmin] text-white font-uni text-center glitch" ref="text">{{title}}</h3>
     </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
                     scrub: true
                 },
                 x: this.direction == 'left' ? -this.$refs['title'].offsetWidth/2 : this.$refs['title'].offsetWidth/2,
-                ease: "power1.out" 
+                ease: "steps(5)" 
             }
         )
     }
@@ -53,6 +53,12 @@ export default {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
     -webkit-text-fill-color: transparent;
+}
+
+.glitch{
+    color: white;
+    text-shadow: 
+        0.025em 0.05em 0 rgba(253, 155, 18, 0.923);
 }
 
 </style>

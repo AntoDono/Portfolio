@@ -41,14 +41,15 @@ export default {
                 this.$refs['container'],
                 {
                     autoAlpha: 1,
-                    duration: 0.5
+                    duration: 0.5,
                 }
             )
             gsap.to(
                 this.$refs['load'],
                 {
                     width: this.percent * this.$refs['full'].offsetWidth,
-                    duration: 1.5
+                    duration: 1.5,
+                    ease: "steps(7)"
                 }
             )
         }

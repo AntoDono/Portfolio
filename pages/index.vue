@@ -1,7 +1,7 @@
 <template>
   <div>
     <Landing/>
-    <div class="z-20 relative bg-secondary">
+    <div class="z-20 relative bg-primary">
         <Titles class="p-10"/>
         <About class="p-10"/>
         <Skills class="p-10"/>

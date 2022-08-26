@@ -49,7 +49,7 @@ export default defineComponent({
                 },
                 autoAlpha: 1,
                 x: 0,
-                ease: "power1.out" 
+                ease: "steps(5)" 
             }
         )
     }

@@ -1,17 +1,8 @@
 <template>
-    <div class="w-screen h-[350vmin] z-10 relative bg-primary" ref="trigger">
-        <div class="fixed top-0 w-full h-full  overflow-y-hidden">
-            <svg style="opacity:0;position:fixed;z-index:-999" viewBox="0 0 1 1">
-                <defs>
-                    <clipPath id="clip" clipPathUnits="objectBoundingBox">
-                        <text x="50%" y="0.25" font-size="0.25" text-anchor="middle" alignment-baseline="middle" ref="l1">HI. I AM</text>
-                        <text x="50%" y="0.7" font-size="0.25" text-anchor="middle" alignment-baseline="middle" ref="l2">YOUWEI</text>
-                    </clipPath>
-                </defs>
-            </svg>
-            <video autoplay playsinline muted loop preload>
-                <source src="~/assets/video/bg3.mp4" />
-            </video>
+    <div class="w-screen h-[400vmin] z-10 relative bg-primary" ref="trigger">
+        <div class="fixed w-full h-full overflow-y-hidden flex justify-center items-center flex-col">
+            <div ref="l1"><glitch text="HI. I AM"/></div>
+            <div ref="l2"><glitch text="YOUWEI"/></div>
         </div>
     </div>
 </template>
@@ -29,17 +20,19 @@ export default defineComponent({
     mounted() {
         gsap.registerPlugin(ScrollTrigger)
 
+        console.log(this.$refs['l1'].offsetWidth)
+
         gsap.set(
             this.$refs['l1'],
             {
-                x: - 0.5
+                x: - 0.75 * this.$refs['l1'].offsetWidth
             }
         )
 
         gsap.set(
             this.$refs['l2'],
             {
-                x: 0.5
+                x: 0.75 * this.$refs['l2'].offsetWidth
             }
         )
 
@@ -53,9 +46,10 @@ export default defineComponent({
                     trigger: this.$refs['trigger'],
                     markers: false,
                     start: "top top",
-                    end: "bottom-=20% top",
+                    end: "bottom-=45% top",
                     scrub: 2,
                 },
+                ease: "steps(12)",
                 x: 0,
             }
         )
@@ -76,4 +70,6 @@ video {
   width: 100%;
   z-index: 1;
 }
+
+
 </style>
