@@ -1,7 +1,9 @@
 <template>
     <div class="h-auto bg-transparent flex justify-center items-start pt-28 pb-28 z-20 relative" id="about">
         <div class="flex justify-around items-center w-[70vw] flex-wrap border-2 border-white pt-10 pb-10">
-            <img src="~/assets/images/amongus.jpg" class="pic rounded-xl"/>
+            <div class="pic-border">
+                <img src="~/assets/images/amongus.jpg" class="pic rounded-xl"/>
+            </div>
             <div class="w-[500px] basis-auto" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen,</h2>
                 <p class="text-white font-montserrat">a passionate high school student in the field of computer science and entrepreneurship.</p>
@@ -69,6 +71,7 @@ export default defineComponent({
     height: 300px;
     width: 300px;
 }
+
 @media (max-width:700px) {
     .pic{
         height: 300px;
