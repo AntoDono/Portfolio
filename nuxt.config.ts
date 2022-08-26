@@ -12,12 +12,6 @@ export default defineNuxtConfig({
       'gsap'
     ],
   },
-  buildModules: [
-    ['@nuxt/image', {
-      provider: 'static',
-      dir: "assets/images",
-    }],
-  ],
   router: {
 
   },
