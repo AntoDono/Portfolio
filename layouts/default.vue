@@ -1,5 +1,6 @@
 <template>
   <div>
+    <leftbar />
     <slot />
     <pageselect/>
     <footer_info/>

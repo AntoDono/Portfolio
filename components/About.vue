@@ -1,5 +1,5 @@
 <template>
-    <div class="z-20 relative bg-primary pt-10 pb-20">
+    <div class="z-20 relative bg-primary pt-10 pb-20 overflow-x-hidden">
         <titles class="pt-48 pb-48"/>
         <div class="flex justify-center items-center">
             <div class="w-[80vw] max-w-[1920px]">

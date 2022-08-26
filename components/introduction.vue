@@ -12,7 +12,7 @@
                     and <nuxt-link to="https://privacysavior.com" class="underline decoration-dotted" target="_blank">PrivacySavior LLC.</nuxt-link>.
                 </p>
                 <p class="text-white font-montserrat pt-4">
-                    As of lately, I am currently the project manager of the Staten Island Techtimes website and the Staten Island MSK website. In addition,
+                    As of lately, I am currently the project manager of the Staten Island Techtimes website. In addition,
                     I am currently in the Silver Divison of the United States of America Computing Olympiad. I also had the honor of placing 1st in the New York City 
                     Youth Entrepreneur Academy and represented the city in the National Saunders Competition.
                 </p>

@@ -4,5 +4,10 @@
     margin: 0;
     border: 0;
 
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+}
+
+:root {
+    --hover_link: rgb(22, 170, 255);
+    --link: rgb(164, 164, 164);
 }

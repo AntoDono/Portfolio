@@ -1,7 +1,10 @@
 <template>
     <div class="border overflow-visible">
         <nuxt-link :href="destination" target="_blank">
-            <img class="social" :src="url" :alt="image"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>{{alt}}</title>
+                <slot/>
+            </svg>
         </nuxt-link>
     </div>
 </template>
@@ -14,7 +17,7 @@ export default defineComponent({
         
     },
     props:{
-        image: {
+        alt: {
             type: String,
             default: "/"
         },
@@ -23,29 +26,20 @@ export default defineComponent({
             default: "/"
         }
     },
-    data(){
-        return {
-            url: "/"
-        }
-    },
-    mounted(){
-        this.url = new URL(`../assets/images/${this.image}`, import.meta.url).href
-    },
     name: "socialMedia"
 })
 </script>
 
 <style scoped>
-.social{
-    height: 2rem;
-    filter: grayscale(100%);
-    transition: all ease 0.2s;
+
+svg{
+    fill: var(--link);
+    transition: all ease 0.3s;
 }
 
-.social:hover{
-    filter: grayscale(0%);
-    transform: translateY(-10px);
-    cursor: pointer;
+svg:hover {
+    fill: var(--hover_link);
+    transform: translateY(-0.45em);
 }
 
 </style>

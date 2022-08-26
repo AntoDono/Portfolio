@@ -1,6 +1,6 @@
 <template>
-    <div class="w-screen h-[400vmin] z-10 relative bg-primary" ref="trigger">
-        <div class="fixed w-full h-full overflow-y-hidden flex justify-center items-center flex-col">
+    <div class="w-full h-[400vmin] z-10 relative bg-primary overflow-x-hidden" ref="trigger">
+        <div class="fixed w-full h-full overflow-y-hidden flex justify-center items-center flex-col overflow-x-hidden">
             <div ref="l1"><glitch text="HI. I AM"/></div>
             <div ref="l2"><glitch text="YOUWEI"/></div>
         </div>

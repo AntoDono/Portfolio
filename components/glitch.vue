@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-center items-center">
-        <h2 class="glitch overflow-y-hidden">
+        <h2 class="glitch overflow-y-hidden overflow-x-hidden">
             <span aria-hidden="true">{{ text }}</span>
             {{ text }}
             <span aria-hidden="true">{{ text }}</span>
