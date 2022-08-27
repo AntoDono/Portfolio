@@ -1,5 +1,5 @@
 <template>
-    <div class="z-20 relative w-[25vw] min-w-[400px] opacity-[10%]" ref="container">
+    <div class="z-20 relative w-[25vw] min-w-[300px] opacity-[10%]" ref="container">
         <div>
             <img class="logo" :src="`skills/${img_name.toLowerCase()}.png`" />
         </div>

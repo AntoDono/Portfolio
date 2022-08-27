@@ -12,7 +12,6 @@
 <script>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 export default {
     data() {
         return {
@@ -37,7 +36,6 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger)
-
         gsap.to(
             this.$refs['skills'],
             {
@@ -67,5 +65,4 @@ export default {
         }
     }
 }
-
 </script>
