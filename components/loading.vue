@@ -21,9 +21,9 @@ export default{
         t1.to(
             this.$refs['load'],
             {
+                ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})",
                 width: this.$refs['full'].offsetWidth,
-                duration: 1,
-                ease: "power1.out"
+                duration: 2,
             },
         )
 

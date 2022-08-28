@@ -10,7 +10,8 @@
 :root {
     --hover_link: rgb(22, 170, 255);
     --link: rgb(164, 164, 164);
-    --primary: rgb(10, 10, 10)
+    --primary: rgb(10, 10, 10);
+    --secondary: rgb(28, 28, 28);
 }
 
 ::-webkit-scrollbar {

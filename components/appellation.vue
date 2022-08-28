@@ -34,8 +34,8 @@ export default {
                 scrollTrigger: {
                     trigger: this.$refs['title'],
                     markers: false,
-                    start: "top center-=200px",
-                    end: "bottom+=200px center-=200px",
+                    start: "top-=10% center-=20%",
+                    end: "bottom center-=20%",
                     toggleActions: "play none reverse none",
                     scrub: true
                 },
@@ -58,7 +58,7 @@ export default {
 .glitch{
     color: white;
     text-shadow: 
-        0.025em 0.05em 0 rgba(253, 155, 18, 0.923);
+        0.025em 0.05em 0 rgb(255, 215, 0);
 }
 
 </style>

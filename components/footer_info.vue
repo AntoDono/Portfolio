@@ -19,8 +19,10 @@
             </socialMedia>
         </div>
         <a href="mailto:youweizhen540@gmail.com" class="font-fenix text-gray-300 eanchor">youweizhen540@gmail.com</a>
-        <a href="https://github.com/AntoDono/Portfolio" target="_blank" class=" text-gray-300 font-fenix link">
+        <a href="https://github.com/AntoDono/Portfolio" target="_blank" class=" text-gray-300 font-fenix link text-center">
             Designed & built by Youwei Zhen.
+            <br/>
+            MIT License
         </a>
     </footer>
 </template>
@@ -32,7 +34,10 @@ export default defineComponent({
     setup() {
 
     },
-    name: "Footer"
+    name: "Footer",
+    mounted(){
+        window.scrollTo(0, 0);
+    }
 })
 </script>
 
@@ -57,7 +62,7 @@ export default defineComponent({
         0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
 }
 
-@media (max-width:500px) {
+@media (max-width:800px) {
     .social {
         display: flex;
     }

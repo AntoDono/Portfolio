@@ -1,5 +1,6 @@
 <template>
   <div>
+    <navbar/>
     <leftbar />
     <slot />
     <pageselect/>

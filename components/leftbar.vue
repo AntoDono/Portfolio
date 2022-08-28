@@ -48,7 +48,7 @@
     color: var(--hover_link);
 }
 
-@media (max-width:500px){
+@media (max-width:800px){
     .social{
         display: none;
     }

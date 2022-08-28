@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-center items-center">
-        <h2 class="glitch overflow-y-hidden overflow-x-hidden">
+        <h2 class="glitch overflow-y-hidden overflow-x-hidden" :style="{fontSize: size}">
             <span aria-hidden="true">{{ text }}</span>
             {{ text }}
             <span aria-hidden="true">{{ text }}</span>
@@ -15,6 +15,10 @@ export default {
         text: {
             type: String,
             default: "Glitch text"
+        },
+        size: {
+            type: String,
+            default: "25vmin"
         }
     }
 }
