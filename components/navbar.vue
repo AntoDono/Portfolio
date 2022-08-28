@@ -1,12 +1,12 @@
 <template>
     <div class="fixed z-50 flex flex-row w-full bg-primary ease-in-out duration-300 menu-container" ref="menu-container">
-        <div class="bg-primary w-[7vmin] h-[7vmin] flex justify-center items-center relative menu-button z-50" ref="menu-button" @click="activate">
-            <glitch text="Y" size="5vmin"/>
+        <div class="bg-primary w-[7em] h-[7em] flex justify-center items-center relative menu-button z-50" ref="menu-button" @click="activate">
+            <glitch text="Y" size="3em"/>
         </div>
         <div class="bg-primary flex flex-row justify-start items-center gap-x-10 p-3 z-40" ref="menu">
-            <nuxt-link to="/" class="text-white text-[1.5vmin] font-uni">Home</nuxt-link>
-            <nuxt-link to="projects" class="text-white text-[1.5vmin] font-uni">Projects</nuxt-link>
-            <a href="mailto:youweizhen540@gmail.com" class="text-white text-[1.5vmin] font-uni">Contact</a>
+            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Home</nuxt-link>
+            <nuxt-link to="projects" class="text-white text-[0.8em] font-uni">Projects</nuxt-link>
+            <a href="mailto:youweizhen540@gmail.com" class="text-white text-[0.8em] font-uni">Contact</a>
         </div>
     </div>
 </template>

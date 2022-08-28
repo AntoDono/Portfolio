@@ -1,6 +1,7 @@
 <template>
     <div class="bg-primary flex flex-col justify-center items-center gap-y-20 pt-20 pb-20">
         <project-right 
+                class="mt-20"
                 image="privacysavior.png" 
                 image_name="PrivacySavior Website Preview"
                 title="PrivacySavior LLC."

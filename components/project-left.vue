@@ -1,6 +1,6 @@
 <template>
     <div class="flex container-flex">
-        <div class="h-full flex items-center z-30 description-order">
+        <div class="h-full flex items-center z-30 description">
             <div class="font-fenix text-white relative flex flex-col gap-y-3 move">
                 <p class="move-text text-accent1">{{status}}</p>
                 <h2 class="text-[3.5vmin] move-text font-uni glitch">{{title}}</h2>
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="pic-container">
+        <div class="flex justify-center pic-container">
             <a :href="link" target="_blank" class="z-20 image">
                 <div>
                     <img :src="`/projects/${image}`" class="text-white pic rounded-lg" :alt="image_name">
@@ -131,6 +131,10 @@ svg:hover{
         background-color: transparent;
         padding: 1rem 0 1rem 0;
     }
+    .pic{
+        height: 12em;
+        width: 20em;
+    }
     .pic-container{
         padding-bottom: 1rem;
     }
@@ -143,8 +147,9 @@ svg:hover{
         flex-direction: column;
     }
 
-    .description-order {
+    .description {
         order: 1;
+        padding: 0 2em 0 2em;
     }
 
 }
