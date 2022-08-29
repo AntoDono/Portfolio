@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import gsap from "gsap"
 
 export default {
     data(){
@@ -23,7 +22,7 @@ export default {
         }
     },
     mounted(){
-        gsap.set(
+        this.$gsap.set(
             this.$refs['menu'],
             {
                 x: - 1.5 * this.$refs['menu'].offsetWidth
@@ -45,7 +44,7 @@ export default {
         },
         activate(){
             this.active = !this.active
-            let t1 = gsap.timeline()
+            let t1 = this.$gsap.timeline()
             t1.to(
                 this.$refs['menu-button'],
                 {

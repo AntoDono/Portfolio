@@ -10,13 +10,12 @@
 </template>
 
 <script>
-import gsap from 'gsap'
 
 export default{
     mounted(){
         document.getElementsByTagName("html")[0].style.overflow = "hidden"
 
-        let t1 = gsap.timeline()
+        let t1 = this.$gsap.timeline()
 
         t1.to(
             this.$refs['load'],

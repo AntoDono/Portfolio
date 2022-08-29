@@ -1,14 +1,14 @@
 @font-face {
     font-family: Fenix;
-    src: url(../font/Fenix/Fenix-Regular.ttf);
+    src: url(../font/Fenix/Fenix-Regular.woff2);
 }
 
 @font-face {
     font-family: Bogart;
-    src: url(../font/Bogart/Bogart-Regular-trial.ttf)
+    src: url(../font/Bogart/Bogart-Regular-trial.woff2)
 }
 
 @font-face {
     font-family: UniSans;
-    src: url(../font/Unisans/UniSansDemo-HeavyCAPS.otf);
+    src: url(../font/Unisans/UniSansDemo-HeavyCAPS.woff2);
 }

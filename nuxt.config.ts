@@ -13,10 +13,26 @@ export default defineNuxtConfig({
     ],
   },
   modules:[
-    '@nuxtjs/robots'
+    [
+      'nuxt-compress',
+      {
+        gzip: {
+          threshold: 8192,
+        },
+        brotli: {
+          threshold: 8192,
+        },
+      },
+    ],
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
   ],
+  robots: {
+    UserAgent: 'Googlebot',
+    Disallow: '/admin', // there's no admin page but whatever
+    Allow: '/'
+  },
   generate: {
     fallback: "404.html"
-    
   }
 })

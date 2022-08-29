@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import gsap from 'gsap'
 
 export default {
     props: {
@@ -37,14 +36,14 @@ export default {
     },
     methods: {
         init() {
-            gsap.to(
+            this.$gsap.to(
                 this.$refs['container'],
                 {
                     autoAlpha: 1,
                     duration: 0.5,
                 }
             )
-            gsap.to(
+            this.$gsap.to(
                 this.$refs['load'],
                 {
                     width: this.percent * this.$refs['full'].offsetWidth,
