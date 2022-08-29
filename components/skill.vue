@@ -1,7 +1,7 @@
 <template>
     <div class="z-20 relative w-[25vw] min-w-[300px] opacity-[10%]" ref="container">
         <div>
-            <img class="rounded-lg h-[50px] w-[50px]" :src="`https://res.cloudinary.com/youweizhen/image/upload/c_scale,h_50,w_50/skills/${img_name.toLowerCase()}.png`" :alt="skill_name"/>
+            <img class="rounded-lg h-[50px] w-" :src="`https://res.cloudinary.com/youweizhen/image/upload/c_scale,h_50,w_50/skills/${img_name.toLowerCase()}.png`" :alt="skill_name"/>
         </div>
         <div class="flex justify-between">
             <h2 class="text-white font-bogart">{{ skill_name }}</h2>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import gsap from 'gsap'
+
 export default {
     props: {
         img_name: {
@@ -36,14 +36,14 @@ export default {
     },
     methods: {
         init() {
-            gsap.to(
+            this.$gsap.to(
                 this.$refs['container'],
                 {
                     autoAlpha: 1,
                     duration: 0.5,
                 }
             )
-            gsap.to(
+            this.$gsap.to(
                 this.$refs['load'],
                 {
                     width: this.percent * this.$refs['full'].offsetWidth,
