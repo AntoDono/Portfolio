@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default {
     props: {
@@ -20,8 +22,8 @@ export default {
         }
     },
     mounted(){
-
-        this.$gsap.set(
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.set(
             this.$refs['appear'],
             {
                 x: this.direction == 'W' ? this.$refs['appear'].offsetWidth : this.direction == 'E' ? -this.$refs['appear'].offsetWidth : 0,
@@ -29,7 +31,7 @@ export default {
             }
         )
 
-        this.$gsap.to(
+        gsap.to(
             this.$refs['appear'], 
             { 
                 scrollTrigger: {

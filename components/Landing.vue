@@ -9,6 +9,8 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default defineComponent({
     name: "Landing",
@@ -16,22 +18,22 @@ export default defineComponent({
 
     },
     mounted() {
-
-        this.$gsap.set(
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.set(
             this.$refs['l1'],
             {
                 x: - 0.75 * this.$refs['l1'].offsetWidth
             }
         )
 
-        this.$gsap.set(
+        gsap.set(
             this.$refs['l2'],
             {
                 x: 0.75 * this.$refs['l2'].offsetWidth
             }
         )
 
-        this.$gsap.to(
+        gsap.to(
             [
                 this.$refs['l1'],
                 this.$refs['l2']

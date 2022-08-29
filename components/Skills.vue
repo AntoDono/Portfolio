@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default {
     data() {
@@ -34,7 +36,8 @@ export default {
         }
     },
     mounted() {
-        this.$gsap.to(
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.to(
             this.$refs['skills'],
             {
                 scrollTrigger: {
@@ -50,7 +53,7 @@ export default {
     },
     methods: {
         show() {
-            let tl = this.$gsap.timeline()
+            let tl = gsap.timeline()
             this.skills.forEach((e) => {
                 tl.to(this.$refs[e.name][0], {
                     duration: 0.25,

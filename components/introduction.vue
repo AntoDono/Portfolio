@@ -28,6 +28,8 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default defineComponent({
     setup() {
@@ -35,8 +37,8 @@ export default defineComponent({
     },
     name: "introduction",
     mounted(){
-
-        this.$gsap.set(
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.set(
             this.$refs['description'],
             {
                 autoAlpha: 0,
@@ -44,7 +46,7 @@ export default defineComponent({
             }
         )
 
-        this.$gsap.to(
+        gsap.to(
             this.$refs['description'], 
             { 
                 scrollTrigger: {

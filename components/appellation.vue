@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default {
     props: {
@@ -23,8 +25,8 @@ export default {
     },
     mounted(){
         if (this.stroke) this.$refs['text'].classList.add('stroke')
-
-        this.$gsap.to(
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.to(
             this.$refs['title'], 
             { 
                 scrollTrigger: {
