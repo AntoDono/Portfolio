@@ -18,7 +18,7 @@ export default defineComponent({
     return {
       title: "Youwei Zhen",
       meta: [
-        { name: "description", content: "Youwei Zhen - Programmer | HS Student" }
+        { name: "description", content: "Youwei Zhen - Programmer | HS Student" },
       ]
     }
   }

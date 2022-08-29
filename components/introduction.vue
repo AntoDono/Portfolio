@@ -2,7 +2,7 @@
     <div class="h-auto bg-transparent flex justify-center items-start pt-28 pb-28 z-20 relative" id="about">
         <div class="flex justify-around items-center w-[70vw] flex-wrap border-2 border-white pt-10 pb-10">
             <div class="pic-border">
-                <img src="~/assets/images/amongus.jpg" class="pic rounded-xl"/>
+                <img src="~/assets/images/amongus.jpg" class="pic rounded-xl" alt="picture of youwei zhen"/>
             </div>
             <div class="w-[500px] basis-auto" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen,</h2>

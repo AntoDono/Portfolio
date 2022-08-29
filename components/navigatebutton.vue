@@ -3,7 +3,7 @@
         <label class="text-white font-bogart order-2">{{ text }}</label>
         <div ref="flip-part">
             <nuxt-link :to="path">
-                <img class="h-8 w-8 rotate-180" src="~/assets/images/pageselect.png" />
+                <img class="h-8 w-8 rotate-180" src="~/assets/images/pageselect.png" alt="select arrow"/>
             </nuxt-link>
         </div>
     </div>
