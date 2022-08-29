@@ -12,9 +12,9 @@ export default defineNuxtConfig({
       'gsap'
     ],
   },
-  router: {
-
-  },
+  modules:[
+    '@nuxtjs/robots'
+  ],
   generate: {
     fallback: "404.html"
     
