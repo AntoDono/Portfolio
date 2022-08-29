@@ -27,11 +27,11 @@ export default defineNuxtConfig({
     //   '@nuxtjs/robots',
     //   '@nuxtjs/sitemap'
     // ],
-    robots: {
-      UserAgent: '*',
-      Disallow: '/admin', // there's no admin page but whatever
-      Allow: '/'
-    },
+    // robots: {
+    //   UserAgent: '*',
+    //   Disallow: '/admin', // there's no admin page but whatever
+    //   Allow: '/'
+    // },
     generate: {
       fallback: "404.html"
     },
