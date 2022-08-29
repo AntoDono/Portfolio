@@ -4,6 +4,9 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   ssr: false,
   css: ['~/assets/css/tailwind.css', '~/assets/css/font.css', '~/assets/css/global.css'],
+  generate: {
+    fallback: "404.html"
+  },
   build: {
     postcss: {
       postcssOptions: require('./postcss.config.js'),
@@ -28,11 +31,8 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap'
   ],
   robots: {
-    UserAgent: 'Googlebot',
+    UserAgent: '*',
     Disallow: '/admin', // there's no admin page but whatever
     Allow: '/'
   },
-  generate: {
-    fallback: "404/index.html"
-  }
 })
