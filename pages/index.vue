@@ -1,8 +1,8 @@
 <template>
   <div>
-    <loading/>
-    <landing/>
-    <About/>
+    <loading />
+    <landing />
+    <About />
   </div>
 </template>
 
@@ -16,6 +16,9 @@ export default defineComponent({
   name: "index",
   head() {
     return {
+      htmlAttrs: {
+        lang: 'en'
+      },
       title: "Youwei Zhen",
       meta: [
         { name: "description", content: "Youwei Zhen - Programmer | HS Student" },

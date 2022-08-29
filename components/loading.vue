@@ -23,7 +23,7 @@ export default{
             {
                 ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})",
                 width: this.$refs['full'].offsetWidth,
-                duration: 2,
+                duration: 1,
             },
         )
 
