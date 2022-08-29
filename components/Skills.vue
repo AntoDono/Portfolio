@@ -19,7 +19,7 @@ export default {
                 {name: "Java", img_name: "java", percent: 0.6, level: "Intermediate" },
                 {name: "JavaScript", img_name: "javascript", percent: 1, level: "Proficient" },
                 {name: "C#", img_name: "csharp", percent: 0.5, level: "Intermediate" },
-                {name: "C++", img_name: "c++", percent: 1, level: "Proficient" },
+                {name: "C++", img_name: "cpp", percent: 1, level: "Proficient" },
                 {name: "R", img_name: "r", percent: 0.5, level: "Intermediate" },
                 {name: "Html", img_name: "html", percent: 1, level: "Proficient" },
                 {name: "CSS", img_name: "css", percent: 1, level: "Proficient" },
