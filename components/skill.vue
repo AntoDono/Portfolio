@@ -1,7 +1,7 @@
 <template>
     <div class="z-20 relative w-[25vw] min-w-[300px] opacity-[10%]" ref="container">
         <div>
-            <img class="logo" :src="`skills/${img_name.toLowerCase()}.webp`" :alt="skill_name"/>
+            <img class="logo" :src="`https://res.cloudinary.com/youweizhen/image/upload/c_scale,h_50,w_50/skills/${img_name.toLowerCase()}.png`" :alt="skill_name"/>
         </div>
         <div class="flex justify-between">
             <h2 class="text-white font-bogart">{{ skill_name }}</h2>
