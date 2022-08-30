@@ -1,3 +1,4 @@
+
 import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -13,26 +14,26 @@ export default defineNuxtConfig({
     ],
   },
   modules:[
-      [
-          'nuxt-compress',
-          {
-              gzip: {
-                  threshold: 8192,
+    [
+      'nuxt-compress',
+      {
+        gzip: {
+          threshold: 8192,
         },
         brotli: {
-            threshold: 8192,
-          },
+          threshold: 8192,
         },
-      ],
-      '@nuxtjs/robots',
-      '@nuxtjs/sitemap'
+      },
     ],
-    robots: {
-      UserAgent: 'GoogleBot',
-      Disallow: '/admin', // there's no admin page but whatever
-      Allow: '/'
-    },
-    generate: {
-      fallback: "404.html"
-    },
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
+  ],
+  robots: {
+    UserAgent: 'Googlebot',
+    Disallow: '/admin', // there's no admin page but whatever
+    Allow: '/'
+  },
+  generate: {
+    fallback: "404.html"
+  }
 })
