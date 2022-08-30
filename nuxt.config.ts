@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     Allow: '/'
   },
   generate: {
+    
     fallback: "404.html"
   }
 })
