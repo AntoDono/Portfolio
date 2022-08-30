@@ -28,7 +28,7 @@ export default defineNuxtConfig({
       '@nuxtjs/sitemap'
     ],
     robots: {
-      UserAgent: '*',
+      UserAgent: 'GoogleBot',
       Disallow: '/admin', // there's no admin page but whatever
       Allow: '/'
     },
