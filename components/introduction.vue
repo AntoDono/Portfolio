@@ -65,13 +65,13 @@ export default defineComponent({
 
 <style scoped>
 .pic{
-    height: 300px;
+    /* height: 300px; */
     width: 300px;
 }
 
 @media (max-width:700px) {
     .pic{
-        height: 300px;
+        /* height: 300px; */
         width: 300px;
     }
 }

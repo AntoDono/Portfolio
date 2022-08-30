@@ -28,5 +28,10 @@ export default defineNuxtConfig({
   ],
   generate: {
     fallback: "404.html"
+  },
+  vite:{
+    build:{
+      sourcemap: true
+    }
   }
 })
