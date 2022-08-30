@@ -3,7 +3,7 @@
         <div class="bg-primary rounded-full w-[7em] h-[7em] flex justify-center items-center relative menu-button z-50" ref="menu-button" @click="activate">
             <glitch text="Y" size="3em"/>
         </div>
-        <div class="bg-primary flex flex-row justify-start items-center gap-x-10 p-3 z-40" ref="menu">
+        <div class="bg-primary flex flex-row justify-start items-center gap-x-10 p-3 z-40" ref="menu-options">
             <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Home</nuxt-link>
             <nuxt-link to="projects" class="text-white text-[0.8em] font-uni">Projects</nuxt-link>
             <a href="mailto:youweizhen540@gmail.com" class="text-white text-[0.8em] font-uni">Contact</a>
@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 export default {
     data(){
         return {
@@ -23,9 +22,9 @@ export default {
     },
     mounted(){
         this.$gsap.set(
-            this.$refs['menu'],
+            this.$refs['menu-options'],
             {
-                x: - 1.5 * this.$refs['menu'].offsetWidth
+                x: - 1.5 * this.$refs['menu-options'].offsetWidth
             }
         )
         this.prevScrollpos = window.pageYOffset;
@@ -55,9 +54,9 @@ export default {
             )
 
             t1.to(
-                this.$refs['menu'],
+                this.$refs['menu-options'],
                 {
-                    x: !this.active * - this.$refs['menu'].offsetWidth,
+                    x: !this.active * - this.$refs['menu-options'].offsetWidth,
                     duration: 0.5,
                     ease: "power1.out"
                 }
