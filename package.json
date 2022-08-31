@@ -17,6 +17,7 @@
   "dependencies": {
     "@nuxtjs/sitemap": "^2.4.0",
     "gsap": "^3.10.4",
+    "matter-js": "^0.18.0",
     "simplex-noise": "^3.0.1",
     "three": "^0.142.0",
     "troisjs": "^0.3.4",

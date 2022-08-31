@@ -1,0 +1,3 @@
+<template>
+    <skills/>
+</template>
