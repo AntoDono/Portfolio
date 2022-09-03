@@ -3,6 +3,7 @@
     <loading />
     <landing />
     <About />
+    <Experience />
   </div>
 </template>
 

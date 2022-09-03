@@ -1,8 +1,9 @@
 <template>
-    <div class="h-auto bg-transparent flex justify-center items-start pt-28 pb-28 z-20 relative" id="about">
-        <div class="flex justify-around items-center w-[70vw] flex-wrap border-2 border-white pt-10 pb-10">
+    <div class="h-auto bg-transparent flex justify-center items-start z-20 relative" id="about">
+        <div class="flex justify-around items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
             <div class="pic-border">
-                <img src="~/assets/images/amongus.jpg" class="pic rounded-xl" alt="picture of youwei zhen"/>
+                <img src="~/assets/images/youweizhen.jpg" class="pic rounded-xl" alt="picture of youwei zhen"/>
+                <h3 class="pic text-red-500 text-center">Unfortunately I do not take selfies so this picture is from like years ago.</h3>
             </div>
             <div class="w-[500px] basis-auto" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen,</h2>
@@ -14,8 +15,8 @@
                     and <nuxt-link to="https://privacysavior.com" class="underline decoration-dotted" target="_blank">PrivacySavior LLC.</nuxt-link>.
                 </p>
                 <p class="text-white font-montserrat pt-4">
-                    As of lately, I am currently the project manager of the Staten Island Techtimes website. In addition,
-                    I am currently in the Silver Divison of the United States of America Computing Olympiad. I also had the honor of placing 1st in the New York City 
+                    As of lately, I am currently the project manager of the Staten Island Techtimes website.
+                    I am in the Silver Divison of the United States of America Computing Olympiad. I also had the honor of placing 1st in the New York City 
                     Youth Entrepreneur Academy and represented the city in the National Saunders Competition.
                 </p>
                 <p class="text-white font-montserrat pt-4">

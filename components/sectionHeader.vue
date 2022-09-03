@@ -56,17 +56,33 @@ export default {
     position: relative;
     color: white;
     text-shadow: 0.15em 0em 0 rgba(0, 187, 255, 0.958);
+    overflow: hidden;
 }
 
-.glitch:after {
+/* .glitch:after {
   content: "";
   position: absolute;
   bottom: 0;
   top: 0.75em;
-  left: 5em;
+  left: 30%;
   right: 0em;
   height: 1em;
   border-top: 1px solid white;
+} */
+
+.glitch:after {
+  content: '';
+  display: inline-block;
+  vertical-align:middle;
+  width:50px;
+  height:5px;
+  margin-left: 2%;
+  border-top:1px solid #fff;
+  /* border-bottom:1px solid #fff; */
 }
 
+.glitch:after {
+  width:100%;
+  margin-right: -100%;
+}
 </style>
