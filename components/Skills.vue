@@ -65,7 +65,7 @@ export default {
                 boxes.push(Matter.Bodies.rectangle(x, y, this.skill_width, this.skill_height, {
                     render: {
                         sprite: {
-                            texture: `/skills/${skill.img_name.toLowerCase()}.png`,
+                            texture: `/skills/${skill.img_name.toLowerCase()}.webp`,
                             xScale: this.skill_width / this.png_width_px,
                             yScale: this.skill_height / this.png_height_px
                         }

@@ -2,7 +2,7 @@
     <div class="h-auto bg-transparent flex justify-center items-start z-20 relative" id="about">
         <div class="flex justify-around items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
             <div class="pic-border">
-                <img src="~/assets/images/youweizhen.jpg" class="pic rounded-xl" alt="picture of youwei zhen"/>
+                <img src="~/assets/images/youweizhen.webp" class="pic rounded-xl" alt="picture of youwei zhen"/>
                 <h3 class="pic text-red-500 text-center">Unfortunately I do not take selfies so this picture is from like years ago.</h3>
             </div>
             <div class="w-[500px] basis-auto" ref="description">
