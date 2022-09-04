@@ -53,8 +53,7 @@ export default {
             ceiling: null,
             ground: null,
             previousWidth: null,
-            gamma: 100,
-            smallest_size: this.smallest_size
+            gamma: 100
         }
     },
     methods: {
@@ -107,8 +106,8 @@ export default {
             })
         },
         checkMobileSize() {
-            if (this.width <= this.smallest_size) {
-                this.width = this.smallest_size
+            if (this.width <= 400) {
+                this.width = 400
                 if (!this.mobile) {
                     this.mobile = true
                     this.scaleSkills(
@@ -148,9 +147,9 @@ export default {
         // create an engine
         this.engine = Matter.Engine.create();
 
-        if (window.innerWidth <= this.smallest_size) { // initial check and setup for mobile
-            this.previousWidth = this.smallest_size
-            this.width = this.smallest_size
+        if (window.innerWidth <= 400) { // initial check and setup for mobile
+            this.previousWidth = 400
+            this.width = 400
             this.mobile = true
             this.skill_gap_x = 25
         } else {
