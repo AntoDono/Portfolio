@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Fenix;
+    font-display: swap;
+    src: url(../font/Fenix/Fenix-Regular.woff2);
+}
+
+@font-face {
+    font-family: Bogart;
+    font-display: swap;
+    src: url(../font/Bogart/Bogart-Regular-trial.woff2)
+}
+
+@font-face {
+    font-family: UniSans;
+    font-display: swap;
+    src: url(../font/Unisans/UniSansDemo-HeavyCAPS.woff2);
+}
