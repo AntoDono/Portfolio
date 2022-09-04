@@ -12,8 +12,6 @@ export default {
     name: "Landing",
     mounted() {
 
-        console.log("Hello")
-
         this.$gsap.set(
             this.$refs['l1'],
             {

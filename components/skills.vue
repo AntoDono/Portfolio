@@ -106,8 +106,8 @@ export default {
             })
         },
         checkMobileSize() {
-            if (this.width <= 400) {
-                this.width = 400
+            if (this.width <= 500) {
+                this.width = 500
                 if (!this.mobile) {
                     this.mobile = true
                     this.scaleSkills(
