@@ -82,19 +82,32 @@ export default {
 
             return boxes
         },
+        handle_resize(){
+            console.log("Resized")
+            this.resize()
+            this.resizeRender()
+        },
         resize() {
             this.width = 0.4 * window.innerWidth
             this.height = 0.6 * window.innerHeight
             this.checkMobileSize()
+        },
+        resizeRender(){
             this.render.bounds.max.x = this.width;
             this.render.bounds.max.y = this.height;
             this.render.options.width = this.width;
             this.render.options.height = this.height;
             this.render.canvas.width = this.width;
             this.render.canvas.height = this.height;
-            Matter.Body.set(this.right, "position", { x: this.width + 10, y: this.height / 2 })
-            Matter.Body.scale(this.ground, this.previousWidth / this.width, 1)
-            this.previousWidth = this.width
+    
+            let new_width = this.right.vertices[0].x - this.left.vertices[0].x
+    
+            Matter.Body.set(this.right, "position", { x: this.width + 10, y: this.height / 2 - 5 })
+            Matter.Body.set(this.left, "position", { x: - 10, y: this.height / 2 - 5 })
+            Matter.Body.scale(this.ground, new_width / this.width, 1)
+            Matter.Body.scale(this.ceiling, new_width / this.width, 1)
+    
+            this.width = new_width
         },
         scaleSkills(xScale, yScale, xTextureScale, yTextureScale) {
             this.engine.world.bodies.forEach((body) => {
@@ -142,19 +155,13 @@ export default {
         //     Composite = Matter.Composite,
         //     Mouse = Matter.Mouse,
         //     MouseConstraint = Matter.MouseConstraint
-        window.addEventListener("resize", this.resize)
+        window.addEventListener("resize", this.handle_resize)
 
         // create an engine
         this.engine = Matter.Engine.create();
 
-        if (window.innerWidth <= 400) { // initial check and setup for mobile
-            this.previousWidth = 400
-            this.width = 400
-            this.mobile = true
-            this.skill_gap_x = 25
-        } else {
-            this.previousWidth = this.width
-        }
+        // Resize before setting renderer
+        this.resize()
 
         // create a renderer
         this.render = Matter.Render.create({
@@ -184,15 +191,6 @@ export default {
         Matter.Composite.add(this.engine.world, mConstraint)
         Matter.Composite.add(this.engine.world, [this.ground, this.left, this.right, this.ceiling].concat(this.createSkills()));
 
-        if (this.mobile) {
-            this.scaleSkills(
-                (this.skill_width * this.png_mobile_scale) / this.png_width_px,
-                (this.skill_height * this.png_mobile_scale) / this.png_height_px,
-                this.png_mobile_scale,
-                this.png_mobile_scale
-            )
-        }
-
         // run the renderer
         Matter.Render.run(this.render);
 
@@ -203,6 +201,15 @@ export default {
 
         // run the engine
         Matter.Runner.run(this.runner, this.engine);
+
+        if (this.mobile){
+            this.scaleSkills(
+                (this.skill_width * this.png_mobile_scale) / this.png_width_px,
+                (this.skill_height * this.png_mobile_scale) / this.png_height_px,
+                this.png_mobile_scale,
+                this.png_mobile_scale
+            )
+        }
 
     },
 }
