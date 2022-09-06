@@ -3,7 +3,7 @@
         <div class="flex justify-center pic-container">
             <a :href="link" target="_blank">
                 <div>
-                    <img :src="`projects/${image}`" class="text-white pic rounded-lg" :alt="image_name">
+                    <img :src="`/projects/${image}`" class="text-white pic rounded-lg" :alt="image_name">
                 </div>
             </a>
         </div>

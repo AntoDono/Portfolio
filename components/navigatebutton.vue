@@ -27,8 +27,19 @@ export default {
             default: false
         }
     },
+    methods: {
+        update(){
+            if (this.flip) this.$refs['flip-part'].classList.add("flip")
+            else if (!this.flip) this.$refs['flip-part'].classList.remove("flip")
+        }
+    },
+    watch:{
+        flip(){
+            this.update()
+        }
+    },
     mounted(){
-        if (this.flip) this.$refs['flip-part'].classList.add("flip")
+        this.update()
     }
 }
 

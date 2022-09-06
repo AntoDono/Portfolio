@@ -12,8 +12,8 @@
                 <img class="h-8 w-8" src="~/assets/images/pageselect.png"/>
             </a>
         </div> -->
-        <navigatebutton v-if="back" :text="'Main'" :path="pages[index - 1]" />
-        <navigatebutton v-if="forward" :flip="true" :text="'Projects'" :path="pages[index + 1]" />
+        <navigatebutton v-if="back" :flip="false" :text="'Main'" :path="pages[index - 1]" id="left"/>
+        <navigatebutton v-if="forward" :flip="true" :text="'Projects'" :path="pages[index + 1]" id="right"/>
     </div>
 </template>
 
@@ -21,6 +21,12 @@
 
 export default {
     name: "pageselect",
+    props:{
+        route: {
+            default: "/",
+            type: String
+        }
+    },
     data() {
         return {
             pages: [
@@ -33,13 +39,10 @@ export default {
         }
     },
     methods: {
-        reset(){
+        init() {
             this.back = true
             this.forward = true
             this.index = 0
-        },
-        init() {
-            this.reset()
             
             this.index = this.pages.indexOf(window.location.pathname.toLocaleLowerCase())
             if (this.index == -1) {
@@ -51,9 +54,9 @@ export default {
         }
     },
     watch: {
-        $route(to, from) {
+        route(to, from) {
             this.init()
-        },
+        }
     },
     mounted() {
         this.init()

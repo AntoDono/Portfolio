@@ -3,8 +3,8 @@
     <navbar/>
     <leftbar />
     <Nuxt />
-    <pageselect/>
-    <footer_info :key="this.$route.path"/>
+    <pageselect :route="this.$route.path"/>
+    <footer_info/>
   </div>
 </template>
 
@@ -20,6 +20,6 @@
       navbar,
       leftbar,
       footer_info
-    }
+    }  
   }
 </script>

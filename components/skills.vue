@@ -52,7 +52,10 @@ export default {
             left: null,
             ceiling: null,
             ground: null,
-            previousWidth: null,
+            prev: {
+                width: null,
+                height: null
+            },
             gamma: 100
         }
     },
@@ -83,7 +86,8 @@ export default {
             return boxes
         },
         handle_resize(){
-            console.log("Resized")
+            // console.log(`w: ${0.4 * window.innerWidth}, h: ${0.6 * window.innerHeight}`)
+            // console.log("Resized") 
             this.resize()
             this.resizeRender()
         },
@@ -91,6 +95,10 @@ export default {
             this.width = 0.4 * window.innerWidth
             this.height = 0.6 * window.innerHeight
             this.checkMobileSize()
+            if (!this.prev.width && !this.prev.height) {
+                this.prev.width = this.width
+                this.prev.height = this.height
+            }
         },
         resizeRender(){
             this.render.bounds.max.x = this.width;
@@ -99,15 +107,29 @@ export default {
             this.render.options.height = this.height;
             this.render.canvas.width = this.width;
             this.render.canvas.height = this.height;
+
     
-            let new_width = this.right.vertices[0].x - this.left.vertices[0].x
+            Matter.Body.set(this.ground, "position", { x: this.width / 2, y: this.height })
+            Matter.Body.set(this.ceiling, "position", { x: this.width / 2, y: 0 })
+            Matter.Body.scale(this.ground, this.width / this.prev.width, 1)
+            Matter.Body.scale(this.ceiling, this.width / this.prev.width, 1)
+
+            Matter.Body.scale(this.left, 1, this.height / this.prev.height)
+            Matter.Body.scale(this.right, 1, this.height / this.prev.height)
+            Matter.Body.set(this.right, "position", { x: this.width + 10, y: this.height })
+            Matter.Body.set(this.left, "position", { x: - 10, y: this.height })
+
+            // console.log("=====================")
+            // if (this.width > this.prev.width) console.log("UPSIZED")
+            // else console.log("DOWNSIZED")
+            // console.log(`Previous Width: ${this.prev.width}, NOW: ${this.width}`)
+            // console.log(`Previous Height: ${this.prev.height}, NOW: ${this.height}`)
+            // console.log(`Area of left: ${this.left.area}`)
+            // console.log(`Area of right: ${this.right.area}`)
+            // console.log(`Area of top: ${this.ceiling.area}`)
+            // console.log(`Area of down: ${this.ground.area}`)
     
-            Matter.Body.set(this.right, "position", { x: this.width + 10, y: this.height / 2 - 5 })
-            Matter.Body.set(this.left, "position", { x: - 10, y: this.height / 2 - 5 })
-            Matter.Body.scale(this.ground, new_width / this.width, 1)
-            Matter.Body.scale(this.ceiling, new_width / this.width, 1)
-    
-            this.width = new_width
+            this.prev.width = this.width
         },
         scaleSkills(xScale, yScale, xTextureScale, yTextureScale) {
             this.engine.world.bodies.forEach((body) => {
@@ -140,10 +162,6 @@ export default {
                 )
             }
         },
-        handleOrientation(event) {
-            console.log(event.gamma)
-            this.gamma = event.gamma
-        },
     },
     mounted() {
         // window.addEventListener("click", this.permission)
@@ -162,7 +180,6 @@ export default {
 
         // Resize before setting renderer
         this.resize()
-
         // create a renderer
         this.render = Matter.Render.create({
             element: this.$refs['draw'],
@@ -179,8 +196,8 @@ export default {
 
         this.ground = Matter.Bodies.rectangle(this.width / 2, this.height, this.width, 60, { isStatic: true, label: "ground", fillStyle: 'red' });
         this.ceiling = Matter.Bodies.rectangle(this.width / 2, 0, this.width, 60, { isStatic: true, label: "ceiling" });
-        this.left = Matter.Bodies.rectangle(-10, this.height / 2, 100, this.height, { isStatic: true, label: "left" });
-        this.right = Matter.Bodies.rectangle(this.width + 10, this.height / 2, 100, this.height, { isStatic: true, label: "right" });
+        this.left = Matter.Bodies.rectangle(-10, this.height / 2, 100, window.innerHeight * 20, { isStatic: true, label: "left" });
+        this.right = Matter.Bodies.rectangle(this.width + 10, this.height / 2, 100, window.innerHeight * 20, { isStatic: true, label: "right" });
 
         var mouse = Matter.Mouse.create(this.$refs['draw'])
         var mConstraint = Matter.MouseConstraint.create(this.engine, {
