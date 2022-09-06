@@ -3,7 +3,6 @@
         <div class="flex justify-around items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
             <div class="pic-border">
                 <img src="~/assets/images/youweizhen.webp" class="pic rounded-xl" alt="picture of youwei zhen"/>
-                <h3 class="pic text-red-500 text-center">Unfortunately I do not take selfies so this picture is from like years ago.</h3>
             </div>
             <div class="w-[500px] basis-auto" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen,</h2>

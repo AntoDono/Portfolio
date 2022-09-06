@@ -1,7 +1,7 @@
 <template>
     <div class="fixed z-50 flex flex-row w-full bg-primary ease-in-out duration-300 menu-container" ref="menu-container">
         <div class="bg-primary rounded-full w-[7em] h-[7em] flex justify-center items-center relative menu-button z-50" ref="menu-button" @click="activate">
-            <glitch text="Y" size="3em"/>
+            <glitch class="highlight" text="Y" size="3em"/>
         </div>
         <div class="bg-primary flex flex-row justify-start items-center gap-x-10 p-3 z-40" ref="menu-options">
             <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Home</nuxt-link>
@@ -161,19 +161,21 @@ export default {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    ::before,
-    ::after {
-        animation-delay: -1ms !important;
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        background-attachment: initial !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0s !important;
-        transition-delay: 0s !important;
-    }
+.highlight{
+    animation: 1.7s enlarge infinite ease-in-out;
 }
+
+@keyframes enlarge{
+  0%{
+    transform: scale(150%);
+  }
+  50%{
+    transform: scale(100%);
+  }
+  100%{
+    transform: scale(150%);
+  }
+}
+
 </style>
 

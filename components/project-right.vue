@@ -7,11 +7,11 @@
                 </div>
             </a>
         </div>
-        <div class="h-full flex items-center description">
+        <div class="h-full flex items-center description max-w-[500px]">
             <div class="font-fenix text-white relative flex flex-col gap-y-3 move">
                 <p class="move-text text-accent1">{{status}}</p>
                 <h2 class="text-[3.5vmin] move-text font-uni glitch">{{title}}</h2>
-                <div class="description-bg p-8 max-w-[500px] rounded">
+                <div class="description-bg p-8 rounded">
                     <p>{{description}}</p>
                 </div>
                 <div class="flex flex-row move-justify gap-x-3">
