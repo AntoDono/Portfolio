@@ -57,7 +57,7 @@ export default{
         },
         status: {
             type: String,
-            default: "Main Project"
+            default: "Side Project"
         },
         link: {
             type: String,

@@ -47,7 +47,7 @@ body {
         -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
         0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
 
-    animation: glitch 1000ms infinite;
+    animation: glitch 1500ms infinite;
 }
 
 .glitch span {
@@ -57,7 +57,7 @@ body {
 }
 
 .glitch span:first-child {
-    animation: glitch 750ms infinite;
+    animation: glitch 1250ms infinite;
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
     transform: translate(-0.025em, -0.0125em);
     /* color: green; */
@@ -65,7 +65,7 @@ body {
 }
 
 .glitch span:last-child {
-    animation: glitch 675ms infinite;
+    animation: glitch 1075ms infinite;
     clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
     transform: translate(0.0125em, 0.025em);
     /* color: red; */

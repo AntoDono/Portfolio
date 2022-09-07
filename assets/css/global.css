@@ -1,9 +1,9 @@
 html{
-    bg: var(--primary)
+    background-color: var(--primary)
 }
 
 * {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     padding: 0;
     margin: 0;
     border: 0;
