@@ -34,7 +34,7 @@ export default {
     },
     name: "footer_info",
     mounted(){
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     },
 }
 </script>
