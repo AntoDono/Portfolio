@@ -54,7 +54,7 @@ export default {
                 },
                 autoAlpha: 1,
                 x: 0,
-                ease: "steps(5)" 
+                ease: "power1.inOut" 
             }
         )
     }

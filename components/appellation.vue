@@ -37,7 +37,7 @@ export default {
                     scrub: true
                 },
                 x: this.direction == 'left' ? -this.$refs['title'].offsetWidth/2 : this.$refs['title'].offsetWidth/2,
-                ease: "steps(5)" 
+                ease: "power1.inOut" 
             }
         )
     }

@@ -33,7 +33,9 @@ export default {
                 { name: "Docker", img_name: "docker", percent: 0.5 },
                 { name: "Linux", img_name: "linux", percent: 0.5 },
             ],
+            boxes: [],
             engine: null,
+            triggeredAnimation: false,
             render: null,
             runner: null,
             skill_width: 100,
@@ -61,12 +63,11 @@ export default {
     },
     methods: {
         createSkills() {
-            let boxes = []
             let x = this.start_x
             let y = this.height / 2 + this.skill_gap_y_initial
 
             for (let skill of this.skills) {
-                boxes.push(Matter.Bodies.rectangle(x, y, this.skill_width, this.skill_height, {
+                this.boxes.push(Matter.Bodies.rectangle(x, y, this.skill_width, this.skill_height, {
                     render: {
                         sprite: {
                             texture: `/skills/${skill.img_name.toLowerCase()}.png`,
@@ -83,7 +84,7 @@ export default {
                 }
             }
 
-            return boxes
+            return this.boxes
         },
         handle_resize(){
             // console.log(`w: ${0.4 * window.innerWidth}, h: ${0.6 * window.innerHeight}`)
@@ -162,6 +163,31 @@ export default {
                 )
             }
         },
+        scrollTrigger(){
+            this.$gsap.to(
+                this.$refs['skills'], 
+                { 
+                    scrollTrigger: {
+                        trigger: this.$refs['skills'],
+                        markers: false,
+                        start: "bottom-=20% bottom",
+                        end: "bottom-=20% top",
+                        onToggle: self => this.applyForce(self.isActive),
+                    },
+                },
+            )
+        },
+        applyForce(active){
+            if (active && !this.triggeredAnimation){
+                this.boxes.forEach(box => {
+                    Matter.Body.applyForce(box, box.position, {
+                        x:  this.height/1500 * (Math.round(Math.random()) * 2 - 1),
+                        y:  this.height/1500 * (Math.round(Math.random()) * 2 - 1),
+                    })
+                })
+                this.triggeredAnimation = true
+            }
+        }
     },
     mounted() {
         // window.addEventListener("click", this.permission)
@@ -173,6 +199,7 @@ export default {
         //     Composite = Matter.Composite,
         //     Mouse = Matter.Mouse,
         //     MouseConstraint = Matter.MouseConstraint
+        this.scrollTrigger()
         window.addEventListener("resize", this.handle_resize)
 
         // create an engine
