@@ -7,7 +7,7 @@
         <div class="fixed w-full bottom-12 flex justify-center">
             <div class="animate-bounce hover:cursor-pointer">
                 <div @click="scroll">
-                    <img class="rotate-90 h-[10vmin]" src="~/assets/images/pageselect.png"/>
+                    <img class="rotate-90 h-[10vmin]" src="~/assets/images/pageselect.png" alt="arrow pointing down"/>
                 </div>
             </div>
         </div>
