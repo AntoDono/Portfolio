@@ -1,5 +1,5 @@
 <template>
-    <div class="h-auto bg-transparent flex justify-center items-start z-20 relative" id="about">
+    <div class="h-auto bg-transparent flex justify-center items-start z-20 relative mobile-layout" id="about">
         <div class="flex justify-around items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
             <div class="pic-border">
                 <img src="~/assets/images/youweizhen.webp" class="pic rounded-xl" alt="picture of youwei zhen"/>
@@ -71,6 +71,12 @@ export default {
     .pic{
         /* height: 300px; */
         width: 300px;
+    }
+}
+
+@media (max-width:1200px){
+    .mobile-layout{
+        text-align: center;
     }
 }
 </style>

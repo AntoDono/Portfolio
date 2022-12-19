@@ -43,7 +43,9 @@ export default {
             png_width_px: 256,
             png_height_px: 256,
             png_mobile_scale: 0.6,
+            png_tablet_scale: 0.8,
             mobile: false,
+            tablet: false,
             skill_gap_x: 25,
             skill_gap_y_initial: 10,
             start_x: 0,
@@ -153,13 +155,31 @@ export default {
                         this.png_mobile_scale
                     )
                 }
-            } else if (this.mobile) {
+            } else if (this.width > 400 && this.width <= 1600) {
+                if (!this.tablet) {
+                    this.tablet = true
+                    this.scaleSkills(
+                        (this.skill_width * this.png_tablet_scale) / this.png_width_px,
+                        (this.skill_height * this.png_tablet_scale) / this.png_height_px,
+                        this.png_tablet_scale,
+                        this.png_tablet_scale
+                    )
+                }
+            }else if (this.mobile) {
                 this.mobile = false
                 this.scaleSkills(
                     this.skill_width / this.png_width_px,
                     this.skill_height / this.png_width_px,
                     1 / this.png_mobile_scale,
                     1 / this.png_mobile_scale
+                )
+            }else if (this.tablet) {
+                this.tablet = false
+                this.scaleSkills(
+                    this.skill_width / this.png_width_px,
+                    this.skill_height / this.png_width_px,
+                    1 / this.png_tablet_scale,
+                    1 / this.png_tablet_scale
                 )
             }
         },
@@ -252,6 +272,13 @@ export default {
                 (this.skill_height * this.png_mobile_scale) / this.png_height_px,
                 this.png_mobile_scale,
                 this.png_mobile_scale
+            )
+        } else if (this.tablet) {
+            this.scaleSkills(
+                (this.skill_width * this.png_tablet_scale) / this.png_width_px,
+                (this.skill_height * this.png_tablet_scale) / this.png_height_px,
+                this.png_tablet_scale,
+                this.png_tablet_scale
             )
         }
 

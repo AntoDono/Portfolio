@@ -35,7 +35,7 @@
     flex-direction: row;
 }
 
-@media (max-width: 800px){
+@media (max-width: 1200px){
     .width-section{
         width: auto;
     }

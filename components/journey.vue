@@ -1,7 +1,7 @@
 <template>
     <div class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden"
         id="about">
-        <div class="flex justify-between items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
+        <div class="flex justify-between items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10 mobile">
             <div class="w-[500px] basis-auto" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">My Journey.</h2>
                 <p class="text-white font-montserrat">
@@ -57,11 +57,15 @@
     justify-content: space-between;
 }
 
-@media (max-width:800px) {
+@media (max-width:1200px) {
     .mobile {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .mobile-text{
+        justify-content: center;
     }
 }
 </style>
