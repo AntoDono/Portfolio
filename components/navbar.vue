@@ -68,7 +68,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 .menu-button{
     -webkit-touch-callout: none; /* iOS Safari */

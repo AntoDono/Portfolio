@@ -1,10 +1,10 @@
 <template>
   <div>
-    <!-- <navbar/>
-    <leftbar /> -->
+    <navbar/>
+    <leftbar />
     <Nuxt />
-    <!-- <pageselect :route="this.$route.path"/>
-    <footer_info/> -->
+    <pageselect :route="this.$route.path"/>
+    <footer_info/>
   </div>
 </template>
 
