@@ -4,8 +4,11 @@
             <glitch class="highlight" text="Y" size="3em"/>
         </div>
         <div class="bg-primary flex flex-row justify-start items-center gap-x-10 p-3 z-40" ref="menu-options">
-            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Home</nuxt-link>
+            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">About</nuxt-link>
+            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Interests</nuxt-link>
+            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Timeline</nuxt-link>
             <nuxt-link to="projects" class="text-white text-[0.8em] font-uni">Projects</nuxt-link>
+            <nuxt-link to="projects" class="text-white text-[0.8em] font-uni">Resume</nuxt-link>
             <a href="mailto:youweizhen540@gmail.com" class="text-white text-[0.8em] font-uni">Contact</a>
         </div>
     </div>

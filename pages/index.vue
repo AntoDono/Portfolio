@@ -1,9 +1,12 @@
 <template>
   <div>
     <loading />
-    <Landing />
-    <About />
+    <landing />
+    <about />
+    <interests />
+    <timeline />
     <Experience />
+    <ScrollProgress/>
   </div>
 </template>
 

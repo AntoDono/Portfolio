@@ -17,7 +17,7 @@
 <script>
 
 export default {
-    name: "Landing",
+    name: "ladning",
     methods: {
         scroll(){
             this.$gsap.to(window, { duration: 1.2, ease: "power1.inOut", scrollTo: "#titles"})
