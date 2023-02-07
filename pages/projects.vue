@@ -1,6 +1,7 @@
 <template>
     <div>
         <displayprojects />
+        <ScrollProgress/>
     </div>
 </template>
 
