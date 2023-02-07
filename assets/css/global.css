@@ -1,0 +1,48 @@
+html{
+    background-color: var(--primary)
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    /* overflow-x: hidden; */
+}
+
+:root {
+    --hover_link: rgb(22, 170, 255);
+    --link: rgb(164, 164, 164);
+    --primary: rgb(10, 10, 10);
+    --secondary: rgb(28, 28, 28);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--link);
+    border-radius: 15px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+}
