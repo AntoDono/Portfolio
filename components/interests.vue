@@ -15,11 +15,3 @@
     }
 </script>
 
-<!-- 
-<div class="z-20 relative bg-primary flex justify-center">
-            <div class="max-w-[1300px] flex flex-col items-start justify-start">
-            <Titles class="pl-40" />
-            <sectionHeader text="About Me" class="p-10"/>
-            <introduction class="p-10" />
-            <Skills class="p-10" />
-        </div> -->

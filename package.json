@@ -13,7 +13,8 @@
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.2.0",
     "gsap": "^3.11.4",
-    "matter-js": "^0.18.0"
+    "matter-js": "^0.18.0",
+    "three": "^0.149.0"
   },
   "resolutions": {
     "@nuxt/kit": "3.0.0-rc.13"
