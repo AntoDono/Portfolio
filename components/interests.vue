@@ -3,7 +3,7 @@
         <div class="flex justify-center items-center">
             <div class="w-[80vw] max-w-[1920px]">
                 <sectionHeader text="Interests"/>
-                <introduction/>
+                <fencing/>
             </div>
         </div>
     </div>
