@@ -1,6 +1,6 @@
 <template>
   <div>
-    <loading />
+    <!-- <loading /> -->
     <New-landing />
     <about />
     <!-- <interests /> -->
