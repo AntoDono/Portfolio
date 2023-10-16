@@ -2,7 +2,7 @@
     <div class="h-auto bg-transparent flex justify-center items-start z-20 relative" id="about">
         <div class="flex justify-around items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
             <div class="pic-border">
-                <img src="~/assets/images/youweizhen.webp" class="pic rounded-xl" alt="picture of youwei zhen"/>
+                <img src="~/assets/images/youwei.jpg" class="pic rounded-xl" alt="picture of youwei zhen"/>
             </div>
             <div class="w-[500px] basis-auto" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen,</h2>
@@ -65,7 +65,7 @@ export default {
 <style scoped>
 .pic{
     /* height: 300px; */
-    width: 300px;
+    width: 400px;
 }
 
 @media (max-width:700px) {
