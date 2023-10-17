@@ -61,13 +61,18 @@ const init = () => {
 
     const geometry = new THREE.BufferGeometry()
     const lineGeometry = new THREE.BufferGeometry();
+    var unpacked_vertices = []
     var vertices = []
-    var old_vertex;
+    var lineVertices = []
     // const material = new THREE.MeshNormalMaterial();
     
     var radius = Math.min(30, size.width / 4);
+
+    THREE.MathUtils.seededRandom(0.19144689152017236)
+
+    console.log(THREE.MathUtils.seededRandom())
     
-    for (let i = 0; i < 500; i ++){
+    for (let i = 0; i < 1000; i ++){
         
         let vertex = new THREE.Vector3()
         
@@ -78,21 +83,27 @@ const init = () => {
         vertex.y = radius * Math.sin(theta) * Math.sin(phi)
         vertex.z = radius * Math.cos(theta)
     
-        vertices.push(vertex.x)
-        vertices.push(vertex.y)
-        vertices.push(vertex.z)
+        unpacked_vertices.push(vertex.x)
+        unpacked_vertices.push(vertex.y)
+        unpacked_vertices.push(vertex.z)
 
-        if (old_vertex){
-            vertices.push(old_vertex.x)
-            vertices.push(old_vertex.y)
-            vertices.push(old_vertex.z)
+        vertices.push(vertex)
+
+        if (THREE.MathUtils.randInt(1, 100)%3 == 0){
+            let random_start = THREE.MathUtils.randInt(0, vertices.length/10)
+            let random_amt = THREE.MathUtils.randInt(1,10)
+            let random_vertices = vertices.slice(random_start, random_start + random_amt)
+
+            for (let v of random_vertices){ // adding it separately because i need it to be unpacked
+                lineVertices.push(v.x)
+                lineVertices.push(v.y)
+                lineVertices.push(v.z)
+            }
         }
-
-        old_vertex = vertex
     }
-    vertices = new Float32Array(vertices)
-    geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
-    lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices.slice(0, 300), 3));
+    unpacked_vertices = new Float32Array(unpacked_vertices)
+    geometry.setAttribute('position', new THREE.BufferAttribute(unpacked_vertices, 3));
+    lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(lineVertices, 3));
     const lineMaterial = new THREE.LineBasicMaterial({ color: '#34aeeb' });  // White color for the lines
     const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
     
