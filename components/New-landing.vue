@@ -47,18 +47,6 @@ const init = () => {
 
     // animation
 
-    
-    window.addEventListener('resize', () => {
-        size.width = canvas.value.offsetWidth
-        size.height = canvas.value.offsetHeight
-        // Update camera
-        camera.aspect = size.width / size.height
-        camera.updateProjectionMatrix()
-        // Update renderer
-        renderer.setSize(size.width, size.height)
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    })
-
     const geometry = new THREE.BufferGeometry()
     const lineGeometry = new THREE.BufferGeometry();
     var unpacked_vertices = []
@@ -69,10 +57,8 @@ const init = () => {
     var radius = Math.min(30, size.width / 4);
 
     THREE.MathUtils.seededRandom(0.19144689152017236)
-
-    console.log(THREE.MathUtils.seededRandom())
     
-    for (let i = 0; i < 1000; i ++){
+    for (let i = 0; i < 750; i ++){
         
         let vertex = new THREE.Vector3()
         
@@ -120,6 +106,25 @@ const init = () => {
     
     camera.lookAt(particleSphere.position)
     renderer.setAnimationLoop(render_loop);
+
+    window.addEventListener('resize', () => {
+        size.width = canvas.value.offsetWidth
+        size.height = canvas.value.offsetHeight
+        // Update camera
+        camera.aspect = size.width / size.height
+        camera.updateProjectionMatrix()
+        // Update renderer
+        renderer.setSize(size.width, size.height)
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    })
+
+    window.addEventListener('mousemove', (event)=>{
+        let dx = -(event.clientX - window.innerWidth/2) * 0.001
+        let dy = -(event.clientY - window.innerHeight/2) * 0.001
+        camera.position.x += dx
+        camera.position.y += dy
+        console.log(dx, dy)
+    })
 }
 onMounted(init)
 
