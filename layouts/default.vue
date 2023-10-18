@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navbar/>
+    <!-- <navbar/> -->
     <leftbar />
     <NuxtPage />
     <pageselect :route="$route.path"/>

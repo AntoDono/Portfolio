@@ -3,11 +3,15 @@
         <div class="w-full h-full flex justify-center items-center overflow-x-hidden" ref="canvas_parent">
             <canvas class="w-full h-full" ref="canvas"></canvas>
         </div>
+        <div class="absolute">
+            <h1 class="font-bogart text-gray-300 text-5xl">Hello, I am Youwei</h1>            
+        </div>
     </div>
 </template>
 
 <script setup>
 
+import gsap from "gsap"
 import { ref, onMounted } from 'vue'
 import * as THREE from 'three';
 
@@ -18,14 +22,27 @@ const size = {
     height: null
 }
 var scene, camera, renderer,particleSphere;
+const animationTimeline = gsap.timeline()
 
 const render_loop = (time) => {
 
     particleSphere.rotation.x = time / 5000;
     particleSphere.rotation.y = time / 5000;
-
+    // camera.position.z += Math.sin(0.0025 * time) / 5
     renderer.render(scene, camera);
 
+}
+
+const talk_effect = ()=>{
+    animationTimeline.to(camera.position, {
+        z: camera.position.z * 8/9,
+        duration: 1,
+        ease: "power3.easeInOut"
+    }).to(camera.position, {
+        z: camera.position.z * 9/8,
+        duration: 1,
+        ease: "power3.easeInOut"
+    })
 }
 
 const init = () => {
@@ -58,7 +75,7 @@ const init = () => {
 
     THREE.MathUtils.seededRandom(0.19144689152017236)
     
-    for (let i = 0; i < 750; i ++){
+    for (let i = 0; i < 500; i ++){
         
         let vertex = new THREE.Vector3()
         
@@ -75,9 +92,9 @@ const init = () => {
 
         vertices.push(vertex)
 
-        if (THREE.MathUtils.randInt(1, 100)%3 == 0){
+        if (THREE.MathUtils.randInt(1, 5)%5 == 0){
             let random_start = THREE.MathUtils.randInt(0, vertices.length/10)
-            let random_amt = THREE.MathUtils.randInt(1,10)
+            let random_amt = THREE.MathUtils.randInt(1, 3) // how many nodes can connect
             let random_vertices = vertices.slice(random_start, random_start + random_amt)
 
             for (let v of random_vertices){ // adding it separately because i need it to be unpacked
@@ -87,13 +104,14 @@ const init = () => {
             }
         }
     }
+
     unpacked_vertices = new Float32Array(unpacked_vertices)
     geometry.setAttribute('position', new THREE.BufferAttribute(unpacked_vertices, 3));
     lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(lineVertices, 3));
-    const lineMaterial = new THREE.LineBasicMaterial({ color: '#34aeeb' });  // White color for the lines
+    const lineMaterial = new THREE.LineBasicMaterial({ color: '#2063ab' });  // White color for the lines
     const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
     
-    var particles = new THREE.Points(geometry, new THREE.PointsMaterial({ color: '#34aeeb', size: 0.5 }))
+    var particles = new THREE.Points(geometry, new THREE.PointsMaterial({ color: '#1dcdfe', size: 0.7 }))
     particles.boundingSphere = 50
     
     var renderGroup = new THREE.Group()
@@ -119,11 +137,10 @@ const init = () => {
     })
 
     window.addEventListener('mousemove', (event)=>{
-        let dx = -(event.clientX - window.innerWidth/2) * 0.001
-        let dy = -(event.clientY - window.innerHeight/2) * 0.001
-        camera.position.x += dx
-        camera.position.y += dy
-        console.log(dx, dy)
+        let x = -(event.clientX - window.innerWidth/2) * 0.002
+        let y = -(event.clientY - window.innerHeight/2) * 0.002
+        camera.position.x = x
+        camera.position.y = y
     })
 }
 onMounted(init)
