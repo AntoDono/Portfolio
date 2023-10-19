@@ -4,7 +4,8 @@
             <canvas class="w-full h-full" ref="canvas"></canvas>
         </div>
         <div class="absolute">
-            <h1 class="font-bogart text-gray-300 text-5xl">Hello, I am Youwei</h1>            
+            <!-- <h1 class="font-bogart text-gray-300 text-5xl">Hello, I am Youwei</h1> -->
+            <PopupText :show="name" text="Hello, I am Youwei"/>     
         </div>
     </div>
 </template>
@@ -24,6 +25,9 @@ const size = {
 var scene, camera, renderer,particleSphere;
 const animationTimeline = gsap.timeline()
 
+const rendererReady = ref(false)
+const name = ref(false) // name state
+
 const render_loop = (time) => {
 
     particleSphere.rotation.x = time / 5000;
@@ -31,17 +35,28 @@ const render_loop = (time) => {
     // camera.position.z += Math.sin(0.0025 * time) / 5
     renderer.render(scene, camera);
 
+    if (!rendererReady.value) {
+        rendererReady.value = true
+    }
 }
+
+watch(rendererReady, (new_value, old_value)=>{
+    if (new_value) {
+        name.value = true
+        for (let i = 0; i < 3; i ++) talk_effect()
+    }
+})
 
 const talk_effect = ()=>{
     animationTimeline.to(camera.position, {
-        z: camera.position.z * 8/9,
-        duration: 1,
-        ease: "power3.easeInOut"
+        z: camera.position.z * 17/18,
+        duration: 0.15,
+        delay: 0.15,
+        ease: "power3.easeIn"
     }).to(camera.position, {
-        z: camera.position.z * 9/8,
-        duration: 1,
-        ease: "power3.easeInOut"
+        z: camera.position.z * 18/17,
+        duration: 0.25,
+        ease: "power3.easeOut"
     })
 }
 
@@ -142,6 +157,7 @@ const init = () => {
         camera.position.x = x
         camera.position.y = y
     })
+
 }
 onMounted(init)
 
