@@ -1,6 +1,6 @@
 <template>
     <div class="overflow-y-hidden" ref="container">
-        <h2 class="text-[7vmin] text-white font-bogart overflow-y-hidden opacity-0" ref="appear">
+        <h2 :class="`${size} text-white font-bogart overflow-y-hidden opacity-0`" ref="appear">
             {{ text }}
         </h2>
     </div>
@@ -22,6 +22,10 @@ export default {
         show: {
             type: Boolean,
             default: false
+        },
+        size: {
+            type: String,
+            default: "text-[7vmin]" // accepts L, M, S
         }
     },
     mounted() {

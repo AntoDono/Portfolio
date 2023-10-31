@@ -1,11 +1,23 @@
 <template>
-    <div class="flex justify-center items-center z-30">
+    <div class="flex flex-col justify-center items-center z-30">
         <div class="w-full h-full flex justify-center items-center overflow-x-hidden" ref="canvas_parent">
-            <canvas class="w-full h-full" ref="canvas"></canvas>
+            <canvas class="w-screen h-screen" ref="canvas"></canvas>
         </div>
         <div class="absolute">
             <!-- <h1 class="font-bogart text-gray-300 text-5xl">Hello, I am Youwei</h1> -->
-            <PopupText :show="name" text="Hello, I am Youwei"/>     
+            <PopupText :show="name" text="Hello, I am Youwei" size="text-[7.5vmin]"/>
+        </div>
+        <div class="flex justify-center gap-x-7 absolute mt-[30vh] flex-wrap">
+            <PopupText :show="t1" text="Machine Learning" size="text-[3.5vmin]"/>
+            <PopupText :show="t2" text="Artificial Intelligence" size="text-[3.5vmin]"/>
+            <PopupText :show="t3" text="Programmer" size="text-[3.5vmin]"/>
+        </div>
+        <div class="absolute w-full bottom-12 flex justify-center opacity-0" ref="ArrowRef">
+            <div class="animate-bounce hover:cursor-pointer">
+                <div @click="scroll">
+                    <img class="rotate-90 h-[10vmin]" src="~/assets/images/pageselect.png" alt="arrow pointing down"/>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -27,6 +39,10 @@ const animationTimeline = gsap.timeline()
 
 const rendererReady = ref(false)
 const name = ref(false) // name state
+const t1 = ref(false)
+const t2 = ref(false)
+const t3 = ref(false)
+const ArrowRef = ref(null)
 
 const render_loop = (time) => {
 
@@ -40,22 +56,46 @@ const render_loop = (time) => {
     }
 }
 
-watch(rendererReady, (new_value, old_value)=>{
+watch(rendererReady, async(new_value, old_value)=>{
     if (new_value) {
+
+        await sleep(700)
         name.value = true
+        await sleep(600)
+        t1.value = true
+        await sleep(600)
+        t2.value = true
+        await sleep(600)
+        t3.value = true
+        await sleep(600)
+
+        gsap.to(ArrowRef.value,{
+            duration: 1,
+            alpha: 1,
+            ease: "power1.easeOut"
+        })
+
         for (let i = 0; i < 3; i ++) talk_effect()
     }
 })
 
+const scroll = ()=> {
+    gsap.to(window, { duration: 1.2, ease: "power1.inOut", scrollTo: "#titles"})
+}
+
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
 const talk_effect = ()=>{
     animationTimeline.to(camera.position, {
         z: camera.position.z * 17/18,
-        duration: 0.15,
-        delay: 0.15,
+        duration: 1,
+        delay: 0.5,
         ease: "power3.easeIn"
     }).to(camera.position, {
         z: camera.position.z * 18/17,
-        duration: 0.25,
+        duration: 1.5,
         ease: "power3.easeOut"
     })
 }
@@ -143,6 +183,9 @@ const init = () => {
     window.addEventListener('resize', () => {
         size.width = canvas.value.offsetWidth
         size.height = canvas.value.offsetHeight
+
+        canvas.value.width = size.width
+        canvas.value.height = size.height
         // Update camera
         camera.aspect = size.width / size.height
         camera.updateProjectionMatrix()
