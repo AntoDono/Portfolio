@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- <loading /> -->
-    <New-landing />
-    <about />
+    <landing />
+    <About />
     <!-- <interests /> -->
     <!-- <timeline /> -->
     <Experience />
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import About from "../components/Home/About.vue"
+
 export default {
   name: "index",
   head() {
