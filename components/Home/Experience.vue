@@ -1,7 +1,7 @@
 <template>
     <div class="z-20 relative bg-primary pt-10 pb-20 overflow-x-hidden">
         <div class="flex justify-center items-center">
-            <div class="width-section">
+            <div class="w-[80vw]">
                 <sectionHeader text="Experience" />
                 <div class="flex mobile-layout justify-between items-center">
                     <journey />
