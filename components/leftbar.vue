@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed left-[-3em] bottom-0 z-40 bg-transparent flex flex-col items-center font-fenix social">
+    <div class="fixed left-[-3em] bottom-0 z-40 bg-transparent flex flex-col items-center font-fenix social bg-transparent">
         <div class="flex flex-col justify-items-center items-center mb-48 email">
             <div class="rotate-90">
                 <a href="mailto:youweizhen540@gmail.com" class="font-fenix text-gray-300 eanchor">youweizhen540@gmail.com</a>

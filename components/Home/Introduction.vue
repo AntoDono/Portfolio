@@ -1,25 +1,25 @@
 <template>
     <div class="h-auto bg-transparent flex justify-center items-start z-20 relative" id="about">
         <div class="flex justify-around items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
-            <div class="pic-border">
+            <div class="pic-border pb-10">
                 <img src="~/assets/images/youwei.jpg" class="pic rounded-xl" alt="picture of youwei zhen"/>
             </div>
-            <div class="w-[500px] basis-auto" ref="description">
-                <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen,</h2>
-                <p class="text-white font-montserrat">a passionate high school student in the field of computer science and entrepreneurship.</p>
+            <div class="w-[500px] basis-auto pl-4" ref="description">
+                <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen.</h2>
+                <p class="text-white font-montserrat">Aspiring Computer Science and Entrepreneurship student.</p>
                 <p class="text-white font-montserrat pt-4">
                     Over the years, I have learned many different skills and frameworks in web and software design. With those skills that I have acquired,
-                    I founded and created multiple websites for my nonprofit and for profit company 
+                    I founded and created several organizations:
                     <nuxt-link to="https://botsitivity.org" class="underline decoration-dotted" target="_blank">BOTSITIVITY INC</nuxt-link> 
                     and <nuxt-link to="https://privacysavior.com" class="underline decoration-dotted" target="_blank">PrivacySavior LLC.</nuxt-link>.
                 </p>
                 <p class="text-white font-montserrat pt-4">
-                    As of lately, I am currently the project manager of the Staten Island Techtimes website.
-                    I am in the Silver Divison of the United States of America Computing Olympiad. I also had the honor of placing 1st in the New York City 
-                    Youth Entrepreneur Academy and represented the city in the National Saunders Competition.
+                    As of lately, I am currently developing and studying machine learning and Artificial Intelligence.
+                    I am also in the Gold Divison (Silver Medal) of
+                    <nuxt-link to="http://usaco.org" class="underline decoration-dotted" target="_blank">USACO</nuxt-link> 
                 </p>
                 <p class="text-white font-montserrat pt-4">
-                    Recently, I have been working on machine learning, three.js and the latest web frameworks such as Nuxt3.
+                    When I am not grinding out my projects, you can often find me on the fencing piste.
                 </p>
             </div>
         </div>
@@ -32,7 +32,7 @@ export default {
     setup() {
         
     },
-    name: "introduction",
+    name: "Introduction",
     mounted(){
 
         this.$gsap.set(
@@ -65,7 +65,7 @@ export default {
 <style scoped>
 .pic{
     /* height: 300px; */
-    width: 400px;
+    width: 500px;
 }
 
 @media (max-width:700px) {

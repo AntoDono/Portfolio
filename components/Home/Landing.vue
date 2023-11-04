@@ -7,12 +7,12 @@
             <!-- <h1 class="font-bogart text-gray-300 text-5xl">Hello, I am Youwei</h1> -->
             <PopupText :show="name" text="Hello, I am Youwei." size="text-[7.5vmin]"/>
         </div>
-        <div class="flex justify-center gap-x-7 absolute mt-[30vh] flex-wrap">
+        <div class="flex justify-center gap-x-7 absolute top-[60%] flex-wrap p-5">
             <PopupText :show="t1" text="Machine Learning" size="text-[3.5vmin]"/>
             <PopupText :show="t2" text="Artificial Intelligence" size="text-[3.5vmin]"/>
             <PopupText :show="t3" text="Programmer" size="text-[3.5vmin]"/>
         </div>
-        <div class="absolute w-full bottom-12 flex justify-center opacity-0" ref="ArrowRef">
+        <div class="absolute w-full bottom-[10%] flex justify-center opacity-0" ref="ArrowRef">
             <div class="animate-bounce hover:cursor-pointer">
                 <div @click="scroll">
                     <img class="rotate-90 h-[10vmin]" src="~/assets/images/pageselect.png" alt="arrow pointing down"/>
@@ -43,6 +43,7 @@ const t1 = ref(false)
 const t2 = ref(false)
 const t3 = ref(false)
 const ArrowRef = ref(null)
+const sensitivity = 0.001
 
 const render_loop = (time) => {
 
@@ -195,8 +196,8 @@ const init = () => {
     })
 
     window.addEventListener('mousemove', (event)=>{
-        let x = -(event.clientX - window.innerWidth/2) * 0.002
-        let y = -(event.clientY - window.innerHeight/2) * 0.002
+        let x = -(event.clientX - window.innerWidth/2) * sensitivity
+        let y = -(event.clientY - window.innerHeight/2) * sensitivity
         camera.position.x = x
         camera.position.y = y
     })

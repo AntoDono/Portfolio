@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <loading /> -->
-    <landing />
+    <Landing />
     <About />
     <!-- <interests /> -->
     <!-- <timeline /> -->
@@ -12,6 +12,8 @@
 
 <script>
 import About from "../components/Home/About.vue"
+import Landing from "../components/Home/Landing.vue"
+import Experience from "../components/Home/Experience.vue"
 
 export default {
   name: "index",
@@ -25,6 +27,11 @@ export default {
         { name: "description", content: "Youwei Zhen - Programmer | HS Student" },
       ]
     }
+  },
+  components:{
+    About,
+    Landing,
+    Experience
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed right-5 top-0 z-30">
+    <div class="fixed right-2 top-0 z-30">
         <div class="text-2xl text-white h-screen flex justify-center items-center ">
             <div class="h-[35%] w-2 rounded bg-gray-700">
                 <div class="h-full bg-green-500 rounded" ref="progress"></div>

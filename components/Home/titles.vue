@@ -10,7 +10,10 @@
 import Appellation from "./Appellation.vue"
 
 export default{
-    name: "titles"
+    name: "titles",
+    components:{
+        Appellation
+    }
 }
 
 </script>

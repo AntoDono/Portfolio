@@ -55,7 +55,7 @@ export default {
 .glitch{
     color: white;
     text-shadow: 
-        0.025em 0.05em 0 rgb(255, 215, 0);
+        0.025em 0.05em 0 rgb(60, 106, 190);
 }
 
 </style>

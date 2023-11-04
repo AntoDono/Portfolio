@@ -1,11 +1,12 @@
 <template>
     <div>
         <displayprojects />
-        <ScrollProgress/>
+        <!-- <ScrollProgress/> -->
     </div>
 </template>
 
 <script>
+import displayprojects from '../components/Projects/displayprojects.vue';
 
 export default {
 
@@ -19,6 +20,9 @@ export default {
                 { name: "description", content: "Youwei Zhen - Projects" }
             ]
         }
+    },
+    components:{
+        displayprojects
     }
 }
 

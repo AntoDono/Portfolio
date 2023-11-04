@@ -1,24 +1,26 @@
 <template>
     <div class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden"
         id="about">
-        <div class="flex justify-between items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
+        <div class="flex justify-center items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
             <div class="w-[500px] basis-auto" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">My Journey.</h2>
                 <p class="text-white font-montserrat">
-                    Over the years, I had experience creating websites and programs for businesses, nonprofits or for
-                    fun.
+                    Programming started for me when I coded my first TI-Basic program on the TI-84 Plus Calculator.
                 </p>
                 <p class="text-white font-montserrat pt-4">
-                    I have acquired a lot of knowledge on the different languages and applications of
-                    modern programming and web developing.
-                    A majority of those skills are for web development and competitive programming, but I have also
-                    dabbled in the fields of machine learning and artificial intelligence.
+                    Since then, I have explored the diverse field of Computer Science. From Machine Learning & Artificial Intelligence
+                    to Web Development, I learned and utilized this skills to create end-to-end-user applications.
                 </p>
                 <p class="text-white font-montserrat pt-4">
-                    Here is a list of all the languages and applications that I currently know:
+                    Taking interest in algorithms, I occasionally participate in competitive programming such as
+                    <nuxt-link to="http://usaco.org" class="underline decoration-dotted" target="_blank">USACO</nuxt-link> and 
+                    <nuxt-link to="https://leetcode.com/" class="underline decoration-dotted" target="_blank">Leetcode.</nuxt-link>
                 </p>
-                <div class="flex justify-around w-full">
-                    <ul class="text-white font-montserrat list-disc columns-2 gap-x-24 pt-10">
+                <p class="text-white font-montserrat pt-4">
+                    Some of the languages and libraries I am familiar with are:
+                </p>
+                <div class="flex justify-center w-full">
+                    <ul class="text-white font-montserrat list-disc columns-3 pt-10">
                         <li>Python</li>
                         <li>Java</li>
                         <li>Javascript</li>
@@ -35,10 +37,10 @@
                         <li>Nginx</li>
                         <li>Typescript</li>
                         <li>Graphql</li>
-                        <li>Ubuntu</li>
-                        <li>Linux</li>
+                        <li>Linux/ubuntu</li>
                         <li>Git/Github</li>
                         <li>Docker</li>
+                        <li>Machine Learning</li>
                     </ul>
                 </div>
             </div>
@@ -57,7 +59,7 @@
     justify-content: space-between;
 }
 
-@media (max-width:800px) {
+@media (max-width:900px) {
     .mobile {
         flex-direction: column;
         justify-content: center;

@@ -1,9 +1,9 @@
 <template>
     <div class="flex justify-center items-center">
-        <h2 class="glitch overflow-y-hidden overflow-x-hidden" :style="{fontSize: size}">
-            <span aria-hidden="true">{{ text }}</span>
+        <h2 class="glitch overflow-y-hidden overflow-x-hidden text-center" :style="{fontSize: size}">
+            <span class="text-center" aria-hidden="true">{{ text }}</span>
             {{ text }}
-            <span aria-hidden="true">{{ text }}</span>
+            <span class="text-center" aria-hidden="true">{{ text }}</span>
         </h2>
     </div>
 </template>
