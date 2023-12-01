@@ -10,36 +10,52 @@
 </template>
 
 
-<script>
+<script setup>
 
-export default{
-    mounted(){
-        document.getElementsByTagName("html")[0].style.overflow = "hidden"
+import { gsap } from "gsap"
 
-        let t1 = this.$gsap.timeline()
+const props = defineProps({
+    percent: {
+        default: 0,
+        type: Number
+    }
+})
+const full = ref(null)
+const load = ref(null)
+const outer = ref(null)
+const timeline = gsap.timeline()
 
-        t1.to(
-            this.$refs['load'],
-            {
-                ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})",
-                width: this.$refs['full'].offsetWidth,
-                duration: 1,
-            },
-        )
+watch( ()=> props.percent, (nv, ov)=>{
 
-        t1.to(
-            this.$refs['outer'],
+    timeline.to(
+        
+        load.value,
+        {
+            ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})",
+            width: nv * full.value.offsetWidth,
+            duration: 1,
+        },
+    )
+
+    if (nv == 1){
+
+        timeline.to(
+            outer.value,
             {
                 autoAlpha: 0,
                 duration: 0.5,
                 ease: "power1.out",
-                onComplete: ()=>{
+                onComplete: () => {
                     document.getElementsByTagName("html")[0].style.overflow = "auto"
                 }
             },
         )
     }
-}
+})
+
+onMounted(async() => {
+    document.getElementsByTagName("html")[0].style.overflow = "hidden"
+})
 
 </script>
 
@@ -122,5 +138,4 @@ export default{
             -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
     }
 }
-
 </style>

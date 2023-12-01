@@ -30,6 +30,9 @@ import * as THREE from 'three';
 
 const canvas = ref(null)
 const canvas_parent = ref(null)
+const emits = defineEmits([
+    'percentage'
+])
 const size = {
     width: null,
     height: null
@@ -44,6 +47,7 @@ const t2 = ref(false)
 const t3 = ref(false)
 const ArrowRef = ref(null)
 const sensitivity = 0.001
+const total_nodes = 500
 
 const render_loop = (time) => {
 
@@ -51,17 +55,13 @@ const render_loop = (time) => {
     particleSphere.rotation.y = time / 5000;
     // camera.position.z += Math.sin(0.0025 * time) / 5
     renderer.render(scene, camera);
-
-    if (!rendererReady.value) {
-        rendererReady.value = true
-    }
 }
 
 watch(rendererReady, async(new_value, old_value)=>{
     if (new_value) {
         
         for (let i = 0; i < 5; i ++) talk_effect()
-        await sleep(700)
+        await sleep(1000)
         name.value = true
         await sleep(600)
         t1.value = true
@@ -131,7 +131,7 @@ const init = () => {
 
     THREE.MathUtils.seededRandom(0.19144689152017236)
     
-    for (let i = 0; i < 500; i ++){
+    for (let i = 1; i <= total_nodes; i ++){
         
         let vertex = new THREE.Vector3()
         
@@ -159,6 +159,8 @@ const init = () => {
                 lineVertices.push(v.z)
             }
         }
+
+        emits("percentage", { percent: i/total_nodes })
     }
 
     unpacked_vertices = new Float32Array(unpacked_vertices)
@@ -202,7 +204,11 @@ const init = () => {
         camera.position.y = y
     })
 
+
+    rendererReady.value = true
 }
-onMounted(init)
+onMounted(()=>{
+    init()
+})
 
 </script>
