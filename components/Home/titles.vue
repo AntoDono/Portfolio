@@ -6,14 +6,6 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import Appellation from "./Appellation.vue"
-
-export default{
-    name: "titles",
-    components:{
-        Appellation
-    }
-}
-
 </script>

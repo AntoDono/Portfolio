@@ -1,13 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    ssr: true,
+    ssr: false,
     // target: 'static',
     css: ['~/assets/css/tailwind.css', '~/assets/css/font.css', '~/assets/css/global.css'],
     // plugins: ['~/plugins/gsap.js'],
     // Global page headers: https://go.nuxtjs.dev/config-head
     app:{
         head: {
-          title: 'Youwei Zhen',
+          title: 'Youwei Zhen Portfolio Site',
           htmlAttrs: {
             lang: 'en'
           },

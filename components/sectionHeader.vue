@@ -1,52 +1,61 @@
 <template>
     <div class="overflow-y-hidden" ref="container">
         <h2 class="text-[7vmin] glitch font-uni overflow-y-hidden" ref="appear">
-            {{text}}
+            {{ text }}
         </h2>
     </div>
 </template>
 
-<script>
+<script setup>
 
-export default {
-    name: "sectionHeader",
-    props: {
-        text: {
-            type: String,
-            default: "Section Text"
-        },
-        direction: {
-            type: String,
-            default: 'N'
-        }
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import gsap from "gsap"
+
+gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollToPlugin)
+
+const appear = ref(null)
+const container = ref(null)
+
+const props = defineProps({
+    text: {
+        type: String,
+        default: "Section Text"
     },
-    mounted(){
-
-        this.$gsap.set(
-            this.$refs['appear'],
-            {
-                x: this.direction == 'W' ? this.$refs['appear'].offsetWidth : this.direction == 'E' ? -this.$refs['appear'].offsetWidth : 0,
-                y: this.direction == 'N'? this.$refs['appear'].offsetHeight : this.direction == 'S'? -this.$refs['appear'].offsetHeight : 0
-            }
-        )
-
-        this.$gsap.to(
-            this.$refs['appear'], 
-            { 
-                scrollTrigger: {
-                    trigger: this.$refs['container'],
-                    markers: false,
-                    start: "top center",
-                    end: "bottom center",
-                    toggleActions: "play none none none",
-                },
-                y: 0,
-                x: 0,
-                ease: "power1.inOut"
-            }
-        )
+    direction: {
+        type: String,
+        default: 'N'
     }
-}
+})
+
+onMounted(()=>{
+
+    gsap.set(
+        appear.value,
+        {
+            x: props.direction == 'W' ? appear.value.offsetWidth : props.direction == 'E' ? -appear.value.offsetWidth : 0,
+            y: props.direction == 'N' ? appear.value.offsetHeight : props.direction == 'S' ? -appear.value.offsetHeight : 0
+        }
+    )
+
+    gsap.to(
+        appear.value,
+        {
+            scrollTrigger: {
+                trigger: container.value,
+                markers: false,
+                start: "top center",
+                end: "bottom center",
+                toggleActions: "play none none none",
+            },
+            y: 0,
+            x: 0,
+            ease: "power1.inOut"
+        }
+    )
+})
+
 
 </script>
 
@@ -72,18 +81,18 @@ export default {
 } */
 
 .glitch:after {
-  content: '';
-  display: inline-block;
-  vertical-align:middle;
-  width:50px;
-  height:5px;
-  margin-left: 2%;
-  border-top:1px solid #fff;
-  /* border-bottom:1px solid #fff; */
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 5px;
+    margin-left: 2%;
+    border-top: 1px solid #fff;
+    /* border-bottom:1px solid #fff; */
 }
 
 .glitch:after {
-  width:100%;
-  margin-right: -100%;
+    width: 100%;
+    margin-right: -100%;
 }
 </style>

@@ -29,14 +29,7 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import ProjectLeft from "./project-left.vue"
 import ProjectRight from "./project-right.vue";
-export default {
-    name: "displayprojects",
-    components:{
-        ProjectLeft,
-        ProjectRight
-    }
-}
 </script>

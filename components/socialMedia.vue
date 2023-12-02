@@ -26,7 +26,6 @@ export default {
             default: "/"
         }
     },
-    name: "socialMedia"
 }
 
 </script>

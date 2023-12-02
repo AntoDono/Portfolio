@@ -1,8 +1,8 @@
 <template>
   <div>
-    <!-- <navbar/> -->
+    <navbar/>
     <leftbar />
-    <NuxtPage />
+    <slot/>
     <pageselect :route="$route.path"/>
     <footer_info/>
   </div>

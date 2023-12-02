@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <div class="w-full h-screen bg-primary flex flex-col justify-center items-center">
+    <div class="w-full h-[90vh] bg-primary flex flex-col justify-center items-center">
       <h1 class="text-white font-bogart text-[5vmin]">Oops, page is not found!</h1>
       <navigatebutton text="Go Back" />
     </div>

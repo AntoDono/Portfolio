@@ -4,17 +4,22 @@
             <glitch class="highlight" text="Y" size="3em"/>
         </div>
         <div class="bg-primary flex flex-row justify-start items-center gap-x-10 p-3 z-40" ref="menu-options">
-            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">About</nuxt-link>
-            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Interests</nuxt-link>
-            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Timeline</nuxt-link>
+            <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Home</nuxt-link>
+            <nuxt-link to="/#about" class="text-white text-[0.8em] font-uni">About</nuxt-link>
+            <nuxt-link to="/#experience" class="text-white text-[0.8em] font-uni">Experience</nuxt-link>
             <nuxt-link to="projects" class="text-white text-[0.8em] font-uni">Projects</nuxt-link>
-            <nuxt-link to="projects" class="text-white text-[0.8em] font-uni">Resume</nuxt-link>
             <a href="mailto:youweizhen540@gmail.com" class="text-white text-[0.8em] font-uni">Contact</a>
         </div>
     </div>
 </template>
 
 <script>
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import gsap from "gsap"
+
+gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollToPlugin)
 
 export default {
     name: "navbar",
@@ -26,7 +31,7 @@ export default {
         }
     },
     mounted(){
-        this.$gsap.set(
+        gsap.set(
             this.$refs['menu-options'],
             {
                 x: - 1.5 * this.$refs['menu-options'].offsetWidth
@@ -35,6 +40,7 @@ export default {
         this.prevScrollpos = window.pageYOffset;
         this.currentScrollPos = window.pageYOffset;
         window.onscroll = this.scroll
+        this.activate()
     },
     methods: {
         scroll(){
@@ -48,7 +54,7 @@ export default {
         },
         activate(){
             this.active = !this.active
-            let t1 = this.$gsap.timeline()
+            let t1 = gsap.timeline()
             t1.to(
                 this.$refs['menu-button'],
                 {

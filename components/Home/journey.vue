@@ -1,7 +1,6 @@
 <template>
-    <div class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden"
-        id="about">
-        <div class="flex justify-center items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
+    <div class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden">
+        <div class="flex justify-center items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10" ref="description">
             <div class="w-[500px] basis-auto" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">My Journey.</h2>
                 <p class="text-white font-montserrat">
@@ -48,10 +47,42 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name: "journey",
-    }
+<script setup>
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import gsap from "gsap"
+
+gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollToPlugin)
+
+const description = ref(null)
+
+onMounted(() => {
+
+    gsap.set(
+        description.value,
+        {
+            autoAlpha: 0,
+            x: -description.value.offsetWidth/2
+        }
+    )
+
+    gsap.to(
+        description.value,
+        {
+            scrollTrigger: {
+                trigger: description.value,
+                markers: false,
+                start: "top center",
+                end: "bottom center",
+                toggleActions: "play none none none",
+            },
+            autoAlpha: 1,
+            x: 0,
+            ease: "power1.inOut",
+        }
+    )
+})
 </script>
 
 <style scoped>

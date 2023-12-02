@@ -81,7 +81,7 @@ watch(rendererReady, async(new_value, old_value)=>{
 })
 
 const scroll = ()=> {
-    gsap.to(window, { duration: 1.2, ease: "power1.inOut", scrollTo: "#titles"})
+    gsap.to(window, { duration: 0.15, ease: "power1.inOut", scrollTo: "#titles"})
 }
 
 const sleep = (milliseconds) => {
