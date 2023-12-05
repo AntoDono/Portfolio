@@ -2,6 +2,8 @@
   <div>
     <loading :percent="percent"/>
     <Landing @percentage="handlePercent"/>
+    <Titles class="pt-48 pb-48" />
+    <Featured/>
     <About />
     <Experience />
   </div>
