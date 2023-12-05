@@ -5,7 +5,7 @@
             <div ref="container">
                 <div class="flex feature-block flex-wrap justify-center items-center pt-10 gap-x-8 gap-y-8 translate-y-[100%] opacity-0" ref="appear">
                     <FeaturedCard 
-                        title="National Leadership Maga zine" 
+                        title="NASSP Leadership Magazine" 
                         date="December 2023" 
                         imageSrc="/featured/nassp.jpg"
                         description="As a senior, Zhen created Project SammyGPT, an AI service tailored to Staten Island Tech. Project SammyGPT contains an AI Generated Detection tool, and an AI Chatbot that could converse with parents in their native language and offer school information, complete with reference links from the school website. It's a significant step forward in integrating AI into the educational process."
