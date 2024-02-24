@@ -18,7 +18,7 @@
                 </p>
                 <p class="text-white font-montserrat pt-4">
                     As of lately, I am currently developing and studying machine learning and Artificial Intelligence.
-                    I am also in the Gold Divison (Silver Medal) of
+                    I am also in the Platinum Divison (Gold Medal) of
                     <nuxt-link to="http://usaco.org" class="underline decoration-dotted" target="_blank">USACO</nuxt-link>
                 </p>
                 <p class="text-white font-montserrat pt-4">
