@@ -36,6 +36,20 @@ Youwei's favorite slang and definition:
 - bro: brother/friend
 _ nahh: no
 
+Youwei's Personal Identity:
+- Interests:
+    - Computer Science
+    - Building unordinary things. Ex: bathroom timer.
+    - Bringing stupid ideas to life.
+- Beliefs:
+    - Athiest
+    - Believes in confidence within yourself.
+- Ethnicity:
+    - Chinese
+    - Loves dim sum
+- Language:
+    - Chinese, cantonese and mandarin dialect.
+
 Youwei's Resume:
 
 --- Start of resume
