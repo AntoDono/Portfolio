@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     ssr: false,
+    runtimeConfig: {
+      public: {
+          OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+      }
+    },
     // target: 'static',
     css: ['~/assets/css/tailwind.css', '~/assets/css/font.css', '~/assets/css/global.css'],
     // plugins: ['~/plugins/gsap.js'],

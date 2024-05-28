@@ -1,13 +1,21 @@
 <template>
-    <div class="fixed z-50 flex flex-row w-full bg-primary ease-in-out duration-300 menu-container" ref="menu-container">
-        <div class="bg-primary rounded-full w-[5em] h-[5em] flex justify-center items-center relative menu-button z-50" ref="menu-button" @click="activate">
+    <div class="fixed z-50 flex flex-row w-full bg-transparent ease-in-out duration-300 menu-container" ref="menu-container">
+        <div class="bg-transparent rounded-full w-[5em] h-[5em] flex justify-center items-center relative menu-button z-[70]" ref="menu-button" @click="activate">
             <glitch class="highlight" text="Y" size="2.5em"/>
         </div>
-        <div class="bg-primary flex flex-row justify-start items-center gap-x-10 p-3 z-40" ref="menu-options">
+        <div class="mobile-detect bg-primary w-full flex flex-row justify-start items-center gap-x-10 p-3 z-40" ref="menu-options">
             <nuxt-link to="/" class="text-white text-[0.8em] font-uni">Home</nuxt-link>
             <nuxt-link to="/#about" class="text-white text-[0.8em] font-uni">About</nuxt-link>
             <nuxt-link to="projects" class="text-white text-[0.8em] font-uni">Projects</nuxt-link>
             <a href="mailto:youweizhen540@gmail.com" class="text-white text-[0.8em] font-uni">Contact</a>
+            <nuxt-link to="chat" class="text-white text-[0.8em] font-uni">Live Chat</nuxt-link>
+        </div>
+        <div class="bg-primary flex flex-col justify-center items-center gap-x-10 gap-y-10 p-3 z-[60] fixed w-full h-screen translate-x-[-100%]" ref="mobile-menu">
+            <nuxt-link to="/" class="text-white text-[1.5em] font-uni">Home</nuxt-link>
+            <nuxt-link to="/#about" class="text-white text-[1.5em] font-uni">About</nuxt-link>
+            <nuxt-link to="projects" class="text-white text-[1.5em] font-uni">Projects</nuxt-link>
+            <a href="mailto:youweizhen540@gmail.com" class="text-white text-[1.5em] font-uni">Contact</a>
+            <nuxt-link to="chat" class="text-white text-[1.5em] font-uni">Live Chat</nuxt-link>
         </div>
     </div>
 </template>
@@ -26,7 +34,8 @@ export default {
         return {
             prevScrollpos: 0,
             currentScrollPos: 0,
-            active: false
+            active: false,
+            mobile: false,
         }
     },
     mounted(){
@@ -39,7 +48,8 @@ export default {
         this.prevScrollpos = window.pageYOffset;
         this.currentScrollPos = window.pageYOffset;
         window.onscroll = this.scroll
-        this.activate()
+        if (window.innerWidth <= 800) this.mobile = true
+        if (!this.mobile) this.activate()
     },
     methods: {
         scroll(){
@@ -51,8 +61,12 @@ export default {
             }
             this.prevScrollpos = this.currentScrollPos;
         },
+        preventScroll(event) {
+            window.scrollTo(0, 0)
+        },
         activate(){
             this.active = !this.active
+
             let t1 = gsap.timeline()
             t1.to(
                 this.$refs['menu-button'],
@@ -62,6 +76,21 @@ export default {
                     ease: "power1.out"
                 }
             )
+
+            if (this.mobile){
+                t1.to(this.$refs['mobile-menu'], {
+                    x: !this.active * - this.$refs['mobile-menu'].offsetWidth,
+                    duration: 1
+                })
+
+                if (this.active){ // disable scroll
+                    window.addEventListener('scroll', this.preventScroll, { passive: false });
+                }else{
+                    window.removeEventListener('scroll', this.preventScroll);
+                }
+
+                return
+            }
 
             t1.to(
                 this.$refs['menu-options'],
@@ -184,6 +213,16 @@ export default {
   100%{
     transform: scale(150%);
   }
+}
+
+.mobile-detect{
+    display: flex;
+}
+
+@media  (max-width: 800px) {
+    .mobile-detect{
+        display: none;
+    }
 }
 
 </style>

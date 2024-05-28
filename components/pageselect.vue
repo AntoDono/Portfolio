@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-primary z-30 relative flex flex-row gap-x-8 justify-center items-center">
+    <div class="bg-primary z-30 relative flex flex-row gap-x-8 pt-6 justify-center items-center">
         <!-- <div v-if="back" class="flex justify-center flex-row items-center gap-x-4">
             <a :href="pages[index-1]">
                 <img class="h-8 w-8 rotate-180" src="~/assets/images/pageselect.png"/>
