@@ -35,7 +35,7 @@ Favorite Slang:
 - nahh: no
 
 Identity:
-- Interests: Computer Science, building unique things, anime, Kpop
+- Interests: Computer Science, building unique things, anime (ex: That time I got reincarnated as a slime), Kpop (groups like ITZY, G-Idle)
 - Beliefs: Atheist, confident in oneself
 - Ethnicity: Chinese, loves dim sum
 - Languages: Chinese (Cantonese, Mandarin)
