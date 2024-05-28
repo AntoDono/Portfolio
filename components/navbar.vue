@@ -8,14 +8,14 @@
             <nuxt-link to="/#about" class="text-white text-[0.8em] font-uni">About</nuxt-link>
             <nuxt-link to="projects" class="text-white text-[0.8em] font-uni">Projects</nuxt-link>
             <a href="mailto:youweizhen540@gmail.com" class="text-white text-[0.8em] font-uni">Contact</a>
-            <nuxt-link to="chat" class="text-white text-[0.8em] font-uni">Live Chat</nuxt-link>
+            <nuxt-link to="/chat" class="text-white text-[0.8em] font-uni">Live Chat</nuxt-link>
         </div>
         <div class="bg-primary flex flex-col justify-center items-center gap-x-10 gap-y-10 p-3 z-[60] fixed w-full h-screen translate-x-[-100%]" ref="mobile-menu">
             <nuxt-link to="/" class="text-white text-[1.5em] font-uni">Home</nuxt-link>
             <nuxt-link to="/#about" class="text-white text-[1.5em] font-uni">About</nuxt-link>
             <nuxt-link to="projects" class="text-white text-[1.5em] font-uni">Projects</nuxt-link>
             <a href="mailto:youweizhen540@gmail.com" class="text-white text-[1.5em] font-uni">Contact</a>
-            <nuxt-link to="chat" class="text-white text-[1.5em] font-uni">Live Chat</nuxt-link>
+            <nuxt-link to="/chat" class="text-white text-[1.5em] font-uni">Live Chat</nuxt-link>
         </div>
     </div>
 </template>
