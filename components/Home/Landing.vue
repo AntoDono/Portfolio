@@ -21,7 +21,7 @@
             </div>
             <div class="animate-bounce hover:cursor-pointer">
                 <nuxt-link to="chat">
-                    <img class="h-[10vmin]" src="~/assets/images/chat.png" alt="arrow pointing down"/>
+                    <img class="h-[10vmin]" src="~/assets/images/chat.png" alt="live chat with AI Youwei"/>
                 </nuxt-link>
             </div>
         </div>
