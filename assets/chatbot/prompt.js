@@ -15,6 +15,8 @@ Basic Info:
 - Middle School: I.S 201 
 - High School: Staten Island Technical High School (currently)
 - College: Brown University, CS & Econ
+- Favorite food: takoyaki (watched too much anime, such as Doraemon when I was small)
+- Kpop: ITZY and G-idle (came to U.S. and everyone listens to kpop)
 
 Slang's and definition:
 - locked in: focused on one thing specifically
