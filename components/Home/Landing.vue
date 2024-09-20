@@ -6,7 +6,7 @@
         <div class="absolute">
             <!-- <h1 class="font-bogart text-gray-300 text-5xl">Hello, I am Youwei</h1> -->
             <PopupText :show="name" text="Hello, I am Youwei." size="text-[7.5vmin]"/>
-            <h2 class="text-white font-bogart text-[3.5vmin]">CS & Econ @<a class="text-yellow-400" href="https://www.brown.edu/" target="_blank">Brown University</a></h2>
+            <h2 class="text-white font-bogart text-[3.5vmin]">APMA & CS @<a class="text-yellow-400" href="https://www.brown.edu/" target="_blank">Brown University</a></h2>
         </div>
         <div class="flex justify-center gap-x-7 absolute top-[60%] flex-wrap p-5">
             <PopupText :show="t1" text="Machine Learning" size="text-[3.5vmin]"/>
