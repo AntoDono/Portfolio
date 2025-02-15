@@ -41,7 +41,7 @@ export default defineNuxtPlugin(nuxtApp => {
 
     var stream = await openai.chat.completions.create({
       messages: history,
-      model: "gpt-4o",
+      model: "gpt-4o-mini",
       temperature: 1,
       frequency_penalty: 0,
       presence_penalty: 0.5,
