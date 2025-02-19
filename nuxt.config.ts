@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     ssr: false,
     runtimeConfig: {
       public: {
-          OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+          LLM_API_KEY: process.env.LLM_API_KEY,
       }
     },
     // target: 'static',
