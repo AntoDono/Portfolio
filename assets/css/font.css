@@ -15,3 +15,9 @@
     font-display: swap;
     src: url(../font/Unisans/UniSansDemo-HeavyCAPS.woff2);
 }
+
+@font-face {
+    font-family: bbhs;
+    font-display: swap;
+    src: url(../font/BBHS/BBHSansHegarty-Regular.ttf);
+}

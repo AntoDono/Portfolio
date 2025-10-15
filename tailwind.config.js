@@ -25,7 +25,8 @@ module.exports = {
           "orbitron": ['Orbitron'],
           "orbitronbold": ['OrbitronBold'],
           "phantom": ['Phantom'],
-          "uni": ['UniSans']
+          "uni": ['UniSans'],
+          "bbhs": ['bbhs']
         },
         colors: {
           darkmode: {

@@ -1,9 +1,7 @@
 <template>
     <div class="fixed w-screen h-screen z-50 bg-primary flex flex-col justify-center items-center" ref="outer">
-        <h2 aria-hidden="true" class="font-uni text-[10vmin] text-white glitch">
-            Y
-        </h2>
-        <div class="w-[200px] h-1 bg-gray-300" ref="full">
+        <scrambledtext class="text-3xl" text="YOUWEI ZHEN" :delay="0" mode="percentage" :percentage="percent * 100" />
+        <div class="w-[300px] h-1 bg-gray-300" ref="full">
             <div class="h-full w-0 bg-accent1" ref="load"></div>
         </div>
     </div>
@@ -20,6 +18,9 @@ const props = defineProps({
         type: Number
     }
 })
+
+const emits = defineEmits(['loadingComplete'])
+
 const full = ref(null)
 const load = ref(null)
 const outer = ref(null)
@@ -47,6 +48,7 @@ watch( ()=> props.percent, (nv, ov)=>{
                 ease: "power1.out",
                 onComplete: () => {
                     document.getElementsByTagName("html")[0].style.overflow = "auto"
+                    emits('loadingComplete')
                 }
             },
         )
