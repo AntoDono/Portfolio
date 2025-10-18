@@ -1,20 +1,23 @@
 <template>
     <div class="relative flex flex-col justify-center items-center w-screen h-screen">
         <!-- 3D Background -->
-        <ParticleSphere class="absolute inset-0 z-0" ref="particleSphereRef" @percentage="handlePercentage" @ready="handleReady" />
+        <ParticleSphere class="absolute inset-0 z-0" ref="particleSphereRef" @percentage="handlePercentage" />
         
         <!-- Content Layer -->
-        <div class="absolute z-10">
-            <scrambledtext text="Hello, I am Youwei" class="font-bogart text-white text-4xl md:text-6xl" mode="wait-for-animation" :animate="isDoneLoading" :delay="0"/>
-            <h2 class="text-white font-bogart text-[3.5vmin] text-center">APMA & CS
-                <span class="relative bottom-1">@</span>
-                <a class="text-yellow-400" href="https://www.brown.edu/" target="_blank">Brown University</a>
-            </h2>
+        <div class="absolute z-10 flex flex-col w-full">
+            <div class="w-full flex justify-center">
+                <scrambledtext text="Hello, I am Youwei" class="font-bbhs text-white text-4xl md:text-6xl" mode="wait-for-animation" :animate="isDoneLoading" :delay="0"/>
+            </div>
+            <div class="w-full flex justify-center">
+                <scrambledtext text="APMA & CS" class="font-bogart text-[3.5vmin] text-center" mode="wait-for-animation" :animate="isDoneLoading" :delay="500"/>
+                <span class="relative bottom-1 text-yellow-400 text-[3.5vmin] font-bogart pl-2 pr-2">@</span>
+                <scrambledtext text="Brown University" class="font-bogart text-yellow-400 text-[3.5vmin] text-center" mode="wait-for-animation" :animate="isDoneLoading" :delay="1000" @animation-complete="handleReady" />
+            </div>
         </div>
         <div class="flex justify-center gap-x-7 absolute top-[60%] flex-wrap p-5 z-10">
-            <PopupText :show="t1" text="Machine Learning" size="text-[3.5vmin]"/>
-            <PopupText :show="t2" text="Artificial Intelligence" size="text-[3.5vmin]"/>
-            <PopupText :show="t3" text="Programmer" size="text-[3.5vmin]"/>
+            <PopupText :show="t1" text="AI-Maxxing" size="font-bogart text-[3.5vmin]"/>
+            <PopupText :show="t2" text="Creating" size="font-bogart text-[3.5vmin]"/>
+            <PopupText :show="t3" text="Side Questing" size="font-bogart text-[3.5vmin]"/>
         </div>
         <div class="absolute w-full bottom-[10%] flex justify-center opacity-0 z-10" ref="ArrowRef">
             <div class="animate-bounce hover:cursor-pointer">
@@ -52,8 +55,6 @@ const handlePercentage = (data) => {
 
 const handleReady = async () => {
     // The ParticleSphere now handles its own talk effects
-    await sleep(1000)
-    await sleep(600)
     t1.value = true
     await sleep(600)
     t2.value = true

@@ -1,9 +1,9 @@
 <template>
-    <div class="fixed w-screen h-screen z-50 bg-primary flex flex-col justify-center items-center" ref="outer">
-        <scrambledtext class="text-3xl" text="YOUWEI ZHEN" :delay="0" mode="percentage" :percentage="percent * 100" />
-        <div class="w-[300px] h-1 bg-gray-300" ref="full">
+    <div class="fixed w-screen h-screen pt-24 pb-24 z-50 bg-primary flex flex-col justify-center items-center" ref="outer">
+        <loadingText class="text-3xl" text="YOUWEI ZHEN" :percentage="percentRef * 100" />
+        <!-- <div class="w-[300px] h-1 bg-gray-300" ref="full">
             <div class="h-full w-0 bg-accent1" ref="load"></div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -21,30 +21,44 @@ const props = defineProps({
 
 const emits = defineEmits(['loadingComplete'])
 
-const full = ref(null)
-const load = ref(null)
+// const full = ref(null)
+// const load = ref(null)
 const outer = ref(null)
 const timeline = gsap.timeline()
+const time = Date.now()
+const percentRef = ref(0)
 
-watch( ()=> props.percent, (nv, ov)=>{
+const sleep = async(ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-    timeline.to(
+watch( ()=> props.percent, async(nv, ov)=>{
+
+    // timeline.to(
         
-        load.value,
-        {
-            ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})",
-            width: nv * full.value.offsetWidth,
-            duration: 1,
-        },
-    )
+    //     load.value,
+    //     {
+    //         ease: "rough({ template: none.out, strength: 1, points: 20, taper: none, randomize: true, clamp: false})",
+    //         width: nv * full.value.offsetWidth,
+    //         duration: 1,
+    //     },
+    // )
 
-    if (nv == 1){
+    if (nv == 1){ // completed loading
+
+        if (Date.now() - time < 1000) {
+            for (let i = 0; i <= 100; i++) {
+                await sleep(10)
+                percentRef.value = i / 100
+            }
+            await sleep(500)
+        }
 
         timeline.to(
             outer.value,
             {
                 autoAlpha: 0,
-                duration: 0.5,
+                duration: 1,
                 ease: "power1.out",
                 onComplete: () => {
                     document.getElementsByTagName("html")[0].style.overflow = "auto"
@@ -52,6 +66,10 @@ watch( ()=> props.percent, (nv, ov)=>{
                 }
             },
         )
+    } else {
+        if (Date.now() - time > 300) { // only update if percent update is not too fast
+            percentRef.value = nv
+        }
     }
 })
 
@@ -60,84 +78,3 @@ onMounted(async() => {
 })
 
 </script>
-
-<style scoped>
-.glitch {
-    font-weight: 700;
-    text-transform: uppercase;
-    position: relative;
-    color: white;
-
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-        -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-
-    animation: glitch 1000ms infinite;
-}
-
-.glitch span {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.glitch span:first-child {
-    animation: glitch 750ms infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-    transform: translate(-0.025em, -0.0125em);
-    /* color: green; */
-    opacity: 0.8;
-}
-
-.glitch span:last-child {
-    animation: glitch 675ms infinite;
-    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
-    transform: translate(0.0125em, 0.025em);
-    /* color: red; */
-    opacity: 0.8;
-}
-
-/* https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites */
-
-@keyframes glitch {
-    0% {
-        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-            -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
-            -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-    }
-
-    14% {
-        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-            -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
-            -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-    }
-
-    15% {
-        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
-            0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
-            -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
-    }
-
-    49% {
-        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
-            0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
-            -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
-    }
-
-    50% {
-        text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-            0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
-    }
-
-    99% {
-        text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-            0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
-    }
-
-    100% {
-        text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
-            -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
-            -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
-    }
-}
-</style>

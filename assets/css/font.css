@@ -7,7 +7,7 @@
 @font-face {
     font-family: Bogart;
     font-display: swap;
-    src: url(../font/Bogart/Bogart-Regular-trial.woff2)
+    src: url(../font/Bogart/Bogart-Regular-trial.woff2);
 }
 
 @font-face {
@@ -20,4 +20,10 @@
     font-family: bbhs;
     font-display: swap;
     src: url(../font/BBHS/BBHSansHegarty-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-display: swap;
+    src: url(../font/Montserrat/Montserrat-VariableFont_wght.ttf);
 }

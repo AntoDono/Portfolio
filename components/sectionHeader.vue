@@ -1,6 +1,6 @@
 <template>
     <div class="overflow-y-hidden" ref="container">
-        <h2 class="text-[7vmin] glitch font-uni overflow-y-hidden" ref="appear">
+        <h2 class="text-[7vmin] text-header-accent font-uni overflow-y-hidden" ref="appear">
             {{ text }}
         </h2>
     </div>
@@ -61,15 +61,13 @@ onMounted(()=>{
 
 
 <style scoped>
-.glitch {
+.text-header-accent {
     text-transform: uppercase;
     position: relative;
-    color: white;
-    text-shadow: 0.15em 0em 0 rgba(0, 187, 255, 0.958);
     overflow: hidden;
 }
 
-/* .glitch:after {
+/* .text-header-accent:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -80,7 +78,7 @@ onMounted(()=>{
   border-top: 1px solid white;
 } */
 
-.glitch:after {
+.text-header-accent:after {
     content: '';
     display: inline-block;
     vertical-align: middle;
@@ -91,7 +89,7 @@ onMounted(()=>{
     /* border-bottom:1px solid #fff; */
 }
 
-.glitch:after {
+.text-header-accent:after {
     width: 100%;
     margin-right: -100%;
 }

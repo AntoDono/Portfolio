@@ -275,7 +275,7 @@ const init = () => {
 
     camera = new THREE.PerspectiveCamera(70, size.width / size.height, 0.01, 10);
     camera.far = 1000
-    camera.position.z = 70;
+    camera.position.z = 25;
     camera.updateProjectionMatrix()
 
     scene = new THREE.Scene();

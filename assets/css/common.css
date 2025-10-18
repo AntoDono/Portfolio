@@ -1,0 +1,86 @@
+/* Text Highlight Effect - Blue Offset */
+.text-highlight {
+    color: white;
+    text-shadow: 
+        0.05em 0.1em 0 rgb(60, 106, 190);
+}
+
+/* Text Highlight - Cyan Offset */
+.text-highlight-cyan {
+    color: white;
+    text-shadow: 
+        0.05em 0.1em 0 rgb(0, 187, 255);
+}
+
+/* Text Highlight - Purple Offset */
+.text-highlight-purple {
+    color: white;
+    text-shadow: 
+        0.05em 0.1em 0 rgb(138, 43, 226);
+}
+
+/* Text Highlight - Orange Offset */
+.text-highlight-orange {
+    color: white;
+    text-shadow: 
+        0.05em 0.1em 0 rgb(255, 140, 0);
+}
+
+/* Text Highlight - Teal Offset */
+.text-highlight-teal {
+    color: white;
+    text-shadow: 
+        0.05em 0.1em 0 rgb(0, 206, 201);
+}
+
+/* Text Highlight for Navbar - Subtle Glow */
+.text-highlight-glow {
+    color: white;
+    text-shadow: 
+        0 0 0.3em rgba(255, 255, 255, 0.5),
+        0.02em 0.02em 0 rgba(255, 255, 255, 0.2);
+    animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+/* Section Headers with Cyan Accent */
+.text-header-accent {
+    color: white;
+    text-shadow: 
+        0.05em 0.1em 0 rgba(0, 187, 255, 0.8);
+}
+
+/* Title Text with Blue Offset Shadow */
+.text-title-accent {
+    color: white;
+    text-shadow: 
+        0.05em 0.1em 0 rgb(60, 106, 190);
+}
+
+/* Subtle Shift Animation */
+@keyframes subtle-shift {
+    0%, 100% {
+        text-shadow: 
+            0.02em 0.02em 0 rgba(255, 255, 255, 0.2),
+            0.04em 0.04em 0 rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        text-shadow: 
+            -0.02em 0.02em 0 rgba(255, 255, 255, 0.2),
+            -0.04em 0.04em 0 rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Subtle Pulse Animation */
+@keyframes subtle-pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 0.3em rgba(255, 255, 255, 0.4),
+            0.02em 0.02em 0 rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        text-shadow: 
+            0 0 0.5em rgba(255, 255, 255, 0.6),
+            0.02em 0.02em 0 rgba(255, 255, 255, 0.3);
+    }
+}
+

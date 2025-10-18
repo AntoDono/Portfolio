@@ -1,11 +1,13 @@
 <template>
-  <span ref="textElement" class="text-white font-bbhs"></span>
+  <span ref="textElement" class="text-white"></span>
 </template>
 
 <script setup>
 import { ref, onMounted, watch, onUnmounted } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+const emits = defineEmits(['animationComplete'])
 
 // Register ScrollTrigger plugin
 if (process.client) {
@@ -85,6 +87,7 @@ const update = () => {
   
   if (complete === queue.length) {
     if (resolve) resolve()
+    emits('animationComplete')
   } else {
     frameRequest = requestAnimationFrame(update)
     frame++
