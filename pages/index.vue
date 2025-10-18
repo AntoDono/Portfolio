@@ -1,12 +1,14 @@
 <template>
   <div>
     <StructuredData />
-    <loading :percent="percent" @loading-complete="handleLoadingComplete"/>
-    <Landing @percentage="handlePercent" :is-done-loading="isDoneLoading"/>
-    <Titles class="pt-48 pb-48" />
-    <Featured/>
-    <About />
-    <Experience />
+    <ClientOnly>
+      <loading :percent="percent" @loading-complete="handleLoadingComplete"/>
+      <Landing @percentage="handlePercent" :is-done-loading="isDoneLoading"/>
+      <Titles class="pt-48 pb-48" />
+      <Featured/>
+      <About />
+      <Experience />
+    </ClientOnly>
   </div>
 </template>
 

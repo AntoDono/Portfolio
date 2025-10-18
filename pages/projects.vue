@@ -1,6 +1,8 @@
 <template>
     <div>
-        <displayprojects />
+        <ClientOnly>
+            <displayprojects />
+        </ClientOnly>
     </div>
 </template>
 

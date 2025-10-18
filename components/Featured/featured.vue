@@ -77,8 +77,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import gsap from "gsap"
 
-gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(ScrollToPlugin)
+if (process.client) {
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollToPlugin)
+}
 
 const appear = ref(null)
 const container = ref(null)
@@ -186,7 +188,7 @@ onMounted(()=>{
     
     .featured-carousel {
         gap: 1.25rem;
-        animation: scroll 7s linear infinite;
+        animation: scroll 10s linear infinite;
     }
 }
 
