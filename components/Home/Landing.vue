@@ -1,7 +1,9 @@
 <template>
     <div class="relative flex flex-col justify-center items-center w-screen h-screen">
         <!-- 3D Background -->
-        <ParticleSphere class="absolute inset-0 z-0" ref="particleSphereRef" @percentage="handlePercentage" />
+        <ClientOnly>
+            <ParticleSphere class="absolute inset-0 z-0" ref="particleSphereRef" @percentage="handlePercentage" />
+        </ClientOnly>
         
         <!-- Content Layer -->
         <div class="absolute z-10 flex flex-col w-full">
@@ -33,7 +35,6 @@
             <Popup :show="t3">
                 <h2 class="text-white font-bogart text-[4vmin] sm:text-[3.5vmin]">Side Questing</h2>
             </Popup>
-            <PopupText :show="t3" text="Side Questing" size="font-bogart text-[4vmin] sm:text-[3.5vmin]"/>
         </div>
         <div class="absolute w-full bottom-[10%] flex justify-center opacity-0 z-10" ref="ArrowRef">
             <div class="animate-bounce hover:cursor-pointer">
