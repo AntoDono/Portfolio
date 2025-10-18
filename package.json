@@ -14,7 +14,6 @@
     "@nuxtjs/tailwindcss": "^6.2.0",
     "gsap": "^3.11.4",
     "matter-js": "^0.18.0",
-    "openai": "^4.47.1",
     "three": "^0.149.0"
   },
   "resolutions": {

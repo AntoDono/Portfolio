@@ -1,11 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    ssr: false,
-    runtimeConfig: {
-      public: {
-          LLM_API_KEY: process.env.LLM_API_KEY,
-      }
-    },
+    ssr: true,
     // target: 'static',
     css: ['~/assets/css/tailwind.css', '~/assets/css/font.css', '~/assets/css/global.css', '~/assets/css/common.css'],
     // plugins: ['~/plugins/gsap.js'],
