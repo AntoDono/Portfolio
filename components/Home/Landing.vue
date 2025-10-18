@@ -14,7 +14,7 @@
                     <span class="relative bottom-1 text-yellow-400 text-[5vmin] sm:text-[3.5vmin] font-fenix pl-2 pr-2">@</span>
                     <scrambledtext text="Brown University" class="font-fenix text-yellow-400 text-[5vmin] sm:text-[3.5vmin] text-center" mode="wait-for-animation" :animate="isDoneLoading" :delay="1000" @animation-complete="handleReady" />
                 </span>
-                <Popup :show="t0">
+                <Popup :show="t0" direction="E">
                     <div class="flex items-center gap-1 whitespace-nowrap">
                         <span class="text-white font-fenix text-[4vmin] sm:text-[3.5vmin]">ML Engineer</span>
                         <span class="text-blue-400 font-fenix text-[4vmin] sm:text-[3.5vmin]">@</span>
