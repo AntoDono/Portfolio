@@ -1,8 +1,8 @@
 <template>
     <div class="overflow-y-hidden" ref="container">
-        <h2 :class="`${size} text-white font-bogart overflow-y-hidden opacity-0`" ref="appear">
-            {{ text }}
-        </h2>
+        <div class="overflow-y-hidden opacity-0" ref="appear">
+            <slot/>
+        </div>
     </div>
 </template>
 
