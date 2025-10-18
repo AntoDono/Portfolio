@@ -11,21 +11,22 @@ module.exports = {
     theme:{
       extend: {
         fontFamily:{
-          'athene': ['Athene'],
-          'voga': ['Voga'],
-          'fenix': ['Fenix'],
-          'aileron': ['Aileron'],
-          'montserrat': ['Montserrat'],
-          'moderne': ['Moderne'],
-          "chelsea": ['Chelsea'],
-          "neovixbold": ['NeovixBold'],
-          "bogart": ['Bogart'],
-          "sf": ['SF'],
-          "avenir": ['Avenir'],
-          "orbitron": ['Orbitron'],
-          "orbitronbold": ['OrbitronBold'],
-          "phantom": ['Phantom'],
-          "uni": ['UniSans']
+          'athene': ['Athene', 'Georgia', 'serif'],
+          'voga': ['Voga', 'Georgia', 'serif'],
+          'fenix': ['Fenix', 'Georgia', 'serif'],
+          'aileron': ['Aileron', 'Arial', 'Helvetica', 'sans-serif'],
+          'montserrat': ['Montserrat', 'Arial', 'Helvetica', 'sans-serif'],
+          'moderne': ['Moderne', 'Arial', 'Helvetica', 'sans-serif'],
+          "chelsea": ['Chelsea', 'Arial', 'Helvetica', 'sans-serif'],
+          "neovixbold": ['NeovixBold', 'Arial Black', 'sans-serif'],
+          "bogart": ['Bogart', 'Montserrat', 'Arial', 'Helvetica', 'sans-serif'],
+          "sf": ['SF', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          "avenir": ['Avenir', 'Arial', 'Helvetica', 'sans-serif'],
+          "orbitron": ['Orbitron', 'Arial', 'sans-serif'],
+          "orbitronbold": ['OrbitronBold', 'Arial Black', 'sans-serif'],
+          "phantom": ['Phantom', 'Arial', 'sans-serif'],
+          "uni": ['UniSans', 'Arial', 'sans-serif'],
+          "bbhs": ['bbhs', 'Arial', 'Helvetica', 'sans-serif']
         },
         colors: {
           darkmode: {

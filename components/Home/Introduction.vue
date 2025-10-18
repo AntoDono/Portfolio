@@ -1,28 +1,20 @@
 <template>
     <div class="h-auto bg-transparent flex justify-center items-start z-20 relative">
         <div class="flex justify-around items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
-            <div class="pic-border pb-10">
-                <img src="~/assets/images/youwei.jpg" class="pic rounded-xl" alt="picture of youwei zhen" />
+            <div class="pic-border pb-10 flex">
+                <img src="~/assets/images/youwei.jpeg" class="pic rounded-xl" alt="picture of youwei zhen" />
             </div>
             <div class="w-[500px] basis-auto pl-4" ref="description">
                 <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen.</h2>
-                <p class="text-white font-montserrat">Aspiring Computer Science and Entrepreneurship student.</p>
-                <p class="text-white font-montserrat pt-4">
-                    Over the years, I have learned many different skills and frameworks in web and software design. With
-                    those skills that I have acquired,
-                    I founded and created several organizations:
-                    <nuxt-link to="https://botsitivity.org" class="underline decoration-dotted" target="_blank">BOTSITIVITY
-                        INC</nuxt-link>
-                    and <nuxt-link to="https://privacysavior.com" class="underline decoration-dotted"
-                        target="_blank">PrivacySavior LLC.</nuxt-link>.
+                <p class="text-white font-montserrat">A builder at heart.</p>
+                <p class="text-white font-montserrat pt-4 text-justify">
+                    Over the years, I've mastered various skills and used them to build projects that have won numerous hackathons and competitions. From robots that carry your laundry using computer vision, to AI-powered music therapy systems with real-time EEG monitoring for mental health conditions like schizophrenia, bipolar disorder, and ADHD.
                 </p>
-                <p class="text-white font-montserrat pt-4">
-                    As of lately, I am currently developing and studying machine learning and Artificial Intelligence.
-                    I am also in the Platinum Divison (Gold Medal) of
-                    <nuxt-link to="http://usaco.org" class="underline decoration-dotted" target="_blank">USACO</nuxt-link>
+                <p class="text-white font-montserrat pt-4 text-justify">
+                    Currently, I'm diving deep into machine learning and artificial intelligence, focusing on integrating these technologies into critical domains like healthcare and neuroscience.
                 </p>
-                <p class="text-white font-montserrat pt-4">
-                    When I am not grinding out my projects, you can often find me on the fencing piste.
+                <p class="text-white font-montserrat pt-4 text-justify">
+                    When I'm not grinding out my projects, you can often find me on the fencing piste or side questing.
                 </p>
             </div>
         </div>

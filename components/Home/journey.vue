@@ -1,25 +1,24 @@
 <template>
-    <div class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden">
-        <div class="flex justify-center items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10" ref="description">
-            <div class="w-[500px] basis-auto" ref="description">
-                <h2 class="text-white text-[3rem] font-bogart text-left">My Journey.</h2>
-                <p class="text-white font-montserrat">
-                    Programming started for me when I coded my first TI-Basic program on the TI-84 Plus Calculator.
+    <div class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden px-4">
+        <div class="flex justify-center items-center w-full max-w-[80vw] flex-wrap border-2 border-white pt-10 pb-10 px-6" ref="container">
+            <div class="w-full max-w-[500px] basis-auto" ref="description">
+                <h2 class="text-white text-[3rem] font-bogart text-left journey-title">My Journey.</h2>
+                <p class="text-white font-montserrat pt-4 text-justify">
+                    It all began with a TI-84 Plus Calculator, where I programmed my first text-based racecar game.
+                </p>
+                <p class="text-white font-montserrat pt-4 text-justify">
+                    From there, my curiosity expanded — I built Discord bots, websites, and dove into competitive programming, achieving Platinum Division (Gold Rank) at
+                    <nuxt-link to="http://usaco.org" class="underline decoration-dotted" target="_blank">USACO</nuxt-link>.
                 </p>
                 <p class="text-white font-montserrat pt-4">
                     Since then, I have explored the diverse field of Computer Science. From Machine Learning & Artificial Intelligence
                     to Web Development, I learned and utilized this skills to create end-to-end-user applications.
                 </p>
                 <p class="text-white font-montserrat pt-4">
-                    Taking interest in algorithms, I occasionally participate in competitive programming such as
-                    <nuxt-link to="http://usaco.org" class="underline decoration-dotted" target="_blank">USACO</nuxt-link> and 
-                    <nuxt-link to="https://leetcode.com/" class="underline decoration-dotted" target="_blank">Leetcode.</nuxt-link>
-                </p>
-                <p class="text-white font-montserrat pt-4">
                     Some of the languages and libraries I am familiar with are:
                 </p>
                 <div class="flex justify-center w-full">
-                    <ul class="text-white font-montserrat list-disc columns-3 pt-10">
+                    <ul class="text-white font-montserrat list-disc columns-2 sm:columns-3 pt-10">
                         <li>Python</li>
                         <li>Java</li>
                         <li>Javascript</li>
@@ -56,14 +55,16 @@ gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(ScrollToPlugin)
 
 const description = ref(null)
+const container = ref(null)
 
 onMounted(() => {
+    const isMobile = window.innerWidth <= 900
 
     gsap.set(
         description.value,
         {
             autoAlpha: 0,
-            x: -description.value.offsetWidth/2
+            x: isMobile ? -50 : -description.value.offsetWidth/2
         }
     )
 
@@ -71,7 +72,7 @@ onMounted(() => {
         description.value,
         {
             scrollTrigger: {
-                trigger: description.value,
+                trigger: container.value,
                 markers: false,
                 start: "top center",
                 end: "bottom center",
@@ -90,11 +91,26 @@ onMounted(() => {
     justify-content: space-between;
 }
 
+.journey-title {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 @media (max-width:900px) {
     .mobile {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    
+    .journey-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .journey-title {
+        font-size: 1.75rem;
     }
 }
 </style>

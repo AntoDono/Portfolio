@@ -8,14 +8,15 @@
             </a>
         </div>
         <div class="h-full flex items-center description max-w-[500px]">
-            <div class="font-fenix text-white relative flex flex-col gap-y-3 move">
+            <div class="font-fenix text-white relative flex flex-col gap-y-1 move">
                 <p class="move-text text-accent1">{{status}}</p>
-                <h2 class="text-[3.5vmin] move-text font-uni glitch">{{title}}</h2>
+                <h2 class="text-[3.5vmin] move-text font-uni text-white">{{title}}</h2>
+                <h3 class="text-white font-fenix underline decoration-dotted text-md font-bold text-right">{{subtitle}}</h3>
                 <div class="description-bg p-8 rounded">
                     <p>{{description}}</p>
                 </div>
-                <div class="flex flex-row move-justify gap-x-3">
-                    <p v-for="tag in tags" :key="tag" class="move-text font-fenix">{{tag[0].toUpperCase() + tag.substring(1, tag.length)}}</p>
+                <div class="w-full flex flex-row justify-end move-justify gap-x-3 w-full flex-wrap gap-y-2">
+                    <p v-for="tag in tags" :key="tag" class="move-text font-fenix bg-blue-500 pl-1 pr-2 text-center rounded-md">{{tag[0].toUpperCase() + tag.substring(1, tag.length)}}</p>
                 </div>
                 <div class="flex w-full move-justify">
                     <a :href="link" target="_blank" aria-label="link to project">
@@ -47,6 +48,10 @@ export default{
             type: String,
             default: "Title"
         },
+        subtitle: {
+            type: String,
+            default: "Subtitle"
+        },
         description: {
             type: String,
             default: "Description"
@@ -63,18 +68,16 @@ export default{
             type: String,
             default: "/"
         },
+        highlightClass: {
+            type: String,
+            default: "text-highlight"
+        }
     }
 }
 
 </script>
 
 <style scoped>
-
-.glitch {
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-        -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-}
 
 svg{
     fill: white;
@@ -87,7 +90,7 @@ svg:hover{
 }
 
 .move{
-    right: 5rem
+    right: 3rem
 }
 
 .move-justify{

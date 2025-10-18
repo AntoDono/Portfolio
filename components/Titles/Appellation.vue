@@ -1,6 +1,6 @@
 <template>
     <div class="overflow-y-hidden flex justify-center" ref="title">
-        <h3 class="text-[10vmin] text-white font-uni text-center glitch" ref="text">{{ props.title }}</h3>
+        <h3 class="text-[10vmin] text-white font-uni text-center text-title-accent" ref="text">{{ props.title }}</h3>
     </div>
 </template>
 
@@ -59,11 +59,5 @@ onMounted(() => {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
     -webkit-text-fill-color: transparent;
-}
-
-.glitch {
-    color: white;
-    text-shadow:
-        0.025em 0.05em 0 rgb(60, 106, 190);
 }
 </style>
