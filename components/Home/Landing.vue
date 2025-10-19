@@ -1,21 +1,23 @@
 <template>
-    <div class="relative flex flex-col justify-center items-center w-screen h-screen">
+    <section class="relative flex flex-col justify-center items-center w-screen h-screen">
         <!-- 3D Background -->
         <ClientOnly>
             <ParticleSphere class="absolute inset-0 z-0" ref="particleSphereRef" @percentage="handlePercentage" />
         </ClientOnly>
         
         <!-- Content Layer -->
-        <div class="absolute z-10 flex flex-col w-full">
+        <header class="absolute z-10 flex flex-col w-full">
             <div class="w-full flex justify-center">
-                <scrambledtext text="Hello, I am Youwei" class="font-bbhs text-white text-4xl md:text-6xl" mode="wait-for-animation" :animate="isDoneLoading" :delay="0"/>
+                <h1>
+                    <scrambledtext text="Hello, I am Youwei" class="font-bbhs text-white text-4xl md:text-6xl" mode="wait-for-animation" :animate="isDoneLoading" :delay="0"/>
+                </h1>
             </div>
             <div class="w-full flex justify-center items-center flex-col gap-y-4">
-                <span class="mt-4">
-                    <scrambledtext text="APMA & CS" class="font-fenix text-[5vmin] text-center sm:text-[3.5vmin]" mode="wait-for-animation" :animate="isDoneLoading" :delay="500"/>
+                <div class="mt-4">
+                    <scrambledtext text="APMA & CS" class="text-white font-fenix text-[5vmin] text-center sm:text-[3.5vmin]" mode="wait-for-animation" :animate="isDoneLoading" :delay="500"/>
                     <span class="relative bottom-1 text-yellow-400 text-[5vmin] sm:text-[3.5vmin] font-fenix pl-2 pr-2">@</span>
                     <scrambledtext text="Brown University" class="font-fenix text-yellow-400 text-[5vmin] sm:text-[3.5vmin] text-center" mode="wait-for-animation" :animate="isDoneLoading" :delay="1000" @animation-complete="handleReady" />
-                </span>
+                </div>
                 <Popup :show="t0" direction="E">
                     <div class="flex items-center gap-1 whitespace-nowrap">
                         <span class="text-white font-fenix text-[4vmin] sm:text-[3.5vmin]">ML Engineer</span>
@@ -24,26 +26,26 @@
                     </div>
                 </Popup>
             </div>
-        </div>
-        <div class="flex justify-center gap-x-7 absolute top-[60%] flex-wrap p-5 z-10 mt-8">
+        </header>
+        <div class="flex justify-center gap-x-7 absolute top-[60%] flex-wrap p-5 z-10 mt-8" role="list" aria-label="Key activities">
             <Popup :show="t1">
-                <h2 class="text-white font-bogart text-[4vmin] sm:text-[3.5vmin]">AI-Maxxing</h2>       
+                <div role="listitem" class="text-white font-bogart text-[4vmin] sm:text-[3.5vmin]">AI-Maxxing</div>       
             </Popup>
             <Popup :show="t2">
-                <h2 class="text-white font-bogart text-[4vmin] sm:text-[3.5vmin]">Creating</h2>
+                <div role="listitem" class="text-white font-bogart text-[4vmin] sm:text-[3.5vmin]">Creating</div>
             </Popup>
             <Popup :show="t3">
-                <h2 class="text-white font-bogart text-[4vmin] sm:text-[3.5vmin]">Side Questing</h2>
+                <div role="listitem" class="text-white font-bogart text-[4vmin] sm:text-[3.5vmin]">Side Questing</div>
             </Popup>
         </div>
-        <div class="absolute w-full bottom-[10%] flex justify-center opacity-0 z-10" ref="ArrowRef">
+        <nav class="absolute w-full bottom-[10%] flex justify-center opacity-0 z-10" ref="ArrowRef" aria-label="Scroll to content">
             <div class="animate-bounce hover:cursor-pointer">
-                <div @click="scroll">
+                <button @click="scroll" aria-label="Scroll down to view more content">
                     <img class="rotate-90 h-[10vmin]" src="~/assets/images/pageselect.png" alt="arrow pointing down"/>
-                </div>
+                </button>
             </div>
-        </div>
-    </div>
+        </nav>
+    </section>
 </template>
 
 <script setup>

@@ -1,5 +1,19 @@
 <template>
     <footer class="bg-primary z-20 relative h-full flex flex-col justify-center items-center gap-y-5 p-10 overflow-x-hidden">
+        <!-- Hidden content for screen readers and content extractors -->
+        <div class="sr-only">
+            <h2>Contact Information</h2>
+            <p>Email: youwei_zhen@brown.edu</p>
+            <nav aria-label="Social media profiles">
+                <ul>
+                    <li><a href="https://github.com/AntoDono">GitHub: github.com/AntoDono</a></li>
+                    <li><a href="https://www.linkedin.com/in/youwei-zhen-a8b662213/">LinkedIn: linkedin.com/in/youwei-zhen-a8b662213</a></li>
+                    <li><a href="https://instagram.com">Instagram</a></li>
+                    <li><a href="https://twitter.com/anthony20151128">Twitter: @anthony20151128</a></li>
+                </ul>
+            </nav>
+        </div>
+        
         <div class="flex flex-row justify-items-center items-center gap-x-5 social">
             <socialMedia alt="Github" destination="https://github.com/AntoDono">
                 <path

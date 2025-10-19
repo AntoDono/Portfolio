@@ -1,11 +1,13 @@
 <template>
   <div>
     <loading :percent="percent" @loading-complete="handleLoadingComplete"/>
-    <Landing @percentage="handlePercent" :is-done-loading="isDoneLoading"/>
-    <Titles class="pt-48 pb-48" />
-    <Featured/>
-    <About />
-    <Experience />
+    <main>
+      <Landing @percentage="handlePercent" :is-done-loading="isDoneLoading"/>
+      <Titles class="pt-48 pb-48" />
+      <Featured/>
+      <About />
+      <Experience />
+    </main>
   </div>
 </template>
 
@@ -25,7 +27,7 @@ const handleLoadingComplete = () => {
   isDoneLoading.value = true
 }
 
-// SEO Meta Tags
+// SEO Meta Tags and Structured Data
 useHead({
   title: 'Youwei Zhen | Full Stack Developer & AI Engineer',
   meta: [
@@ -53,6 +55,51 @@ useHead({
   ],
   link: [
     { rel: 'canonical', href: 'https://youweizhen.com' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Youwei Zhen",
+        "url": "https://youweizhen.com",
+        "image": "https://youweizhen.com/og-image.png",
+        "jobTitle": ["Full Stack Developer", "AI Engineer", "Machine Learning Engineer"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Refine.Dev"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Brown University",
+          "department": ["Applied Mathematics", "Computer Science"]
+        },
+        "description": "Full Stack Developer and AI Engineer specializing in web development, machine learning, and innovative applications. Winner of HackMIT 2025, BigRedHacks 2025, and multiple hackathons.",
+        "sameAs": [
+          "https://www.linkedin.com/in/youwei-zhen-a8b662213",
+          "https://github.com/youweizhen"
+        ],
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Full Stack Development",
+          "Web Development",
+          "Python",
+          "JavaScript",
+          "TypeScript",
+          "React",
+          "Vue.js",
+          "Nuxt.js",
+          "Node.js"
+        ],
+        "award": [
+          "1st Place at HackMIT 2025",
+          "2nd Place Overall at Cornell BigRedHacks 2025",
+          "1st Place at Emergent AI Conference 2025"
+        ]
+      })
+    }
   ]
 })
 

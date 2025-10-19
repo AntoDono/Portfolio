@@ -1,11 +1,11 @@
 <template>
-    <div class="h-auto bg-transparent flex justify-center items-start z-20 relative">
+    <article class="h-auto bg-transparent flex justify-center items-start z-20 relative">
         <div class="flex justify-around items-center w-[80vw] flex-wrap border-2 border-white pt-10 pb-10">
             <div class="pic-border pb-10 flex">
                 <img src="~/assets/images/youwei.jpeg" class="pic rounded-xl" alt="picture of youwei zhen" />
             </div>
             <div class="w-[500px] basis-auto pl-4" ref="description">
-                <h2 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen.</h2>
+                <h3 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen.</h3>
                 <p class="text-white font-montserrat">A builder at heart.</p>
                 <p class="text-white font-montserrat pt-4 text-justify">
                     Over the years, I've mastered various skills and used them to build projects that have won numerous hackathons and competitions. From robots that carry your laundry using computer vision, to AI-powered music therapy systems with real-time EEG monitoring for mental health conditions like schizophrenia, bipolar disorder, and ADHD.
@@ -18,7 +18,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </article>
 </template>
 
 <script setup>
@@ -38,7 +38,7 @@ onMounted(() => {
     gsap.set(
         description.value,
         {
-            autoAlpha: 0,
+            opacity: 0,
             x: description.value.offsetWidth
         }
     )
@@ -53,7 +53,7 @@ onMounted(() => {
                 end: "bottom center",
                 toggleActions: "play none none none",
             },
-            autoAlpha: 1,
+            opacity: 1,
             x: 0,
             ease: "power1.inOut",
         }

@@ -1,16 +1,18 @@
 <template>
-    <a :href="link" target="_blank" class="featured-card" ref="container">
-        <div class="featured-image-wrapper">
-            <img :src="imageSrc" class="featured-image" :alt="title">
-        </div>
-        <div class="featured-content">
-            <div class="featured-header">
-                <h2 class="featured-title">{{ title }}</h2>
-                <p class="featured-date">{{ date }}</p>
+    <article class="featured-card" ref="container">
+        <a :href="link" target="_blank" class="featured-card-link" rel="noopener noreferrer">
+            <div class="featured-image-wrapper">
+                <img :src="imageSrc" class="featured-image" :alt="title">
             </div>
-            <p class="featured-description">{{ description }}</p>
-        </div>
-    </a>
+            <div class="featured-content">
+                <div class="featured-header">
+                    <h3 class="featured-title">{{ title }}</h3>
+                    <time class="featured-date" :datetime="date">{{ date }}</time>
+                </div>
+                <p class="featured-description">{{ description }}</p>
+            </div>
+        </a>
+    </article>
 </template>
 
 <script setup>
@@ -41,13 +43,17 @@ const props = defineProps({
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 350px;
+    max-width: 400px;
+    height: 100%;
+}
+
+.featured-card-link {
     display: flex;
     flex-direction: column;
     height: 100%;
     text-decoration: none;
     cursor: pointer;
-    min-width: 350px;
-    max-width: 400px;
 }
 
 .featured-card:hover {
@@ -97,6 +103,7 @@ const props = defineProps({
     min-height: 3.6rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -116,6 +123,7 @@ const props = defineProps({
     line-height: 1.6;
     display: -webkit-box;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;

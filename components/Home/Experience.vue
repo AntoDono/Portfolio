@@ -1,7 +1,8 @@
 <template>
-    <div class="z-20 relative bg-primary pt-10 pb-20 overflow-x-hidden" id="experience">
+    <section class="z-20 relative bg-primary pt-10 pb-20 overflow-x-hidden" id="experience" aria-labelledby="experience-heading">
         <div class="flex justify-center items-center">
             <div class="w-[80vw]">
+                <h2 id="experience-heading" class="sr-only">Experience</h2>
                 <sectionHeader text="Experience" />
                 <div class="flex mobile-layout justify-between items-center">
                     <journey />
@@ -11,7 +12,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>

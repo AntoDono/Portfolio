@@ -1,8 +1,8 @@
 <template>
-    <div class="overflow-y-hidden" ref="container">
-        <h2 class="text-[7vmin] text-header-accent font-uni overflow-y-hidden" ref="appear">
+    <div class="overflow-y-hidden" ref="container" role="heading" aria-level="2">
+        <div class="text-[7vmin] text-header-accent font-uni overflow-y-hidden" ref="appear">
             {{ text }}
-        </h2>
+        </div>
     </div>
 </template>
 

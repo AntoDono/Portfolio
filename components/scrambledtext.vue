@@ -1,5 +1,8 @@
 <template>
-  <span ref="textElement" class="text-white"></span>
+  <span class="scrambled-text-wrapper">
+    <span class="sr-only">{{ text }}</span>
+    <span ref="textElement" aria-hidden="true"></span>
+  </span>
 </template>
 
 <script setup>
@@ -229,6 +232,10 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.scrambled-text-wrapper {
+  display: inline;
+}
+
 .dud {
   color: #757575;
 }

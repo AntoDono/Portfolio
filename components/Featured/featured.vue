@@ -1,10 +1,11 @@
 <template>
-    <div class="bg-primary flex justify-center items-center pt-10 pb-10">
+    <section class="bg-primary flex justify-center items-center pt-10 pb-10" aria-labelledby="featured-heading">
         <div class="w-full px-6">
             <div class="max-w-7xl mx-auto pb-20">
+                <h2 id="featured-heading" class="sr-only">Featured On</h2>
                 <SectionHeader text="Featured on"/>
             </div>
-            <div ref="container" class="carousel-container">
+            <div ref="container" class="carousel-container" role="region" aria-label="Featured achievements carousel">
                 <div class="featured-carousel-wrapper translate-y-[100%] opacity-0" ref="appear">
                     <div class="featured-carousel">
                         <FeaturedCard 
@@ -68,7 +69,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup>

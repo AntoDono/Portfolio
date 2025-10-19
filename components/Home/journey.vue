@@ -1,8 +1,8 @@
 <template>
-    <div class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden px-4">
+    <article class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden px-4">
         <div class="flex justify-center items-center w-full max-w-[80vw] flex-wrap border-2 border-white pt-10 pb-10 px-6" ref="container">
             <div class="w-full max-w-[500px] basis-auto" ref="description">
-                <h2 class="text-white text-[3rem] font-bogart text-left journey-title">My Journey.</h2>
+                <h3 class="text-white text-[3rem] font-bogart text-left journey-title">My Journey.</h3>
                 <p class="text-white font-montserrat pt-4 text-justify">
                     It all began with a TI-84 Plus Calculator, where I programmed my first text-based racecar game.
                 </p>
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </article>
 </template>
 
 <script setup>
@@ -65,7 +65,7 @@ onMounted(() => {
     gsap.set(
         description.value,
         {
-            autoAlpha: 0,
+            opacity: 0,
             x: isMobile ? -50 : -description.value.offsetWidth/2
         }
     )
@@ -80,7 +80,7 @@ onMounted(() => {
                 end: "bottom center",
                 toggleActions: "play none none none",
             },
-            autoAlpha: 1,
+            opacity: 1,
             x: 0,
             ease: "power1.inOut",
         }

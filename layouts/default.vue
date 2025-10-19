@@ -1,14 +1,10 @@
 <template>
   <div class="overflow-x-hidden">
-    <ClientOnly>
-      <navbar/>
-      <leftbar />
-    </ClientOnly>
+    <navbar/>
+    <leftbar />
     <slot/>
-    <ClientOnly>
-      <pageselect :route="$route.path"/>
-      <footer_info/>
-    </ClientOnly>
+    <pageselect :route="$route.path"/>
+    <footer_info/>
   </div>
 </template>
 
