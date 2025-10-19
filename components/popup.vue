@@ -1,6 +1,6 @@
 <template>
     <div class="overflow-y-hidden" ref="container">
-        <div class="overflow-y-hidden opacity-0" ref="appear">
+        <div class="overflow-y-hidden" :class="{ 'opacity-0': isClient }" ref="appear">
             <slot/>
         </div>
     </div>
@@ -17,6 +17,7 @@ if (process.client) {
 }
 
 const appear = ref('appear')
+const isClient = ref(false)
 
 const props = defineProps({
     text: {
@@ -38,7 +39,8 @@ const props = defineProps({
 })
 
 onMounted(() => {
-
+    isClient.value = true
+    
     gsap.set(
         appear.value,
         {

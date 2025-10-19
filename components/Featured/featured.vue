@@ -6,7 +6,7 @@
                 <SectionHeader text="Featured on"/>
             </div>
             <div ref="container" class="carousel-container" role="region" aria-label="Featured achievements carousel">
-                <div class="featured-carousel-wrapper translate-y-[100%] opacity-0" ref="appear">
+                <div class="featured-carousel-wrapper" :class="{ 'translate-y-[100%] opacity-0': isClient }" ref="appear">
                     <div class="featured-carousel">
                         <FeaturedCard 
                             title="1st Place @ HackMIT" 
@@ -85,6 +85,7 @@ if (process.client) {
 
 const appear = ref(null)
 const container = ref(null)
+const isClient = ref(false)
 
 const props = defineProps({
     text: {
@@ -98,6 +99,8 @@ const props = defineProps({
 })
 
 onMounted(()=>{
+    isClient.value = true
+    
     gsap.to(
         appear.value,
         {
