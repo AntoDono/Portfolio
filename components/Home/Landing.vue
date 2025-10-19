@@ -15,8 +15,7 @@
             <div class="w-full flex justify-center items-center flex-col gap-y-4">
                 <div class="mt-4">
                     <scrambledtext text="APMA & CS" class="text-white font-fenix text-[5vmin] text-center sm:text-[3.5vmin]" mode="wait-for-animation" :animate="isDoneLoading" :delay="500"/>
-                    <span class="relative bottom-1 text-yellow-400 text-[5vmin] sm:text-[3.5vmin] font-fenix pl-2 pr-2">@</span>
-                    <scrambledtext text="Brown University" class="font-fenix text-yellow-400 text-[5vmin] sm:text-[3.5vmin] text-center" mode="wait-for-animation" :animate="isDoneLoading" :delay="1000" @animation-complete="handleReady" />
+                    <scrambledtext text=" @ Brown University" class="font-fenix text-yellow-400 text-[5vmin] sm:text-[3.5vmin] text-center" mode="wait-for-animation" :animate="isDoneLoading" :delay="1000" @animation-complete="handleReady" />
                 </div>
                 <Popup :show="t0" direction="E">
                     <div class="flex items-center gap-1 whitespace-nowrap">

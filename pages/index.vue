@@ -1,6 +1,11 @@
 <template>
   <div>
-    <loading :percent="percent" @loading-complete="handleLoadingComplete"/>
+    <!-- Loading screen is just a visual overlay, content is always in DOM -->
+    <ClientOnly>
+      <loading :percent="percent" @loading-complete="handleLoadingComplete"/>
+    </ClientOnly>
+    
+    <!-- Content is always rendered for crawlers/scrapers -->
     <main>
       <Landing @percentage="handlePercent" :is-done-loading="isDoneLoading"/>
       <Titles class="pt-48 pb-48" />
