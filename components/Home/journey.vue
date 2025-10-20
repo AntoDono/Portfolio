@@ -1,7 +1,7 @@
 <template>
     <article class="h-auto bg-primary flex justify-center items-start z-30 relative overflow-x-hidden px-4">
         <div class="flex justify-center items-center w-full max-w-[80vw] flex-wrap border-2 border-white pt-10 pb-10 px-6" ref="container">
-            <div class="w-full max-w-[500px] basis-auto" ref="description" :class="{ 'ssr-visible': !isClient }">
+            <div class="w-full max-w-[500px] basis-auto" ref="description">
                 <h3 class="text-white text-[3rem] font-bogart text-left journey-title">My Journey.</h3>
                 <p class="text-white font-montserrat pt-4 text-justify">
                     It all began with a TI-84 Plus Calculator, where I programmed my first text-based racecar game.
@@ -58,10 +58,8 @@ if (process.client) {
 
 const description = ref(null)
 const container = ref(null)
-const isClient = ref(false)
 
 onMounted(() => {
-    isClient.value = true
     const isMobile = window.innerWidth <= 900
 
     gsap.set(
@@ -116,11 +114,5 @@ onMounted(() => {
     .journey-title {
         font-size: 1.75rem;
     }
-}
-
-/* Show content during SSR for crawlers/scrapers */
-.ssr-visible {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
 }
 </style>

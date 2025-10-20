@@ -1,6 +1,6 @@
 <template>
     <div class="overflow-y-hidden" ref="container" role="heading" aria-level="2">
-        <div class="text-[7vmin] text-header-accent font-uni overflow-y-hidden" ref="appear" :class="{ 'ssr-visible': !isClient }">
+        <div class="text-[7vmin] text-header-accent font-uni overflow-y-hidden" ref="appear">
             {{ text }}
         </div>
     </div>
@@ -19,7 +19,6 @@ if (process.client) {
 
 const appear = ref(null)
 const container = ref(null)
-const isClient = ref(false)
 
 const props = defineProps({
     text: {
@@ -33,7 +32,6 @@ const props = defineProps({
 })
 
 onMounted(()=>{
-    isClient.value = true
 
     gsap.set(
         appear.value,
@@ -96,10 +94,5 @@ onMounted(()=>{
 .text-header-accent:after {
     width: 100%;
     margin-right: -100%;
-}
-
-/* Show content during SSR for crawlers/scrapers */
-.ssr-visible {
-    transform: translate(0, 0) !important;
 }
 </style>

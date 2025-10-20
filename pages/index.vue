@@ -1,9 +1,7 @@
 <template>
   <div>
     <!-- Loading screen is just a visual overlay, content is always in DOM -->
-    <ClientOnly>
-      <loading :percent="percent" @loading-complete="handleLoadingComplete"/>
-    </ClientOnly>
+    <loading :percent="percent" @loading-complete="handleLoadingComplete"/>
     
     <!-- Content is always rendered for crawlers/scrapers -->
     <main>

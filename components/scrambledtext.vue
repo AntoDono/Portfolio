@@ -1,6 +1,7 @@
 <template>
   <span class="scrambled-text-wrapper">
-    <span ref="textElement" :class="{ 'ssr-visible': !isClient }">{{ text }}</span>
+    <span class="sr-only">{{ text }}</span>
+    <span ref="textElement" aria-hidden="true"></span>
   </span>
 </template>
 
@@ -51,7 +52,6 @@ const props = defineProps({
 })
 
 const textElement = ref(null)
-const isClient = ref(false)
 let frameRequest = null
 let frame = 0
 let queue = []
@@ -203,7 +203,6 @@ const init = () => {
 }
 
 onMounted(() => {
-  isClient.value = true
   init()
 })
 
@@ -239,11 +238,6 @@ onUnmounted(() => {
 
 .dud {
   color: #757575;
-}
-
-/* Show text during SSR for crawlers/scrapers */
-.ssr-visible {
-  display: inline;
 }
 </style>
 

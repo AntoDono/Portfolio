@@ -4,7 +4,7 @@
             <div class="pic-border pb-10 flex">
                 <img src="~/assets/images/youwei.jpeg" class="pic rounded-xl" alt="picture of youwei zhen" />
             </div>
-            <div class="w-[500px] basis-auto pl-4" ref="description" :class="{ 'ssr-visible': !isClient }">
+            <div class="w-[500px] basis-auto pl-4" ref="description">
                 <h3 class="text-white text-[3rem] font-bogart text-left">I'm Youwei Zhen.</h3>
                 <p class="text-white font-montserrat">A builder at heart.</p>
                 <p class="text-white font-montserrat pt-4 text-justify">
@@ -32,10 +32,8 @@ if (process.client) {
 }
 
 const description = ref(null)
-const isClient = ref(false)
 
 onMounted(() => {
-    isClient.value = true
 
     gsap.set(
         description.value,
@@ -74,10 +72,4 @@ onMounted(() => {
         /* height: 300px; */
         width: 300px;
     }
-}
-
-/* Show content during SSR for crawlers/scrapers */
-.ssr-visible {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
 }</style>
