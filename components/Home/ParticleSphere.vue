@@ -26,8 +26,8 @@ const animationTimeline = gsap.timeline()
 const rendererReady = ref(false)
 const name = ref(false) // name state
 const sensitivity = 0.003
-const total_nodes = 200
-const new_lines = 20 // number of animated lines to spawn per second
+const total_nodes = 150
+const new_lines = 15 // number of animated lines to spawn per second
 
 // Store vertices and animated lines
 var globalVertices = []
