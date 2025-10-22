@@ -23,7 +23,8 @@ export default defineNuxtConfig({
             { hid: 'og:type', property: 'og:type', content: 'website' },
             { hid: 'og:title', property: 'og:title', content: 'Youwei Zhen | Full Stack Developer & AI Engineer' },
             { hid: 'og:description', property: 'og:description', content: 'Full Stack Developer and AI Engineer specializing in web development, machine learning, and innovative applications. Winner of HackMIT, BigRedHacks, and multiple hackathons.' },
-            { hid: 'og:image', property: 'og:image', content: 'https://youweizhen.com/og-image.jpg' },
+            { hid: 'og:image', property: 'og:image', content: 'https://youweizhen.com/og-image.png' },
+            { hid: 'og:image:type', property: 'og:image:type', content: 'image/png' },
             { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
             { hid: 'og:image:height', property: 'og:image:height', content: '630' },
             { hid: 'og:url', property: 'og:url', content: 'https://youweizhen.com' },
@@ -33,7 +34,7 @@ export default defineNuxtConfig({
             { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
             { hid: 'twitter:title', name: 'twitter:title', content: 'Youwei Zhen | Full Stack Developer & AI Engineer' },
             { hid: 'twitter:description', name: 'twitter:description', content: 'Full Stack Developer and AI Engineer specializing in web development, machine learning, and innovative applications.' },
-            { hid: 'twitter:image', name: 'twitter:image', content: 'https://youweizhen.com/og-image.jpg' },
+            { hid: 'twitter:image', name: 'twitter:image', content: 'https://youweizhen.com/og-image.png' },
           ],
           link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

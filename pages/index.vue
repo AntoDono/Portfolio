@@ -50,6 +50,9 @@ useHead({
     { hid: 'og:type', property: 'og:type', content: 'website' },
     { hid: 'og:url', property: 'og:url', content: 'https://youweizhen.com' },
     { hid: 'og:image', property: 'og:image', content: 'https://youweizhen.com/og-image.png' },
+    { hid: 'og:image:type', property: 'og:image:type', content: 'image/png' },
+    { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
+    { hid: 'og:image:height', property: 'og:image:height', content: '630' },
     // Twitter Card
     { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
     { hid: 'twitter:title', name: 'twitter:title', content: 'Youwei Zhen | Full Stack Developer & AI Engineer' },
