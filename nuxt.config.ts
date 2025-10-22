@@ -71,6 +71,16 @@ export default defineNuxtConfig({
     
     },
   
+    nitro: {
+      output: {
+        dir: '.output',
+        publicDir: '.output/public'
+      },
+      prerender: {
+        routes: ['/projects']
+      }
+    },
+    
     generate: {
     //   fallback: "404"
     },
