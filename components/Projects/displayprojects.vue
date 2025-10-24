@@ -17,7 +17,7 @@
                 image="duelingo.jpg" 
                 image_name="Duelingo App Preview" 
                 title="Duelingo"
-                subtitle="1st Place @ Cornell BigRedHacks 2025"
+                subtitle="2nd Place @ Cornell BigRedHacks 2025"
                 description="Duelingo is a non-deterministic, AI-powered language learning game where players race in real-time multiplayer competitions to discover vocabulary by creatively combining words—with no pre-scripted paths or predetermined answers. Instead of following static, memorized content like traditional language apps, every combination is evaluated on-the-fly by AI that assesses linguistic logic and cultural understanding, requiring players to pronounce new discoveries correctly before proceeding."
                 :tags="['gemini', 'dynamic-caching', 'groq', 'javascript', 'llm', 'localization', 'mongodb', 'node.js']"
                 link="https://devpost.com/software/qlasses" 

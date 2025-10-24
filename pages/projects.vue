@@ -14,7 +14,7 @@ useHead({
     { 
       hid: 'description', 
       name: 'description', 
-      content: 'Featured projects by Youwei Zhen including 4Real (HackHarvard 2025), Duelingo (1st Place BigRedHacks 2025), tempoRoll (1st Place HackMIT 2025), and more innovative AI and web applications.' 
+      content: 'Featured projects by Youwei Zhen including 4Real (HackHarvard 2025), Duelingo (2nd Place BigRedHacks 2025), tempoRoll (1st Place HackMIT 2025), and more innovative AI and web applications.' 
     },
     { 
       hid: 'keywords', 
