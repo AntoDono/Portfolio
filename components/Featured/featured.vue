@@ -30,10 +30,10 @@
                             link="https://www.linkedin.com/posts/youwei-zhen-a8b662213_just-won-2nd-place-overall-at-cornells-bigred-activity-7376007735848361984-ndJU?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADYGMYsB79hwIxSdH0wKsVQ-TTrxjUW93nk"
                         />
                         <FeaturedCard 
-                            title="4x Winner @ HackPrinceton" 
-                            date="January 2025" 
+                            title="4x Winner @ Hack Princeton" 
+                            date="November 2025" 
                             imageSrc="/featured/pton.png"
-                            description="'But what if we win?' We won 4 times at HackPrinceton 2025! My team built EdgeCart - a predictive waste intelligence system that prevents food waste by using AI to detect produce freshness and match expiring items with customers who want them. Won 1st Place Capital One, 1st Place Knot API, Y Combinator runner-up, and Best Use of Google Gemini API."
+                            description="We won 4 times at HackPrinceton 2025! My team built EdgeCart - a predictive waste intelligence system that prevents food waste by using AI to detect produce freshness and match expiring items with customers who want them. Won 1st Place Capital One, 1st Place Knot API, Y Combinator runner-up, and Best Use of Google Gemini API."
                             link="https://devpost.com/software/edgecart"
                         />
                         <FeaturedCard 
