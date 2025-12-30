@@ -4,6 +4,17 @@
         
         <div class="projects-container">
             <ProjectCard 
+                image="edgecart.png" 
+                image_name="EdgeCart Dashboard Preview" 
+                title="EdgeCart"
+                subtitle="4x Winner @ HackPrinceton 2025"
+                description="EdgeCart is a predictive waste intelligence system that stops food waste before it happens. Using real-time computer vision to monitor produce freshness and AI to match expiring items with customers who actually buy them, we project 19.5% reduction in grocery emissions. Won 1st Place Capital One, 1st Place Knot API, Y Combinator runner-up, and Best Use of Google Gemini API."
+                :tags="['python', 'flask', 'yolo', 'pytorch', 'react', 'typescript', 'opencv', 'gemini', 'knot-api', 'xai-grok', 'websocket', 'resnet']"
+                link="https://devpost.com/software/edgecart" 
+                status="Featured Project"
+                :reverse="true" />
+
+            <ProjectCard 
                 image="4real.jpg" 
                 image_name="4Real? App Preview" 
                 title="4Real?"
@@ -21,8 +32,7 @@
                 description="Duelingo is a non-deterministic, AI-powered language learning game where players race in real-time multiplayer competitions to discover vocabulary by creatively combining words—with no pre-scripted paths or predetermined answers. Instead of following static, memorized content like traditional language apps, every combination is evaluated on-the-fly by AI that assesses linguistic logic and cultural understanding, requiring players to pronounce new discoveries correctly before proceeding."
                 :tags="['gemini', 'dynamic-caching', 'groq', 'javascript', 'llm', 'localization', 'mongodb', 'node.js']"
                 link="https://devpost.com/software/qlasses" 
-                status="Featured Project"
-                :reverse="true" />
+                status="Featured Project" />
             
             <ProjectCard 
                 image="tempoRoll.jpg" 
