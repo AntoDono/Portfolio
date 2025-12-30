@@ -67,7 +67,7 @@
                         />
                         <FeaturedCard 
                             title="4x Winner @ Hack Princeton" 
-                            date="January 2025" 
+                            date="November 2025" 
                             imageSrc="/featured/pton.png"
                             description="We won 4 times at HackPrinceton 2025! My team built EdgeCart - a predictive waste intelligence system that prevents food waste by using AI to detect produce freshness and match expiring items with customers who want them. Won 1st Place Capital One, 1st Place Knot API, Y Combinator runner-up, and Best Use of Google Gemini API."
                             link="https://devpost.com/software/edgecart"
