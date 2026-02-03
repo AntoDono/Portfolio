@@ -3,6 +3,28 @@
         <glitch text="Featured Projects" size="10vmin" class="mb-12" />
         
         <div class="projects-container">
+
+            <ProjectCard 
+                image="scale.png" 
+                image_name="scale. 3D City Preview" 
+                title="Scale Diffusion"
+                subtitle="Hack@Brown 2026 Project"
+                description="Scale Diffusion transforms AI training data collection into a game. Users navigate a 3D Manhattan metropolis rendered in Three.js while watching their world transform in real-time through streaming diffusion model at 30fps—every frame pair and input feeds autonomous driving training data. Connect a Solana wallet and get paid for quality-validated data through blockchain-native rewards."
+                :tags="['aws', 'decart', 'langgraph', 'langsmith', 'solana', 'three.js', 'webrtc', 'websockets']"
+                link="https://devpost.com/software/scale-diffusion" 
+                status="Featured Project"
+                :reverse="true" />
+
+            <ProjectCard 
+                image="mirrai.jpeg" 
+                image_name="MIRR.AI Virtual Try-On Preview" 
+                title="MIRR.AI"
+                subtitle="Winner Best Use of MongoDB Atlas @ McHacks 13"
+                description="MIRR.AI is a Chrome extension that lets you virtually try on any clothing item from any online store, see yourself from 7 different angles, and get AI-powered outfit recommendations—all from a single photo. Using Gumloop's distributed inference pipeline with 7 parallel Gemini workers, we achieved 5x faster multi-view generation (21s → 4s) for real-time virtual try-on."
+                :tags="['flask', 'gemini', 'google-cloud', 'mongodb', 'node.js', 'plasmo', 'react', 'typescript', 'vertex-ai']"
+                link="https://devpost.com/software/fashion-mxr7e3" 
+                status="Featured Project" />
+
             <ProjectCard 
                 image="edgecart.png" 
                 image_name="EdgeCart Dashboard Preview" 
@@ -32,7 +54,8 @@
                 description="Duelingo is a non-deterministic, AI-powered language learning game where players race in real-time multiplayer competitions to discover vocabulary by creatively combining words—with no pre-scripted paths or predetermined answers. Instead of following static, memorized content like traditional language apps, every combination is evaluated on-the-fly by AI that assesses linguistic logic and cultural understanding, requiring players to pronounce new discoveries correctly before proceeding."
                 :tags="['gemini', 'dynamic-caching', 'groq', 'javascript', 'llm', 'localization', 'mongodb', 'node.js']"
                 link="https://devpost.com/software/qlasses" 
-                status="Featured Project" />
+                status="Featured Project"
+                :reverse="true" />
             
             <ProjectCard 
                 image="tempoRoll.jpg" 
@@ -41,7 +64,7 @@
                 subtitle="1st Place @ HackMIT 2025 (Cerebras Track)"
                 description="tempoRoll is an AI-powered music therapy system that uses real-time EEG monitoring to help people with mental health conditions like schizophrenia, bipolar disorder, and ADHD. Our hybrid adaptation combines a real-time, in-house trained-from-scratch classification model with Cerebras's lightning-fast inference to detect brainwave imbalances and generate personalized music therapy that guides brainwaves back to baseline."
                 :tags="['react', 'typescript', 'mongodb', 'nginx', 'llm', 'eeg', 'ml']" 
-                link="https://botsitivity.org"
+                link="https://www.linkedin.com/posts/youwei-zhen-a8b662213_just-won-1st-place-in-the-cerebras-sponsor-activity-7373426633367654400-NAPw?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADYGMYsB79hwIxSdH0wKsVQ-TTrxjUW93nk"
                 status="Featured Project" />
             
             <ProjectCard 
