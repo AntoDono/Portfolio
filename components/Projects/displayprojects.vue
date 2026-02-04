@@ -6,9 +6,9 @@
 
             <ProjectCard 
                 image="scale.png" 
-                image_name="scale. 3D City Preview" 
+                image_name="Scale Diffusion 3D City Preview" 
                 title="Scale Diffusion"
-                subtitle="Hack@Brown 2026 Project"
+                subtitle="Winner Best Use of Solana @ Hack@Brown 2026 Project"
                 description="Scale Diffusion transforms AI training data collection into a game. Users navigate a 3D Manhattan metropolis rendered in Three.js while watching their world transform in real-time through streaming diffusion model at 30fps—every frame pair and input feeds autonomous driving training data. Connect a Solana wallet and get paid for quality-validated data through blockchain-native rewards."
                 :tags="['aws', 'decart', 'langgraph', 'langsmith', 'solana', 'three.js', 'webrtc', 'websockets']"
                 link="https://devpost.com/software/scale-diffusion" 
