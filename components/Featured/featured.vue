@@ -9,6 +9,20 @@
                 <div class="featured-carousel-wrapper translate-y-[100%] opacity-0" ref="appear">
                     <div class="featured-carousel">
                         <FeaturedCard 
+                            title="1st Place Advanced AI & SWE Track @ yconic 2026" 
+                            date="March 2026" 
+                            imageSrc="/featured/yconic.jpeg"
+                            description="My team and I built Clone.dna at the yconic New England Inter-Collegiate AI Hackathon in Providence, RI — winning 1st Place in the Advanced AI & SWE Track ($4,000 grand prize). Clone.dna mints portable .dna blocks from a developer's public GitHub: a QLoRA adapter trained on their real committed code, encoding their coding style, architectural instincts, and domain vocabulary. Hot-swappable adapters, a Bayesian PM orchestration layer, a reference-counted VRAM eviction engine, and a talent registry make it the first system to encode developer intelligence directly into model weights — not a prompt."
+                            link="https://github.com/AntoDono/clone.dna"
+                        />
+                        <FeaturedCard 
+                            title="1st Place @ Harvard HackRare 2026" 
+                            date="March 2026" 
+                            imageSrc="/featured/hackrare.jpeg"
+                            description="My team built Knockout — a passive monitoring and pattern-learning platform for Triadin Knockout Syndrome (TKOS), one of the rarest inherited arrhythmia syndromes with only 21 known patients globally. We combined pharmacokinetic modeling, a 2.2MB on-device ResNet arrhythmia classifier using the Muon optimizer, and a Bayesian personalization loop to fill the ICD gap and give continuous physiologic awareness between quarterly cardiology visits. Won Grand Prize in the Symptom Management track ($2,000)."
+                            link="https://devpost.com/software/knockout-x6vfnz"
+                        />
+                        <FeaturedCard 
                             title="1st Place @ HackMIT" 
                             date="September 2025" 
                             imageSrc="/featured/hackmit.jpeg"
@@ -44,6 +58,20 @@
                             link="https://www.nassp.org/publication/principal-leadership/volume-24-2023-2024/principal-leadership-december-2023/ahead-of-the-ai-curve/"
                         />
                         <!-- Duplicate for seamless loop -->
+                        <FeaturedCard 
+                            title="1st Place Advanced AI & SWE Track @ yconic 2026" 
+                            date="March 2026" 
+                            imageSrc="/featured/yconic.jpeg"
+                            description="My team and I built Clone.dna at the yconic New England Inter-Collegiate AI Hackathon in Providence, RI — winning 1st Place in the Advanced AI & SWE Track ($4,000 grand prize). Clone.dna mints portable .dna blocks from a developer's public GitHub: a QLoRA adapter trained on their real committed code, encoding their coding style, architectural instincts, and domain vocabulary. Hot-swappable adapters, a Bayesian PM orchestration layer, a reference-counted VRAM eviction engine, and a talent registry make it the first system to encode developer intelligence directly into model weights — not a prompt."
+                            link="https://github.com/AntoDono/clone.dna"
+                        />
+                        <FeaturedCard 
+                            title="1st Place @ Harvard HackRare 2026" 
+                            date="March 2026" 
+                            imageSrc="/featured/hackrare.jpeg"
+                            description="My team built Knockout — a passive monitoring and pattern-learning platform for Triadin Knockout Syndrome (TKOS), one of the rarest inherited arrhythmia syndromes with only 21 known patients globally. We combined pharmacokinetic modeling, a 2.2MB on-device ResNet arrhythmia classifier using the Muon optimizer, and a Bayesian personalization loop to fill the ICD gap and give continuous physiologic awareness between quarterly cardiology visits. Won Grand Prize in the Symptom Management track ($2,000)."
+                            link="https://devpost.com/software/knockout-x6vfnz"
+                        />
                         <FeaturedCard 
                             title="1st Place @ HackMIT" 
                             date="September 2025" 

@@ -14,12 +14,12 @@ useHead({
     { 
       hid: 'description', 
       name: 'description', 
-      content: 'Featured projects by Youwei Zhen including 4Real (HackHarvard 2025), Duelingo (2nd Place BigRedHacks 2025), tempoRoll (1st Place HackMIT 2025), and more innovative AI and web applications.' 
+      content: 'Featured projects by Youwei Zhen including Knockout (1st Place Harvard HackRare 2026), 4Real (HackHarvard 2025), Duelingo (2nd Place BigRedHacks 2025), tempoRoll (1st Place HackMIT 2025), and more innovative AI and web applications.' 
     },
     { 
       hid: 'keywords', 
       name: 'keywords', 
-      content: 'Youwei Zhen Projects, 4Real, Duelingo, tempoRoll, HackMIT, BigRedHacks, AI Projects, Web Development, Machine Learning Projects, SammyGPT, BOTISITIVTY' 
+      content: 'Youwei Zhen Projects, Knockout, HackRare, TKOS, 4Real, Duelingo, tempoRoll, HackMIT, BigRedHacks, AI Projects, Web Development, Machine Learning Projects, SammyGPT, BOTISITIVTY' 
     },
     // Open Graph
     { hid: 'og:title', property: 'og:title', content: 'Projects | Youwei Zhen' },

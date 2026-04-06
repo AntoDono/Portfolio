@@ -5,6 +5,27 @@
         <div class="projects-container">
 
             <ProjectCard 
+                image="clonedna.png" 
+                image_name="Clone.dna Workspace Preview" 
+                title="Clone.dna"
+                subtitle="1st Place Advanced AI & SWE Track @ yconic 2026 — $4,000"
+                description="Clone.dna mints portable .dna blocks from a developer's public GitHub — a QLoRA adapter trained on their real committed code using Grok-4 as teacher, encoding their exact coding style, architectural instincts, and domain vocabulary. Features a reference-counted VRAM eviction engine for concurrent training and inference, zero-cost LoRA hot-swapping, PM orchestration with weight-space adapter blending (0.7 specialist + 0.3 PM), and a talent registry. Validated on DGX A100, dual RTX 5090, and dual RTX 3090. Won $4,000 Grand Prize."
+                :tags="['python', 'fastapi', 'pytorch', 'peft', 'lora', 'qwen', 'grok', 'nuxt3', 'vue', 'typescript', 'sqlite', 'huggingface', 'xai']"
+                link="https://github.com/AntoDono/clone.dna" 
+                status="Featured Project"
+                :reverse="true" />
+
+            <ProjectCard 
+                image="knockout.png" 
+                image_name="Knockout Episode Timeline Preview" 
+                title="Knockout"
+                subtitle="1st Place @ Harvard HackRare 2026 — $2,000"
+                description="Knockout is a passive monitoring and pattern-learning platform for Triadin Knockout Syndrome (TKOS) — one of the rarest inherited arrhythmia syndromes with only 21 known patients globally. Built around 6 continuous data streams, a pharmacokinetic model that exposes real-time medication trough windows, a 2.2MB on-device ResNet classifier trained with the Muon optimizer, and a Bayesian personalization loop that learns each patient's unique episode triggers after ~20–30 labeled events."
+                :tags="['pytorch', 'resnet', 'fastapi', 'next.js', 'react', 'typescript', 'python', 'sqlite', 'websockets', 'recharts', 'xai', 'deeplearning']"
+                link="https://devpost.com/software/knockout-x6vfnz" 
+                status="Featured Project"/>
+
+            <ProjectCard 
                 image="scale.png" 
                 image_name="Scale Diffusion 3D City Preview" 
                 title="Scale Diffusion"
@@ -12,7 +33,7 @@
                 description="Scale Diffusion transforms AI training data collection into a game. Users navigate a 3D Manhattan metropolis rendered in Three.js while watching their world transform in real-time through streaming diffusion model at 30fps—every frame pair and input feeds autonomous driving training data. Connect a Solana wallet and get paid for quality-validated data through blockchain-native rewards."
                 :tags="['aws', 'decart', 'langgraph', 'langsmith', 'solana', 'three.js', 'webrtc', 'websockets']"
                 link="https://devpost.com/software/scale-diffusion" 
-                status="Featured Project"
+                status="Featured Project" 
                 :reverse="true" />
 
             <ProjectCard 
@@ -29,7 +50,7 @@
                 image="edgecart.png" 
                 image_name="EdgeCart Dashboard Preview" 
                 title="EdgeCart"
-                subtitle="4x Winner @ HackPrinceton 2025"
+                subtitle="4x Winner @ HackPrinceton 2025 — $1,500"
                 description="EdgeCart is a predictive waste intelligence system that stops food waste before it happens. Using real-time computer vision to monitor produce freshness and AI to match expiring items with customers who actually buy them, we project 19.5% reduction in grocery emissions. Won 1st Place Capital One, 1st Place Knot API, Y Combinator runner-up, and Best Use of Google Gemini API."
                 :tags="['python', 'flask', 'yolo', 'pytorch', 'react', 'typescript', 'opencv', 'gemini', 'knot-api', 'xai-grok', 'websocket', 'resnet']"
                 link="https://devpost.com/software/edgecart" 
@@ -50,7 +71,7 @@
                 image="duelingo.jpg" 
                 image_name="Duelingo App Preview" 
                 title="Duelingo"
-                subtitle="2nd Place @ Cornell BigRedHacks 2025"
+                subtitle="2nd Place @ Cornell BigRedHacks 2025 — $1,200"
                 description="Duelingo is a non-deterministic, AI-powered language learning game where players race in real-time multiplayer competitions to discover vocabulary by creatively combining words—with no pre-scripted paths or predetermined answers. Instead of following static, memorized content like traditional language apps, every combination is evaluated on-the-fly by AI that assesses linguistic logic and cultural understanding, requiring players to pronounce new discoveries correctly before proceeding."
                 :tags="['gemini', 'dynamic-caching', 'groq', 'javascript', 'llm', 'localization', 'mongodb', 'node.js']"
                 link="https://devpost.com/software/qlasses" 
