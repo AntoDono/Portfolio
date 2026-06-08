@@ -19,9 +19,9 @@
                 </div>
                 <Popup :show="t0" direction="E">
                     <div class="flex items-center gap-1 whitespace-nowrap">
-                        <span class="text-white font-fenix text-[4vmin] sm:text-[3.5vmin]">ML Engineer</span>
+                        <span class="text-white font-fenix text-[4vmin] sm:text-[3.5vmin]">SWE Intern</span>
                         <span class="text-blue-400 font-fenix text-[4vmin] sm:text-[3.5vmin]">@</span>
-                        <a class="text-blue-400 font-fenix text-[4vmin] sm:text-[3.5vmin] underline decoration-dotted" href="https://refine.dev" target="_blank">Refine.Dev</a>
+                        <a class="text-blue-400 font-fenix text-[4vmin] sm:text-[3.5vmin] underline decoration-dotted" href="https://refine.dev" target="_blank">SpaceX 🚀</a>
                     </div>
                 </Popup>
             </div>
