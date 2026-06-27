@@ -18,10 +18,12 @@
                     <scrambledtext text=" @ Brown University" class="font-fenix text-yellow-400 text-[5vmin] sm:text-[3.5vmin] text-center" mode="wait-for-animation" :animate="isDoneLoading" :delay="1000" @animation-complete="handleReady" />
                 </div>
                 <Popup :show="t0" direction="E">
-                    <div class="flex items-center gap-1 whitespace-nowrap">
+                    <div class="flex items-center gap-1 whitespace-nowrap flex-wrap justify-center">
                         <span class="text-white font-fenix text-[4vmin] sm:text-[3.5vmin]">SWE Intern</span>
                         <span class="text-blue-400 font-fenix text-[4vmin] sm:text-[3.5vmin]">@</span>
-                        <a class="text-blue-400 font-fenix text-[4vmin] sm:text-[3.5vmin] underline decoration-dotted" href="https://refine.dev" target="_blank">SpaceX 🚀</a>
+                        <a class="text-blue-400 font-fenix text-[4vmin] sm:text-[3.5vmin] underline decoration-dotted" href="https://www.spacex.com/" target="_blank">SpaceX 🚀</a>
+                        <span class="text-gray-400 font-fenix text-[3.5vmin] sm:text-[3vmin]">, prev @</span>
+                        <a class="text-gray-400 font-fenix text-[3.5vmin] sm:text-[3vmin] underline decoration-dotted" href="https://www.refine.dev/" target="_blank">Refine</a>
                     </div>
                 </Popup>
             </div>
