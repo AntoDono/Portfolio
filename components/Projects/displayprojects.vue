@@ -4,8 +4,29 @@
         
         <div class="projects-container">
 
-            <ProjectCard 
-                image="clonedna.png" 
+            <ProjectCard
+                image="ahost.png"
+                image_name="AHost Dashboard Preview"
+                title="AHost"
+                subtitle="Self-Hosted App Hosting for a Single Linux Server"
+                description="AHost is self-hosted app hosting for a single Linux server. Describe an app once in a small TOML file and AHost runs it in its own isolated environment — a sandboxed systemd service with its own runtime and dedicated GPUs — plus an nginx site with HTTPS and an auto-assigned port. An idempotent plan/apply reconciler keeps the server in sync with the manifests, and a web dashboard handles logs, CPU/GPU monitoring, and app control, all running least-privilege."
+                :tags="['python', 'systemd', 'nginx', 'certbot', 'linux', 'nuxt3', 'vue', 'bun', 'toml', 'cuda', 'devops']"
+                link="https://github.com/AntoDono/AHost"
+                status="Featured Project"
+                :reverse="true" />
+
+            <ProjectCard
+                image="chungus.png"
+                image_name="CHUNGUS Dashboard Preview"
+                title="CHUNGUS"
+                subtitle="Computing Hybrid Utilization Network for GPU Unified Scheduling"
+                description="CHUNGUS is a personal GPU inference gateway exposing an OpenAI-compatible API over vLLM and Ollama backends. A Node.js gateway spawns and proxies a Django API while serving a statically generated Nuxt app, with a role-aware session-based dashboard, built-in docs, and API key management with rate limiting."
+                :tags="['python', 'django', 'node.js', 'nuxt3', 'vue', 'vllm', 'ollama', 'cuda', 'openai-api']"
+                link="https://github.com/AntoDono/Chungus"
+                status="Featured Project" />
+
+            <ProjectCard
+                image="clonedna.png"
                 image_name="Clone.dna Workspace Preview" 
                 title="Clone.dna"
                 subtitle="1st Place Advanced AI & SWE Track @ yconic 2026 — $4,000"
