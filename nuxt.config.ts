@@ -71,13 +71,17 @@ export default defineNuxtConfig({
     
     },
   
+    routeRules: {
+      '/resume': { redirect: '/resume.pdf' }
+    },
+
     nitro: {
       output: {
         dir: '.output',
         publicDir: '.output/public'
       },
       prerender: {
-        routes: ['/projects']
+        routes: ['/projects', '/resume']
       }
     },
     
